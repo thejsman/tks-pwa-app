@@ -1,0 +1,10 @@
+html{height:100%;} 
+body,.appBody {background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/phL4LXyXpPm9HvHjH.jpeg'); } 
+.appLogo{ background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/TKCafpepQxPd4dZnk.png');} 
+.appNavbarBGColor{background-color:#000000;} 
+.appNavbarFontColor{color:#ffffff;} 
+.appNavbarFontFamily{font-family: 'Roboto', sans-serif;}  
+.appBodyFontColor{color:#ffffff;}  
+.appBodyFontFamily{font-family: 'Roboto', sans-serif;}   
+.appSelectColor{color:#8a74b4;}  
+.appGradientColor{background: linear-gradient(to right,#002f4c,#094470);} 
