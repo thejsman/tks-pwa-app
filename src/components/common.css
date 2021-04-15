@@ -137,11 +137,13 @@ body {
   padding: 0px 10px;
   text-align: center;
   margin: 0px 7px 40px 7px;
-  background: transparent !important;
+
   border: 1px solid var(--font-color) !important;
   cursor: pointer;
   border-radius: none !important;
   text-transform: uppercase;
+  border-radius: 10px;
+  background-color: var(--bbcolor);
 }
 a.commonBtnDestination {
   line-height: 2;
