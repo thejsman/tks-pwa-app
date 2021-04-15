@@ -141,6 +141,8 @@
   .loginbtn {
     padding: 0px 20px !important;
     font-size: 14px !important;
+    align-items: center;
+    border-radius: 10px;
   }
 
   .nameHeading {
