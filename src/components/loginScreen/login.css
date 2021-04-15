@@ -65,6 +65,7 @@
 }
 .textboxTransparent {
   color: var(--font-color) !important;
+  border-radius: 10px;
 }
 ::placeholder {
   color: var(--font-color) !important;

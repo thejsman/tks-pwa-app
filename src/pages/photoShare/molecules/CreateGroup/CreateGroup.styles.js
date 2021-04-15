@@ -12,7 +12,7 @@ export const SearchContainer = styled.div`
   z-index: 10;
   .clear {
     position: absolute;
-    top:50%;
+    top: 50%;
     right: 0;
     transform: translate(-10%, -50%);
   }
@@ -24,13 +24,13 @@ export const ResultContainer = styled.ul`
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 5px 6px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 6px 0px rgba(0, 0, 0, 0.5);
   color: #000;
   max-height: 200px;
   overflow-y: auto;
   margin: 0;
   padding: 10px;
-  &.selected{
+  &.selected {
     position: relative;
     top: auto;
     background: transparent;

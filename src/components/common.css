@@ -501,7 +501,7 @@ ul.alice-carousel__dots {
     margin-top: 10px;
   }
   .mobileBtnBridge {
-    background: transparent;
+    background: var(--bbcolor);
     border: 1px solid var(--font-color);
     padding: 0px 20px;
     height: 40px;
@@ -510,6 +510,8 @@ ul.alice-carousel__dots {
     margin: 30px auto;
     text-align: center !important;
     text-transform: uppercase;
+    border-radius: 10px;
+    align-items: center;
   }
   .commonBtnDestination {
     font-size: 12px !important;
