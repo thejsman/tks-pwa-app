@@ -1,10 +1,35 @@
-html{height:100%;} 
-body,.appBody {background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/phL4LXyXpPm9HvHjH.jpeg'); } 
-.appLogo{ background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/TKCafpepQxPd4dZnk.png');} 
-.appNavbarBGColor{background-color:#000000;} 
-.appNavbarFontColor{color:#ffffff;} 
-.appNavbarFontFamily{font-family: 'Roboto', sans-serif;}  
-.appBodyFontColor{color:#ffffff;}  
-.appBodyFontFamily{font-family: 'Roboto', sans-serif;}   
-.appSelectColor{color:#8a74b4;}  
-.appGradientColor{background: linear-gradient(to right,#002f4c,#094470);} 
+html {
+  height: 100%;
+}
+body,
+.appBody {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg");
+}
+.appLogo {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/xjkfRuvt6fZtQK2pr.png");
+}
+.appNavbarBGColor {
+  background-color: #a5a181;
+}
+.appNavbarFontColor {
+  color: #753331;
+}
+.appNavbarFontFamily {
+  font-family: "Scope One Regular";
+}
+.appBodyFontColor {
+  color: #753331;
+}
+.appBodyFontFamily {
+  font-family: "Scope One Regular";
+}
+.appSelectColor {
+  color: #ffffff;
+}
+.appGradientColor {
+  background: linear-gradient(to right, #a09777, #f3ebdd);
+}
+/* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
+.appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
+.appContactBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
+.appItineraryBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  */

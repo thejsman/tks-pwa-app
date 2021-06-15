@@ -93,7 +93,7 @@ input[type="checkbox"] {
 }
 
 .myPreference-card .mypreference-radio-group label {
-  width: 174px;
+  width: 80%;
   border: 1px solid var(--font-color);
   text-align: center;
   height: 40px;
@@ -375,7 +375,7 @@ input:focus,
     height: 43px !important;
     line-height: 30px;
     margin-bottom: 25px !important;
-    width: 152px !important;
+    /* width: 152px !important; */
     font-size: 14px !important;
     margin-left: auto !important;
     margin-right: auto !important;

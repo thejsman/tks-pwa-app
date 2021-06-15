@@ -313,7 +313,7 @@
   color: var(--font-color);
   left: 41%;
   top: 22px;
-  color: white;
+
   font-size: 21px;
 }
 .topHeaderCss {
@@ -435,6 +435,7 @@ li {
     text-transform: uppercase;
     /* color: white; */
     font-size: 16px;
+    font-weight: bold;
   }
 
   .rightHeader {

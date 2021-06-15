@@ -4,7 +4,7 @@ import {
   getEventName,
   getGuestId,
   getEventId,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -30,7 +30,7 @@ class Menu extends React.Component {
       appDetails: cloneDeep(props.appDetails),
       showIosPWABanner: false,
       showAndroidPWADownload: false,
-      downloadAndroidPWA: false
+      downloadAndroidPWA: false,
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -79,7 +79,7 @@ class Menu extends React.Component {
     if (window.matchMedia("(display-mode: standalone)").matches) {
       this.setState({
         showAndroidPWADownload: false,
-        showIosPWABanner: false
+        showIosPWABanner: false,
       });
     }
   }
@@ -177,7 +177,8 @@ class Menu extends React.Component {
     return (
       <div className="categories">
         <h3 className="coupleName appBodyFontColor appNavbarFontFamily headingTop headingTopSize">
-          {AppTItle}
+          {/* {AppTItle} */}
+          &nbsp;
         </h3>
         <div className="container categoriesItem">
           <ul id="iconContainer" className="category-items">
@@ -203,7 +204,7 @@ class Menu extends React.Component {
                   />
                 )}
               <p className="iconName appBodyFontFamily appBodyFontColor">
-                WELCOME
+                GREETINGS
               </p>
             </li>
             {appdet &&
@@ -224,7 +225,7 @@ class Menu extends React.Component {
                               }}
                             />
                             <p className="iconName appBodyFontFamily appBodyFontColor">
-                              BRIDE & GROOM
+                              ANSHITA & ABHILASH
                             </p>
                           </div>
                         )}
@@ -411,7 +412,7 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  PHOTO SHARING
+                  GALLARY
                 </p>
               </li>
             ) : null}
@@ -455,7 +456,7 @@ class Menu extends React.Component {
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        WISHES
+                        YOUR BLESSINGS
                       </p>
                     </li>
                   )}
@@ -526,7 +527,7 @@ function mapStateToProps(state) {
     eventId: getEventId(state),
     guestId: getGuestId(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 

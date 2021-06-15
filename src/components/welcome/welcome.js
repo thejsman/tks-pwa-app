@@ -18,7 +18,6 @@ class dashboard extends React.Component {
     }
   }
   componentDidMount() {
-    // console.log("WELCOME PROPS ::::::::::::::::::::::", this.props);
     let pageTitle =
       this.props.welcomeData && this.props.welcomeData.welcomeTitle;
     if (!this.props.welcomeData) {
@@ -121,7 +120,7 @@ class dashboard extends React.Component {
             position: "absolute",
             top: "0px",
             width: "100%",
-            height: "100%"
+            height: "100%",
           }}
         >
           <div className="modal-body" style={{ padding: "0px" }}>
@@ -141,7 +140,7 @@ class dashboard extends React.Component {
                 paddingTop: "10px",
                 paddingLeft: "17px",
                 zIndex: "1",
-                top: "8%"
+                top: "8%",
               }}
             >
               X
@@ -204,7 +203,7 @@ function mapStateToProps(state) {
   return {
     welcomeData: getWelcomeDetails(state),
     eventId: getEventId(state),
-    guestId: getGuestId(state)
+    guestId: getGuestId(state),
   };
 }
 export default connect(mapStateToProps)(dashboard);

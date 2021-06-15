@@ -5,7 +5,7 @@ import {
   getEventName,
   getGuestId,
   getPopupdata,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -36,7 +36,7 @@ class leftNav extends React.Component {
       display: "none",
       leftNav: "block",
       welcomeData: cloneDeep(props.welcomeData),
-      appDetails: cloneDeep(props.appDetails)
+      appDetails: cloneDeep(props.appDetails),
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -460,7 +460,7 @@ class leftNav extends React.Component {
                 <span className="icon-handshake commonIcon icon-white iconp" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
-                WELCOME
+                GREETINGS
               </p>
             </div>
           </li>
@@ -484,7 +484,7 @@ class leftNav extends React.Component {
                               <span className="icon-bride-and-groom commonIcon icon-white iconp" />
                             </div>
                             <p className="menuName" style={{ float: "left" }}>
-                              BRIDE & GROOM
+                              ANSHITA & ABHILASH
                             </p>
                           </div>
                         </div>
@@ -708,7 +708,7 @@ class leftNav extends React.Component {
                         <span className="icon-wishes commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
-                        WISHES
+                        YOUR BLESSINGS
                       </p>
                     </div>
                   </li>
@@ -791,7 +791,7 @@ function mapStateToProps(state) {
     guestId: getGuestId(state),
     popDetails: getPopupdata(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 export default connect(mapStateToProps)(leftNav);

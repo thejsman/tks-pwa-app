@@ -31,7 +31,7 @@ class header extends React.Component {
       showIosPWABanner: false,
       pwaInstruction: false,
       showPrompt: false,
-      beforeinstallprompt: null
+      beforeinstallprompt: null,
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -54,7 +54,7 @@ class header extends React.Component {
     if (window.matchMedia("(display-mode: standalone)").matches) {
       this.setState({
         showAndroidPWADownload: false,
-        showIosPWABanner: false
+        showIosPWABanner: false,
       });
     }
   }
@@ -86,7 +86,7 @@ class header extends React.Component {
   togglePWAInstruction() {
     console.log("Clicked ...");
     this.setState({
-      pwaInstruction: !this.state.pwaInstruction
+      pwaInstruction: !this.state.pwaInstruction,
     });
   }
 
@@ -126,7 +126,7 @@ class header extends React.Component {
 
   toggleHidden(event) {
     this.setState({
-      isMenuHidden: !this.state.isMenuHidden
+      isMenuHidden: !this.state.isMenuHidden,
     });
     this.iconClass = get(event.target, "attributes['id'].value");
     let isClose = $(event.currentTarget).hasClass("close");
@@ -183,7 +183,7 @@ class header extends React.Component {
     if (showPrompt) {
       // alert("Will show A2HS here");
       beforeinstallprompt.prompt();
-      beforeinstallprompt.userChoice.then(function(choiceResult) {
+      beforeinstallprompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === "accepted") {
           document.querySelector(".a2hsBtn").classList.add("hide");
         } else {
@@ -320,7 +320,7 @@ class header extends React.Component {
                 <div className="icon-div">
                   <span className="icon-handshake commonIcon icon-white iconp" />
                 </div>
-                <p className="menuName">WELCOME</p>
+                <p className="menuName">GREETINGS</p>
               </div>
             </li>
             {appdet &&
@@ -341,7 +341,7 @@ class header extends React.Component {
                               <div className="icon-div">
                                 <span className="icon-bride-and-groom commonIcon icon-white iconp" />
                               </div>
-                              <p className="menuName">BRIDE & GROOM</p>
+                              <p className="menuName">ANSHITA & ABHILASH</p>
                             </div>
                           </div>
                         )}
@@ -538,7 +538,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="fa fa-camera commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">PHOTO SHARING</p>
+                        <p className="menuName">GALLARY</p>
                       </div>
                     </li>
                   );
@@ -586,7 +586,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-wishes commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">WISHES</p>
+                        <p className="menuName">YOUR BLESSINGS</p>
                       </div>
                     </li>
                   )}
@@ -657,7 +657,7 @@ function mapStateToProps(state) {
     popDetails: getPopupdata(state),
     eventName: getEventName(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 export default connect(mapStateToProps)(header);
