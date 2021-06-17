@@ -42,7 +42,7 @@ class brideAndGroom extends React.Component {
       this.setState({ appDetails: appDetails });
       if (isMobile) {
         if (appDetails.basicDetails.eventType === "wedding") {
-          $("#spanHeaderText").html("Bride & Groom");
+          $("#spanHeaderText").html("ANSHITA & ABHILASH");
         } else {
           $("#spanHeaderText").html("About");
         }
@@ -63,7 +63,7 @@ class brideAndGroom extends React.Component {
     this.sessionEventId = localStorage.getItem("eventId");
     this.sessionGuestId = localStorage.getItem("guestId");
     if (isMobile) {
-      $("#spanHeaderText").html("Bride & Groom");
+      $("#spanHeaderText").html("ANSHITA & ABHILASH");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();

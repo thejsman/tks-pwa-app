@@ -538,7 +538,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="fa fa-camera commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">GALLARY</p>
+                        <p className="menuName">GALLERY</p>
                       </div>
                     </li>
                   );

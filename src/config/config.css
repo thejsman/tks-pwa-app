@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 html {
   height: 100%;
 }
@@ -9,25 +11,26 @@ body,
   background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/xjkfRuvt6fZtQK2pr.png");
 }
 .appNavbarBGColor {
-  background-color: #a5a181;
+  background-color: #ede5d8;
 }
 .appNavbarFontColor {
-  color: #753331;
+  color: #b55bf3;
 }
 .appNavbarFontFamily {
-  font-family: "Scope One Regular";
+  /* font-family: "Scope One Regular"; */
+  font-family: "Oswald", sans-serif;
 }
 .appBodyFontColor {
-  color: #753331;
+  color: #b55bf3;
 }
 .appBodyFontFamily {
-  font-family: "Scope One Regular";
+  font-family: "Oswald", sans-serif;
 }
 .appSelectColor {
   color: #ffffff;
 }
 .appGradientColor {
-  background: linear-gradient(to right, #a09777, #f3ebdd);
+  background: linear-gradient(to right, #ede5d8, #f3ebdd);
 }
 /* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
 .appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  

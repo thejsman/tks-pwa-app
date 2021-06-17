@@ -109,7 +109,9 @@ class Visa extends React.Component {
           guestVisaImages: [url],
         });
         self.props.setLoading(false);
-        store.dispatch(dataSavedSuccessfully("Visa photo saved successfully"));
+        store.dispatch(
+          dataSavedSuccessfully("RT PCR report saved successfully")
+        );
       })
       .catch(e => {
         alert("Upload failed");
@@ -150,7 +152,7 @@ class Visa extends React.Component {
         >
           <a className="card-title">
             <i className="icon-my-visa" aria-hidden="true" />
-            MY VISA
+            RT PCR REPORT
             <i className="fa" aria-hidden="true" />
           </a>
         </div>
@@ -244,7 +246,7 @@ class Visa extends React.Component {
                       }}
                     >
                       {" "}
-                      UPLOAD VISA{" "}
+                      UPLOAD RP PCT REPORT{" "}
                     </label>
                     <input
                       type="file"
@@ -292,7 +294,7 @@ class Visa extends React.Component {
             <div className="row text-center" id="visa-na">
               <div className="col-md-12">
                 <p className="disable-msg">
-                  Please get in touch with a travel representative to get
+                  Please get in touch with a wedding representative to get
                   assistance regarding your travel.
                 </p>
               </div>

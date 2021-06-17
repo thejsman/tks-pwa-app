@@ -328,7 +328,18 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
-
+            {/* COVID-INFO */}
+            <li>
+              <div
+                className="fa fa-hospital-o bigIcon icon-white"
+                onClick={() => {
+                  browserHistory.push("/covid-info");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                COVID-19
+              </p>
+            </li>
             {this.hasFeature("Sponsors") ? (
               <li>
                 <div
@@ -412,7 +423,7 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  GALLARY
+                  GALLERY
                 </p>
               </li>
             ) : null}
