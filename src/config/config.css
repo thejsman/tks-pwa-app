@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&display=swap");
 html {
   height: 100%;
 }
 body,
 .appBody {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/Yo5uPQjY8RCiybbif.jpeg");
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/HGZHMKfH9KtT99puy.jpeg");
 }
 .appLogo {
   background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/aFNjLRughPt4G24n7.png");
@@ -14,17 +13,17 @@ body,
   background-color: #ede5d8;
 }
 .appNavbarFontColor {
-  color: #b55bf3;
+  color: #502e5e;
 }
 .appNavbarFontFamily {
   /* font-family: "Scope One Regular"; */
-  font-family: "Oswald", sans-serif;
+  font-family: "Alegreya", serif;
 }
 .appBodyFontColor {
-  color: #b55bf3;
+  color: #502e5e;
 }
 .appBodyFontFamily {
-  font-family: "Oswald", sans-serif;
+  font-family: "Alegreya", serif;
 }
 .appSelectColor {
   color: #ffffff;
