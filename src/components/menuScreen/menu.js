@@ -275,20 +275,17 @@ class Menu extends React.Component {
               </p>
             </li> */}
             {/* My Purchases section - END */}
-
-            {this.hasFeature("RSVP") ? (
-              <li>
-                <div
-                  className="icon-rsvp-and-registration bigIcon icon-white"
-                  onClick={() => {
-                    browserHistory.push("/rsvp");
-                  }}
-                />
-                <p className="iconName appBodyFontFamily appBodyFontColor">
-                  {rsvp_name}
-                </p>
-              </li>
-            ) : null}
+            <li>
+              <div
+                className="icon-event-details bigIcon  icon-white"
+                onClick={() => {
+                  browserHistory.push("/eventDetails");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                EVENT DETAILS
+              </p>
+            </li>
 
             {this.hasFeature("Itinerary") ? (
               <li>
@@ -304,17 +301,19 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-            <li>
-              <div
-                className="icon-event-details bigIcon  icon-white"
-                onClick={() => {
-                  browserHistory.push("/eventDetails");
-                }}
-              />
-              <p className="iconName appBodyFontFamily appBodyFontColor">
-                EVENT DETAILS
-              </p>
-            </li>
+            {this.hasFeature("RSVP") ? (
+              <li>
+                <div
+                  className="icon-rsvp-and-registration bigIcon icon-white"
+                  onClick={() => {
+                    browserHistory.push("/rsvp");
+                  }}
+                />
+                <p className="iconName appBodyFontFamily appBodyFontColor">
+                  {rsvp_name}
+                </p>
+              </li>
+            ) : null}
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
