@@ -240,7 +240,7 @@ class Itinerary extends Component {
                         <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
                           <p className="mobileHeadingFontSize">
                             {defaultIti.startTime}{" "}
-                            {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                            {defaultIti.endTime.replace("12:34PM", "onwards")}
                           </p>
                           <p>{defaultIti.description}</p>
                         </div>
@@ -266,7 +266,7 @@ class Itinerary extends Component {
                           <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
                             <p className=" mobileHeadingFontSize">
                               {defaultIti.startTime} -{" "}
-                              {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                              {defaultIti.endTime.replace("12:34PM", "onwards")}
                             </p>
                             <p className=" mobileParagraphFontSize">
                               {defaultIti.description}
@@ -285,7 +285,7 @@ class Itinerary extends Component {
                           <div className="col-md-5 itinerarypRight appBodyFontFamily appBodyFontColor">
                             <p>
                               {defaultIti.startTime}{" "}
-                              {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                              {defaultIti.endTime.replace("12:34PM", "onwards")}
                             </p>
                             <p>{defaultIti.description}</p>
                           </div>
@@ -349,7 +349,7 @@ class Itinerary extends Component {
                         >
                           <p className="mobileHeadingFontSize">
                             {defaultIti.startTime}{" "}
-                            {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                            {defaultIti.endTime.replace("12:34PM", "onwards")}
                           </p>
                           <p className="mobileParagraphFontSize">
                             {defaultIti.description}
@@ -358,7 +358,7 @@ class Itinerary extends Component {
                       </div>
                     );
                   } else {
-                    // let endTime = defaultIti.endTime === "12:34PM"? "Onwards from let" : defaultIti.endTime;
+                    // let endTime = defaultIti.endTime === "12:34PM"? "onwards from let" : defaultIti.endTime;
 
                     return (
                       <div>
@@ -384,7 +384,7 @@ class Itinerary extends Component {
                           >
                             <p className="mobileHeadingFontSize">
                               {defaultIti.startTime} <span>-</span>{" "}
-                              {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                              {defaultIti.endTime.replace("12:34PM", "onwards")}
                             </p>
                             <p className="mobileParagraphFontSize">
                               {defaultIti.description}
