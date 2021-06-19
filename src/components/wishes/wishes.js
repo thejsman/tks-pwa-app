@@ -206,18 +206,19 @@ class Wishes extends Component {
     console.log(this.state.wishData);
     return (
       <div>
-        <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily ">
+        <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily">
           {title}
         </h3>
 
         <div className="row textAreaAlign">
+          <p className="mx-auto text-center lead text-dark">{placeholder}</p>
           <textarea
             value={wishMessage}
             className="appBodyFontColor appBodyFontFamily"
             rows="12"
             cols="60"
             ref="wishListDescription"
-            placeholder={placeholder}
+            placeholder=""
             onChange={this.handleChange}
           ></textarea>
         </div>

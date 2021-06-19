@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
+
 html {
   height: 100%;
 }
@@ -17,19 +18,19 @@ body,
 }
 .appNavbarFontFamily {
   /* font-family: "Scope One Regular"; */
-  font-family: "Alegreya", serif;
+  font-family: "PT Serif", serif;
 }
 .appBodyFontColor {
   color: #502e5e;
 }
 .appBodyFontFamily {
-  font-family: "Alegreya", serif;
+  font-family: "PT Serif", serif;
 }
 .appSelectColor {
   color: #ffffff;
 }
 .appGradientColor {
-  background: linear-gradient(to right, #ede5d8, #f3ebdd);
+  background: linear-gradient(to right, #e1b2a2, #cfadd0);
 }
 /* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
 .appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
