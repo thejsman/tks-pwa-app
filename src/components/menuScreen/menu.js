@@ -401,18 +401,6 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
-            <li>
-              <div
-                className="icon-my-summary bigIcon icon-white"
-                onClick={() => {
-                  browserHistory.push("/mySummary");
-                }}
-              />
-              <p className="iconName appBodyFontFamily appBodyFontColor">
-                MY SUMMARY
-              </p>
-            </li>
-
             {this.hasFeature("photoShare") ? (
               <li>
                 <div
@@ -426,6 +414,17 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
+            <li>
+              <div
+                className="icon-my-summary bigIcon icon-white"
+                onClick={() => {
+                  browserHistory.push("/mySummary");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                MY SUMMARY
+              </p>
+            </li>
 
             {this.hasFeature("downloads") ? (
               <li>
