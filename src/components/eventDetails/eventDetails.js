@@ -249,7 +249,10 @@ class EventDetails extends Component {
                             </p>
                             <p className="paragraphCommon appBodyFontFamily">
                               {" "}
-                              {defaultEve.subEventStartTime} -{" "}
+                              {defaultEve.subEventStartTime}{" "}
+                              {defaultEve.subEventEndTime === "12:34PM"
+                                ? " "
+                                : " - "}
                               {defaultEve.subEventEndTime.replace(
                                 "12:34PM",
                                 "onwards"
@@ -364,7 +367,10 @@ class EventDetails extends Component {
                           </p>
                           <p className="paragraphCommon appBodyFontFamily">
                             {" "}
-                            {defaultEve.subEventStartTime} -{" "}
+                            {defaultEve.subEventStartTime}
+                            {defaultEve.subEventEndTime === "12:34PM"
+                              ? " "
+                              : " - "}
                             {defaultEve.subEventEndTime.replace(
                               "12:34PM",
                               "onwards"
@@ -482,7 +488,10 @@ class EventDetails extends Component {
                             </p>
                             <p className="paragraphCommon appBodyFontFamily">
                               {" "}
-                              {defaultEve.subEventStartTime} -{" "}
+                              {defaultEve.subEventStartTime}{" "}
+                              {defaultEve.subEventEndTime === "12:34PM"
+                                ? " "
+                                : " - "}
                               {defaultEve.subEventEndTime.replace(
                                 "12:34PM",
                                 "onwards"

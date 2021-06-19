@@ -238,7 +238,7 @@ class Itinerary extends Component {
                           </div>
                         </div>
                         <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
-                          <p className="mobileHeadingFontSize">
+                          <p className="">
                             {defaultIti.startTime}
                             {defaultIti.endTime === "12:34PM" ? " " : " - "}
                             {defaultIti.endTime.replace("12:34PM", "onwards")}
@@ -265,7 +265,7 @@ class Itinerary extends Component {
                             </div>
                           </div>
                           <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
-                            <p className=" mobileHeadingFontSize">
+                            <p className=" ">
                               {defaultIti.startTime}
                               {defaultIti.endTime === "12:34PM" ? " " : " - "}
                               {defaultIti.endTime.replace("12:34PM", "onwards")}
@@ -350,7 +350,7 @@ class Itinerary extends Component {
                           className="col-md-10 col-sm-10 col-xs-10 itineraryp itinerarymobile appBodyFontFamily appBodyFontColor"
                           style={{ float: "left" }}
                         >
-                          <p className="mobileHeadingFontSize">
+                          <p className="">
                             {defaultIti.startTime}
                             {defaultIti.endTime === "12:34PM" ? " " : " - "}
                             {defaultIti.endTime.replace("12:34PM", "onwards")}
@@ -386,7 +386,7 @@ class Itinerary extends Component {
                             className="col-md-10 col-sm-10 col-xs-10 itineraryp itinerarymobile appBodyFontFamily appBodyFontColor"
                             style={{ float: "left" }}
                           >
-                            <p className="mobileHeadingFontSize">
+                            <p className="">
                               {defaultIti.startTime}{" "}
                               {defaultIti.endTime === "12:34PM" ? " " : " - "}
                               {defaultIti.endTime.replace("12:34PM", "onwards")}
