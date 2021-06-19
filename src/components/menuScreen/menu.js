@@ -330,7 +330,7 @@ class Menu extends React.Component {
             {/* COVID-INFO */}
             <li>
               <div
-                className="fa fa-hospital-o bigIcon icon-white"
+                className="fa fa-heartbeat bigIcon icon-white"
                 onClick={() => {
                   browserHistory.push("/covid-info");
                 }}

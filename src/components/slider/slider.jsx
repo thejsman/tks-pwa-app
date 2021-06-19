@@ -72,7 +72,8 @@ const SliderItem = ({ item }) =>
       <img src={item.aboutPageImg} alt={item.aboutPageTitle} />
       <SliderItemContent>
         <div className="about-destination appBodyFontColor appBodyFontFamily">
-          <div className="mobileHeadingFontSize">{item.aboutPageTitle}</div>
+          {/* <div className="mobileHeadingFontSize">{item.aboutPageTitle}</div> */}
+          <div className="mobileHeadingFontSize">&nbsp;</div>
           <p className="lineFormat"><Linkify properties={{target: '_blank'}}>{item.aboutPageContent}</Linkify></p>
         </div>
 

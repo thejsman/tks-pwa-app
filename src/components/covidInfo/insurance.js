@@ -281,9 +281,7 @@ class Insurance extends React.Component {
                 )}
               </div>
               <div className="row">
-                <div className="update-info">
-                  Please click save button to save your changes.
-                </div>
+                <div className="update-info">Click Save.</div>
                 <button
                   className="myInformationBtn btnSave"
                   id="save-insurance-btn"

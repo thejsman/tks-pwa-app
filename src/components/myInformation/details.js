@@ -651,7 +651,7 @@ class Details extends React.Component {
                             <span id="ErrorEmail" style={{ color: "white" }} />
                           </div>
                         </div>
-                        <div className="row">
+                        {/* <div className="row">
                           <div className="col-md-6">
                             <DatePicker
                               className="form-control form-control-color appBodyFontFamily appBodyFontColor"
@@ -698,7 +698,7 @@ class Details extends React.Component {
                                 })}
                             </select>
                           </div>
-                        </div>
+                        </div> */}
                         {this.state.photoField || photo ? (
                           <div className="row">
                             {" "}
@@ -744,9 +744,7 @@ class Details extends React.Component {
                           </div>
                         )}
                         <div className="row">
-                          <div className="update-info">
-                            Please click save button to save your changes.
-                          </div>
+                          <div className="update-info">Click Save.</div>
                           <button
                             className="myInformationBtn appBodyFontFamily appBodyFontColor btnSave"
                             onClick={this.savePersonalDetails.bind(this)}
