@@ -211,14 +211,13 @@ class Wishes extends Component {
         </h3>
 
         <div className="row textAreaAlign">
-          <p className="mx-auto text-center lead text-dark">{placeholder}</p>
           <textarea
             value={wishMessage}
             className="appBodyFontColor appBodyFontFamily"
             rows="12"
             cols="60"
             ref="wishListDescription"
-            placeholder=""
+            placeholder={placeholder}
             onChange={this.handleChange}
           ></textarea>
         </div>

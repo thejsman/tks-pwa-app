@@ -744,7 +744,7 @@ class Details extends React.Component {
                           </div>
                         )}
                         <div className="row">
-                          <div className="update-info">Click Save.</div>
+                          <div className="update-info">Click 'SAVE'</div>
                           <button
                             className="myInformationBtn appBodyFontFamily appBodyFontColor btnSave"
                             onClick={this.savePersonalDetails.bind(this)}

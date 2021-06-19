@@ -245,7 +245,7 @@ class Visa extends React.Component {
                         this.refs.visaUpload.click();
                       }}
                     >
-                      UPLOAD RP PCR REPORT
+                      UPLOAD RT PCR REPORT
                     </label>
                     <input
                       type="file"
@@ -274,7 +274,7 @@ class Visa extends React.Component {
                 )}
               </div>
               <div className="row">
-                <div className="update-info">Click Save.</div>
+                <div className="update-info">Click 'SAVE'</div>
                 <button
                   className="myInformationBtn btnSave"
                   id="save-visa-btn"

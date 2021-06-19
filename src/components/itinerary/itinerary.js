@@ -239,7 +239,8 @@ class Itinerary extends Component {
                         </div>
                         <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
                           <p className="mobileHeadingFontSize">
-                            {defaultIti.startTime}{" "}
+                            {defaultIti.startTime}
+                            {defaultIti.endTime === "12:34PM" ? " " : " - "}
                             {defaultIti.endTime.replace("12:34PM", "onwards")}
                           </p>
                           <p>{defaultIti.description}</p>
@@ -265,7 +266,8 @@ class Itinerary extends Component {
                           </div>
                           <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
                             <p className=" mobileHeadingFontSize">
-                              {defaultIti.startTime} -{" "}
+                              {defaultIti.startTime}
+                              {defaultIti.endTime === "12:34PM" ? " " : " - "}
                               {defaultIti.endTime.replace("12:34PM", "onwards")}
                             </p>
                             <p className=" mobileParagraphFontSize">
@@ -284,7 +286,8 @@ class Itinerary extends Component {
                         <div className="row" key={defaultIti._id}>
                           <div className="col-md-5 itinerarypRight appBodyFontFamily appBodyFontColor">
                             <p>
-                              {defaultIti.startTime}{" "}
+                              {defaultIti.startTime}
+                              {defaultIti.endTime === "12:34PM" ? " " : " - "}
                               {defaultIti.endTime.replace("12:34PM", "onwards")}
                             </p>
                             <p>{defaultIti.description}</p>
@@ -348,7 +351,8 @@ class Itinerary extends Component {
                           style={{ float: "left" }}
                         >
                           <p className="mobileHeadingFontSize">
-                            {defaultIti.startTime}{" "}
+                            {defaultIti.startTime}
+                            {defaultIti.endTime === "12:34PM" ? " " : " - "}
                             {defaultIti.endTime.replace("12:34PM", "onwards")}
                           </p>
                           <p className="mobileParagraphFontSize">
@@ -383,7 +387,8 @@ class Itinerary extends Component {
                             style={{ float: "left" }}
                           >
                             <p className="mobileHeadingFontSize">
-                              {defaultIti.startTime} <span>-</span>{" "}
+                              {defaultIti.startTime}{" "}
+                              {defaultIti.endTime === "12:34PM" ? " " : " - "}
                               {defaultIti.endTime.replace("12:34PM", "onwards")}
                             </p>
                             <p className="mobileParagraphFontSize">
