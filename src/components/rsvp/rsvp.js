@@ -289,7 +289,7 @@ class RSVP extends Component {
                     this.getsubEvents(event);
                   }}
                 >
-                  {moment(event.split(",")[0]).format("DD MMMM, YYYY")}
+                  {event}
                 </button>
               );
             })}
@@ -307,7 +307,7 @@ class RSVP extends Component {
                       this.getsubEvents(event);
                     }}
                   >
-                    {moment(event.split(",")[0]).format("DD MMMM, YYYY")}
+                    {event}
                   </button>
                 );
               })}
