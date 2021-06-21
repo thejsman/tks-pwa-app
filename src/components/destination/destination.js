@@ -245,7 +245,7 @@ class destination extends React.Component {
                         <div className="destination-data appGradientColor">
                           <figcaption className="figure-caption appGradientColor appBodyFontColor">
                             <span className="mainheadingCommon appBodyFontFamily">
-                              {defaultDestination.basicInfo.destinationName}
+                              {/* {defaultDestination.basicInfo.destinationName} */}
                             </span>
                             <p className="paragraphCommon appBodyFontFamily lineFormat">
                               <Linkify properties={{ target: "_blank" }}>
