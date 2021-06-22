@@ -5,10 +5,10 @@ html {
 }
 body,
 .appBody {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/HGZHMKfH9KtT99puy.jpeg");
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/q7fYhhuZwGgbLnPDt.jpeg");
 }
 .appLogo {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/aFNjLRughPt4G24n7.png");
+  background-image: url("/icons/login-logo.png");
 }
 .appNavbarBGColor {
   background-color: #ede5d8;

@@ -36,6 +36,8 @@ const SliderContent = styled.div`
     height : auto;
     font-size: 14px;
     margin-bottom: 60px;
+    align-items: center;
+    border-radius: 10px;
   }
   img{
     width : 100%;

@@ -51,7 +51,6 @@
   margin-left: auto !important;
   margin-right: auto !important;
   font-size: 22px;
-  text-transform: lowercase;
 }
 .textboxTransparent.loginText:focus {
   border-image: linear-gradient(to right, #d46565, #5a9117 100%);
@@ -84,7 +83,7 @@
 }
 .nameHeading {
   text-align: center;
-  font-size: 40px;
+  font-size: 36px;
   font-family: "Arima Madurai Medium";
   text-transform: capitalize;
   margin-top: 50px !important;
@@ -150,7 +149,7 @@
     margin-top: 20px !important;
     margin-bottom: 20px !important;
 
-    font-size: 29px !important;
+    font-size: 26px !important;
   }
   #loginForm .form-group {
     margin-bottom: 10px !important;

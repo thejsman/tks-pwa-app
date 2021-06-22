@@ -138,7 +138,7 @@ class Wishes extends Component {
     this.setState({ wishData: wishDataStr });
 
     if (isMobile) {
-      $("#spanHeaderText").html("Wishes");
+      $("#spanHeaderText").html("YOUR BLESSINGS");
       $(".headingTop").hide();
       $(".notificationBell").show();
       $(".appLogo").hide();

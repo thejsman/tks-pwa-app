@@ -24,7 +24,7 @@ class Home extends React.PureComponent {
           ? `${window.localStorage.getItem(
               "guestFirstName"
             )} ${window.localStorage.getItem("guestLastName")}`
-          : null
+          : null,
     };
   }
   componentDidMount() {
@@ -40,7 +40,7 @@ class Home extends React.PureComponent {
   render() {
     $(".backIcon").show();
     $(".backIconMobile").show();
-    $("#spanHeaderText").html("E-DOCS");
+    $("#spanHeaderText").html("E-Ticket");
     const { guestName, downloads } = this.state;
 
     return (
@@ -154,7 +154,7 @@ class Home extends React.PureComponent {
 
 function mapStateToProps(state) {
   return {
-    downloads: getDownloads(state)
+    downloads: getDownloads(state),
   };
 }
 

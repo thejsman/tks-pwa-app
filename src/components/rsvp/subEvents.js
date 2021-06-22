@@ -21,7 +21,7 @@ export default class SubEvents extends Component {
     const event = [
       { label: "ATTENDING", value: true, identifier: "attending" },
       { label: "MAYBE", value: "intermediate", identifier: "maybe" },
-      { label: "REGRET", value: false, identifier: "regret" },
+      { label: "NOT ATTENDING ", value: false, identifier: "regret" },
     ];
     return (
       <div

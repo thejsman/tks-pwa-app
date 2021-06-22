@@ -127,7 +127,7 @@ class destination extends React.Component {
       return (
         <button
           name="button"
-          className="commonBtnDestination appBodyFontColor btn btn-default btn-responsive"
+          className="commonBtnDestination appBodyFontFamily appBodyFontColor btn btn-default btn-responsive appBodyFontFamily"
           onClick={this.openPlaceToVisit.bind(this)}
         >
           PLACES TO VISIT
@@ -191,7 +191,7 @@ class destination extends React.Component {
                       return (
                         <button
                           name="button"
-                          className={`commonBtnDestination appBodyFontColor btn btn-default btn-responsive ${
+                          className={`commonBtnDestination appBodyFontFamily appBodyFontColor btn btn-default btn-responsive ${
                             destination.destinationId ===
                             defaultDestination.destinationId
                               ? "active"
@@ -213,7 +213,7 @@ class destination extends React.Component {
                         return (
                           <button
                             name="button"
-                            className={`commonBtnDestination appBodyFontColor btn btn-default btn-responsive ${
+                            className={`commonBtnDestination appBodyFontFamily appBodyFontColor btn btn-default btn-responsive ${
                               destination.destinationId ===
                               defaultDestination.destinationId
                                 ? "active"

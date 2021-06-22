@@ -11,8 +11,8 @@ class legalTerms extends Component {
     let styles = {
       link: {
         maxWidth: "400px",
-        padding: "15px"
-      }
+        padding: "15px",
+      },
     };
 
     $(".backIcon").show();
@@ -20,7 +20,7 @@ class legalTerms extends Component {
     const appDomain = AppURL;
     const appName = AppTItle;
     return (
-      <div className="container-fluid respobsiveMarginTop contactusmaincontent appGradientColor">
+      <div className="container-fluid respobsiveMarginTop contactusmaincontent appGradientColor appBodyFontFamily">
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily">
           {" "}
         </h3>

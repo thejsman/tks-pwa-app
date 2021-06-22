@@ -497,7 +497,7 @@ li {
   .topHeaderCss {
     top: 4px;
     padding-left: 0;
-    margin-left: -20px;
+    /* margin-left: -20px; */
   }
   .mobileHamBurgerIconL {
     top: 12px;

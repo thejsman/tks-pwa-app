@@ -225,7 +225,7 @@ class Menu extends React.Component {
                               }}
                             />
                             <p className="iconName appBodyFontFamily appBodyFontColor">
-                              ANSHITA & ABHILASH
+                              Bride & Groom
                             </p>
                           </div>
                         )}
@@ -435,7 +435,7 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  E-DOCS
+                  E-Ticket
                 </p>
               </li>
             ) : null}

@@ -12,15 +12,15 @@ class userAgreement extends Component {
     let styles = {
       link: {
         maxWidth: "400px",
-        padding: "15px"
-      }
+        padding: "15px",
+      },
     };
     $(".backIcon").show();
     $(".backIconMobile").show();
     const appDomain = AppURL;
     const appName = AppTItle;
     return (
-      <div className="container-fluid respobsiveMarginTop contactusmaincontent appGradientColor">
+      <div className="container-fluid respobsiveMarginTop contactusmaincontent appGradientColor appBodyFontFamily">
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily" />
         <div className="legal-content">
           <div className="legal-header">
@@ -45,16 +45,17 @@ class userAgreement extends Component {
               OF {appDomain}
             </p>
             <p>
-              {appName} has taken all reasonable measures to
-              ensure the accuracy of the links and profile within {appName}. We invite you to bring to our attention any
-              information you believe to be inaccurate. Please respond to
-              General Information, along with an explanation of your
-              objection.The links and profile that appear on {appDomain} are for
-              informational purposes only. Despite our efforts to provide useful
-              and accurate information, errors may appear from time to time.
-              Before purchasing services you've read about on {appName}, you should confirm with the Agency, Vendor and
-              similar entities any information, including the price that is
-              important to your purchasing decision. {appName}
+              {appName} has taken all reasonable measures to ensure the accuracy
+              of the links and profile within {appName}. We invite you to bring
+              to our attention any information you believe to be inaccurate.
+              Please respond to General Information, along with an explanation
+              of your objection.The links and profile that appear on {appDomain}{" "}
+              are for informational purposes only. Despite our efforts to
+              provide useful and accurate information, errors may appear from
+              time to time. Before purchasing services you've read about on{" "}
+              {appName}, you should confirm with the Agency, Vendor and similar
+              entities any information, including the price that is important to
+              your purchasing decision. {appName}
               is not responsible for, and does not guarantee the performance of,
               any such or services. USER AGREEMENT
             </p>
@@ -62,19 +63,19 @@ class userAgreement extends Component {
               a. Your use of a {appName} (including {appDomain}
               (hereinafter referred to as "the Website") and its related sites,
               services and tools} is governed by the following terms and
-              conditions as applicable to the {appName} and the
-              general principles for other {appDomain} websites of our
-              subsidiaries. If you transact on any {appDomain} website other
-              than the Home Website, you shall be subject to the policies that
-              are applicable to {appDomain} sites for such transaction. This
-              User Agreement for the Website shall come into effect on
-              19/04/2018 ("User Agreement"). If you reside in India, you are
-              contracting with Key Disruptors Private Limited, a company
-              incorporated under Companies Act, 2013 with registered office at
-              B-502 Sukh Sagar Apartments, Plot no. 12, Sector 9, Dwarka, New
-              Delhi, 110075. These terms and conditions constitute your binding
-              obligations towards these respective contracting entities
-              (hereinafter individually and collectively referred to as
+              conditions as applicable to the {appName} and the general
+              principles for other {appDomain} websites of our subsidiaries. If
+              you transact on any {appDomain} website other than the Home
+              Website, you shall be subject to the policies that are applicable
+              to {appDomain} sites for such transaction. This User Agreement for
+              the Website shall come into effect on 19/04/2018 ("User
+              Agreement"). If you reside in India, you are contracting with Key
+              Disruptors Private Limited, a company incorporated under Companies
+              Act, 2013 with registered office at B-502 Sukh Sagar Apartments,
+              Plot no. 12, Sector 9, Dwarka, New Delhi, 110075. These terms and
+              conditions constitute your binding obligations towards these
+              respective contracting entities (hereinafter individually and
+              collectively referred to as
               {appDomain}").b. For the purpose of the User Agreement, Registered
               User / Guest User and wherever the context so require 'You' shall
               mean any natural or legal person who has agreed to become a member
@@ -203,8 +204,9 @@ class userAgreement extends Component {
               {appDomain} reserves the right to issue a warning, temporarily
               /indefinitely suspend or terminate your membership of the
               App/Website and refuse to provide you with access to the Website
-              in case of non-payment of fees by you to {appName}, www.thekeysolution.in also reserves the right to take legal
-              action in case of non-payment of fees by you to {appDomain}.
+              in case of non-payment of fees by you to {appName},
+              www.thekeysolution.in also reserves the right to take legal action
+              in case of non-payment of fees by you to {appDomain}.
             </p>
             <p>USE OF THE APP/ WEBSITE</p>
             <p>
