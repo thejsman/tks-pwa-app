@@ -52,6 +52,7 @@ class RSVP extends Component {
   }
 
   componentDidMount() {
+    $("body").addClass("appContactBackground");
     const { guestId } = this.props;
     this.sessionGuestId = localStorage.getItem("guestId");
     const paramsId = guestId || this.sessionGuestId;
@@ -324,7 +325,7 @@ class RSVP extends Component {
                 />
               );
             })}
-          <div className="BtnCommon responsiveBtn rsvpWeddingGuestName">
+          <div className="BtnCommon responsiveBtn rsvpWeddingGuestName mb-2">
             <button
               className="btn commonBtnDestination appBodyFontFamily appBodyFontColor submitRsvp"
               onClick={this.submitRsvpDetails}

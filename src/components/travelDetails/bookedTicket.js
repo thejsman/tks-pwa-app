@@ -113,7 +113,7 @@ class bookedTicket extends Component {
         <div className="links">
           {/* <a className="card-header myInformation-card-header appBodyFontColor appGradientColor" onClick={() => {browserHistory.push("/travel/book-ticket")}}>Enter Ticket Details</a> */}
           <a
-            className="card-header myInformation-card-header appBodyFontColor appGradientColor"
+            className="card-header myInformation-card-header appBodyFontColor appBodyFontFamily appGradientColor"
             onClick={() => {
               browserHistory.push("/travel/upload-ticket");
             }}

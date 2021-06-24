@@ -32,7 +32,11 @@ body,
 .appGradientColor {
   background: linear-gradient(to right, #e1b2a2, #cfadd0);
 }
+
+.appContactBackground {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/q7fYhhuZwGgbLnPDt.jpeg");
+}
 /* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
 .appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
-.appContactBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
+ 
 .appItineraryBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  */
