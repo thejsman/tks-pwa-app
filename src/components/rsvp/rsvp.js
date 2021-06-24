@@ -52,7 +52,7 @@ class RSVP extends Component {
   }
 
   componentDidMount() {
-    $("body").addClass("appContactBackground");
+    $("body").addClass("appBodyRSVP");
     const { guestId } = this.props;
     this.sessionGuestId = localStorage.getItem("guestId");
     const paramsId = guestId || this.sessionGuestId;
@@ -205,9 +205,6 @@ class RSVP extends Component {
       this.sortByDateAsc
     );
 
-    // console.log('current Guest Info',guestInformation);
-    // console.log('eventDetailArr info render',eventDetailArr);
-    // console.log('guestId from state',guestId);
     var rsvpByDate =
       this.state.mainEventDetails &&
       this.state.mainEventDetails.basicDetails &&
@@ -377,7 +374,7 @@ class RSVP extends Component {
         );
       }
     }
-    return <div>{rsvp_component}</div>;
+    return <React.Fragment>{rsvp_component}</React.Fragment>;
   }
 }
 function mapStateToProps(state) {

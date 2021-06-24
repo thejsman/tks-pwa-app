@@ -65,9 +65,9 @@ class login extends React.Component {
         <div className="Absolute-Center is-Responsive">
           <div className="appLogo logo" />
           <h1 className="nameHeading appBodyFontColor appBodyFontFamily">
-            Anshita
-            <br />&<br />
-            Abhilash’s Wedding
+            Anshita & Abhilash’s
+            <br />
+            Wedding
           </h1>
           <form id="loginForm">
             <div className="form-group input-group">

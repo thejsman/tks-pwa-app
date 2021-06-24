@@ -36,6 +36,13 @@ body,
 .appContactBackground {
   background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/q7fYhhuZwGgbLnPDt.jpeg");
 }
+.appBodyRSVP {
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
 .appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/LJ6eFA56fRkuKNebN.jpeg');}  
  
