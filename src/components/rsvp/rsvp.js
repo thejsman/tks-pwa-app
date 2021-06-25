@@ -374,7 +374,13 @@ class RSVP extends Component {
         );
       }
     }
-    return <React.Fragment>{rsvp_component}</React.Fragment>;
+    return (
+      <div className="container rsvpStrechFix">
+        <div className="row">
+          <div className="col-12"> {rsvp_component}</div>
+        </div>
+      </div>
+    );
   }
 }
 function mapStateToProps(state) {

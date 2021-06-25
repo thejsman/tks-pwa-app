@@ -601,3 +601,10 @@ ul.alice-carousel__dots {
 .table th {
   padding: 0.6rem;
 }
+
+@media screen and (max-width: 768px) {
+  .rsvpStrechFix {
+    max-height: 745px;
+    overflow: scroll;
+  }
+}
