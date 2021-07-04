@@ -93,10 +93,11 @@ body {
   padding-top: 5px !important;
 }
 .icon-div {
-  width: 45px;
+  width: 5px;
   height: 45px;
-  padding: 5px;
+  padding: 0px;
   float: left;
+  visibility: hidden;
 }
 .icon-div:hover {
   background-color: #fff;
@@ -600,4 +601,58 @@ ul.alice-carousel__dots {
 .table td,
 .table th {
   padding: 0.6rem;
+}
+
+/* Homescreen Icons */
+
+.icon-namaste-2 {
+  background-image: url("/homescreen/welcome.svg");
+}
+.icon-bride-and-groom-2 {
+  background-image: url("/homescreen/bride&groom.svg");
+}
+.icon-destination-2 {
+  background-image: url("/homescreen/destination.svg");
+}
+.icon-event-details-2 {
+  background-image: url("/homescreen/program.svg");
+}
+.icon-rsvp-and-registration-2 {
+  background-image: url("/homescreen/rsvp.svg");
+}
+.album-icon {
+  background-image: url("/homescreen/instantcamera.svg");
+}
+.icon-wishes-2 {
+  background-image: url("/homescreen/wishes.svg");
+}
+.icon-contact-us-2 {
+  background-image: url("/homescreen/contact-us.svg");
+}
+.shagaan-icon {
+  background-image: url("/homescreen/shagaan.svg");
+}
+.icon-itinerary-2 {
+  background-image: url("/homescreen/programs.svg");
+}
+.icon-my-info-2 {
+  background-image: url("/homescreen/myinfo.svg");
+}
+.icon-travel-details-2 {
+  background-image: url("/homescreen/traveldetails.svg");
+}
+.icon-my-preferences-2 {
+  background-image: url("/homescreen/mypreferences.svg");
+}
+.icon-my-summary-2 {
+  background-image: url("/homescreen/mysummary.svg");
+}
+.icon-camera-2 {
+  background-image: url("/homescreen/instantcamera.svg");
+}
+.icon-event-details-2 {
+  background-image: url("/homescreen/hospitality.svg");
+}
+.shagaan-icon {
+  background-image: url("/homescreen/shagan.svg");
 }

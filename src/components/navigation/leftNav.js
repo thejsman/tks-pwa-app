@@ -5,7 +5,7 @@ import {
   getEventName,
   getGuestId,
   getPopupdata,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -36,7 +36,7 @@ class leftNav extends React.Component {
       display: "none",
       leftNav: "block",
       welcomeData: cloneDeep(props.welcomeData),
-      appDetails: cloneDeep(props.appDetails)
+      appDetails: cloneDeep(props.appDetails),
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -227,225 +227,7 @@ class leftNav extends React.Component {
               })}
           </div>
         </div>
-        <div
-          className="leftMenu appNavbarBGColor"
-          style={{ display: this.state.leftNav }}
-        >
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/welcome"
-            data-isexapaned="false"
-          >
-            <span className="icon-handshake commonIcon icon-white" />
-          </div>
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
-              if (list === "About") {
-                return (
-                  <div>
-                    {appdet &&
-                      appdet.basicDetails &&
-                      appdet.basicDetails.eventType === "wedding" && (
-                        <div
-                          className="icon-div"
-                          onClick={this.selectedMenu.bind(this)}
-                          data-menu="/about2"
-                          data-isexapaned="false"
-                        >
-                          <span className="icon-bride-and-groom commonIcon icon-white" />
-                        </div>
-                      )}
-                    {appdet &&
-                      appdet.basicDetails &&
-                      appdet.basicDetails.eventType !== "wedding" && (
-                        <div
-                          className="icon-div"
-                          onClick={this.selectedMenu.bind(this)}
-                          data-menu="/about2"
-                          data-isexapaned="false"
-                        >
-                          <span className="icon-manager commonIcon icon-white" />
-                        </div>
-                      )}
-                  </div>
-                );
-              }
-            })}
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
-              if (list === "Destination") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/destination"
-                  >
-                    <span className="icon-destination commonIcon icon-white" />
-                  </div>
-                );
-              }
-              if (list === "RSVP") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/rsvp"
-                  >
-                    <span className="icon-rsvp-and-registration commonIcon icon-white" />
-                  </div>
-                );
-              }
-            })}
-          {this.hasFeature("photoShare") ? (
-            <div
-              className="icon-div"
-              onClick={this.selectedMenu.bind(this)}
-              data-menu={`/${PHOTOS.BASE_PATH}`}
-            >
-              <span className="fa fa-camera commonIcon icon-white" />
-            </div>
-          ) : null}
 
-          {this.hasFeature("downloads") ? (
-            <div
-              className="icon-div"
-              onClick={this.selectedMenu.bind(this)}
-              data-menu={`/${DOWNLOADS.BASE_PATH}`}
-            >
-              <span className="fa fa-download commonIcon icon-white" />
-            </div>
-          ) : null}
-
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/myInformation"
-          >
-            <span className="icon-my-info commonIcon icon-white" />
-          </div>
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
-              if (list === "Travel Details") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/travel/booked-ticket"
-                  >
-                    <span className="icon-travel-details commonIcon icon-white" />
-                  </div>
-                );
-              }
-              if (list === "Itinerary") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/itinerary"
-                  >
-                    <span className="icon-itinerary commonIcon icon-white" />
-                  </div>
-                );
-              }
-            })}
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/eventDetails"
-          >
-            <span className="icon-event-details commonIcon icon-white" />
-          </div>
-          {this.preferenceExist() ? (
-            <div
-              className="icon-div"
-              onClick={this.selectedMenu.bind(this)}
-              data-menu="/myPreferences"
-            >
-              <span className="icon-my-preferences commonIcon icon-white" />
-            </div>
-          ) : null}
-
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/mySummary"
-          >
-            <span className="icon-my-summary commonIcon icon-white" />
-          </div>
-
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
-              if (list === "Contact Details") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/contactUs"
-                  >
-                    {" "}
-                    <span className="icon-contact-us commonIcon icon-white" />
-                  </div>
-                );
-              }
-            })}
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.featureFeedbackType !== "none" && (
-              <React.Fragment>
-                {feedback ? (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/feedback"
-                  >
-                    <span className="icon-wishes commonIcon icon-white" />
-                  </div>
-                ) : (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/wishes"
-                  >
-                    <span className="icon-wishes commonIcon icon-white" />
-                  </div>
-                )}
-              </React.Fragment>
-            )}
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/legal"
-          >
-            <span className="icon-legal commonIcon icon-white" />
-          </div>
-          {welcomeData &&
-            ((welcomeData.facebookLink &&
-              typeof welcomeData.facebookLink != "undefined") ||
-              (welcomeData.twitterLink &&
-                typeof welcomeData.twitterLink != "undefined") ||
-              (welcomeData.instagramLink &&
-                typeof welcomeData.instagramLink != "undefined")) && (
-              <div
-                className="icon-div"
-                onClick={this.selectedMenu.bind(this)}
-                data-menu="/social"
-              >
-                <span className="fa fa-share-square commonIcon icon-white" />
-              </div>
-            )}
-          <div className="icon-div" onClick={this.openLogoutScreen}>
-            <span className="icon-log-out commonIcon icon-white" />
-          </div>
-        </div>
         <ul
           className="leftMenuExpanded appNavbarBGColor"
           style={{ display: this.state.display }}
@@ -791,7 +573,7 @@ function mapStateToProps(state) {
     guestId: getGuestId(state),
     popDetails: getPopupdata(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 export default connect(mapStateToProps)(leftNav);

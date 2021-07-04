@@ -1,7 +1,7 @@
 {
-  "name": "Holland Dhamaka",
-  "short_name": "Trailblazers",
-  "description": "Holland Dhamaka Event app.",
+  "name": "KUNWAR & RATNA",
+  "short_name": "KUNWAR & RATNA",
+  "description": "KUNWAR & RATNA WEDDING APP.",
   "gcm_sender_id": "103953800507",
   "start_url": "/",
   "scope": "/",
@@ -10,25 +10,25 @@
   "theme_color": "#2874f0",
   "background_color": "#2874f0",
   "icons": [
-      {
-          "src": "icons/192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-      },
-      {
-          "src": "icons/256.png",
-          "sizes": "256x256",
-          "type": "image/png"
-      },
-      {
-          "src": "icons/384.png",
-          "sizes": "384x384",
-          "type": "image/png"
-      },
-      {
-          "src": "icons/512.png",
-          "sizes": "512x512",
-          "type": "image/png"
-      }
-  ]  
+    {
+      "src": "icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

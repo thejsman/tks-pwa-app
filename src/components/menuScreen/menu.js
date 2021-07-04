@@ -4,7 +4,7 @@ import {
   getEventName,
   getGuestId,
   getEventId,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -30,7 +30,7 @@ class Menu extends React.Component {
       appDetails: cloneDeep(props.appDetails),
       showIosPWABanner: false,
       showAndroidPWADownload: false,
-      downloadAndroidPWA: false
+      downloadAndroidPWA: false,
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -79,7 +79,7 @@ class Menu extends React.Component {
     if (window.matchMedia("(display-mode: standalone)").matches) {
       this.setState({
         showAndroidPWADownload: false,
-        showIosPWABanner: false
+        showIosPWABanner: false,
       });
     }
   }
@@ -186,7 +186,7 @@ class Menu extends React.Component {
                 appdet.basicDetails &&
                 appdet.basicDetails.eventType === "wedding" && (
                   <div
-                    className="icon-namaste bigIcon  icon-white"
+                    className="icon-namaste-2 bigIcon  icon-white"
                     onClick={() => {
                       browserHistory.push("/welcome");
                     }}
@@ -218,7 +218,7 @@ class Menu extends React.Component {
                         appdet.basicDetails.eventType === "wedding" && (
                           <div>
                             <div
-                              className="icon-bride-and-groom bigIcon  icon-white"
+                              className="icon-bride-and-groom-2 bigIcon  icon-white"
                               onClick={() => {
                                 browserHistory.push("/about2");
                               }}
@@ -250,7 +250,7 @@ class Menu extends React.Component {
             {this.hasFeature("Destination") ? (
               <li>
                 <div
-                  className="icon-destination bigIcon  icon-white"
+                  className="icon-destination-2 bigIcon  icon-white"
                   onClick={() => {
                     browserHistory.push("/destination");
                   }}
@@ -278,7 +278,7 @@ class Menu extends React.Component {
             {this.hasFeature("RSVP") ? (
               <li>
                 <div
-                  className="icon-rsvp-and-registration bigIcon icon-white"
+                  className="icon-rsvp-and-registration-2 bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/rsvp");
                   }}
@@ -292,7 +292,7 @@ class Menu extends React.Component {
             {this.hasFeature("Itinerary") ? (
               <li>
                 <div
-                  className="icon-itinerary bigIcon  icon-white"
+                  className="icon-itinerary-2 bigIcon  icon-white"
                   onClick={() => {
                     browserHistory.push("/itinerary");
                   }}
@@ -305,7 +305,7 @@ class Menu extends React.Component {
 
             <li>
               <div
-                className="icon-event-details bigIcon  icon-white"
+                className="icon-event-details-2 bigIcon  icon-white"
                 onClick={() => {
                   browserHistory.push("/eventDetails");
                 }}
@@ -346,7 +346,7 @@ class Menu extends React.Component {
               appdet.appDetails.selectedAppGuestInfo && (
                 <li>
                   <div
-                    className="icon-my-info bigIcon icon-white"
+                    className="icon-my-info-2 bigIcon icon-white"
                     onClick={() => {
                       browserHistory.push("/myInformation");
                     }}
@@ -365,7 +365,7 @@ class Menu extends React.Component {
                     <li>
                       {/* <div className="icon-travel-details bigIcon icon-white" onClick={() => {browserHistory.push("/travelDetails")}}/> */}
                       <div
-                        className="icon-travel-details bigIcon icon-white"
+                        className="icon-travel-details-2 bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/travel/booked-ticket");
                         }}
@@ -380,7 +380,7 @@ class Menu extends React.Component {
             {this.preferenceExist() ? (
               <li>
                 <div
-                  className="icon-my-preferences bigIcon icon-white"
+                  className="icon-my-preferences-2 bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/myPreferences");
                   }}
@@ -392,7 +392,7 @@ class Menu extends React.Component {
             ) : null}
             <li>
               <div
-                className="icon-my-summary bigIcon icon-white"
+                className="icon-my-summary-2 bigIcon icon-white"
                 onClick={() => {
                   browserHistory.push("/mySummary");
                 }}
@@ -401,11 +401,21 @@ class Menu extends React.Component {
                 MY SUMMARY
               </p>
             </li>
-
+            <li>
+              <div
+                className="shagaan-icon bigIcon  icon-white"
+                onClick={() => {
+                  browserHistory.push(`/shagan`);
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                Shagan
+              </p>
+            </li>
             {this.hasFeature("photoShare") ? (
               <li>
                 <div
-                  className="fa fa-camera bigIcon  icon-white"
+                  className="icon-camera-2 bigIcon  icon-white"
                   onClick={() => {
                     browserHistory.push(`/${PHOTOS.BASE_PATH}`);
                   }}
@@ -437,7 +447,7 @@ class Menu extends React.Component {
                   {feedback ? (
                     <li>
                       <div
-                        className="icon-wishes bigIcon icon-white"
+                        className="icon-wishes-2 bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/feedback");
                         }}
@@ -526,7 +536,7 @@ function mapStateToProps(state) {
     eventId: getEventId(state),
     guestId: getGuestId(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 

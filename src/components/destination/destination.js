@@ -243,7 +243,7 @@ class destination extends React.Component {
                           alt="image Not found"
                         />
                         <div className="destination-data appGradientColor">
-                          <figcaption className="figure-caption appGradientColor appBodyFontColor">
+                          <figcaption className="figure-caption  appBodyFontColor">
                             <span className="mainheadingCommon appBodyFontFamily">
                               {defaultDestination.basicInfo.destinationName}
                             </span>
@@ -266,7 +266,7 @@ class destination extends React.Component {
                               alt="image Not found"
                             />
                             <div className="destination-data appGradientColor">
-                              <figcaption className="figure-caption appGradientColor appBodyFontColor">
+                              <figcaption className="figure-caption  appBodyFontColor">
                                 <span className="subHeadingCommon appBodyFontFamily">
                                   Nearest Airport
                                 </span>
@@ -352,7 +352,7 @@ class destination extends React.Component {
                               alt="image Not found"
                             />
                             <div className="destination-data appGradientColor">
-                              <figcaption className="figure-caption appGradientColor appBodyFontColor">
+                              <figcaption className="figure-caption  appBodyFontColor">
                                 {defaultDestination.destinationTips &&
                                   defaultDestination.destinationTips.destinationDos.map(
                                     (data, i) => {
@@ -409,8 +409,8 @@ class destination extends React.Component {
                           className="figure-img   img-responsive "
                           alt="image Not found"
                         />
-                        <div className="destination-data-mobile appGradientColor">
-                          <figcaption className="figure-caption appGradientColor appBodyFontColor appBodyFontFamily">
+                        <div className="destination-data-mobile">
+                          <figcaption className="figure-caption  appBodyFontColor appBodyFontFamily">
                             <div className="about-destination">
                               <p
                                 className="mobileHeadingFontSize"
@@ -453,7 +453,7 @@ class destination extends React.Component {
                               alt="image Not found"
                             />
                             <div className="destination-data-mobile appGradientColor">
-                              <figcaption className="figure-caption appGradientColor appBodyFontColor">
+                              <figcaption className="figure-caption  appBodyFontColor">
                                 <p
                                   className="subHeadingCommon appBodyFontFamily"
                                   style={{ textAlign: "left" }}
@@ -542,7 +542,7 @@ class destination extends React.Component {
                               alt="image Not found"
                             />
                             <div className="destination-data-mobile appGradientColor">
-                              <figcaption className="figure-caption mobilefig appGradientColor appBodyFontColor">
+                              <figcaption className="figure-caption mobilefig  appBodyFontColor">
                                 {defaultDestination.destinationTips &&
                                   defaultDestination.destinationTips.destinationDos.map(
                                     (data, i) => {
