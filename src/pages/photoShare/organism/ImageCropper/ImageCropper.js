@@ -14,7 +14,7 @@ import {
   Select,
   Button,
   CropImageWrapper,
-  FileInput
+  FileInput,
 } from "./ImageCropper.styles";
 
 import CreateGroup from "../../molecules/CreateGroup";
@@ -26,11 +26,11 @@ class ImageCropper extends React.PureComponent {
     className: string,
     uploadPhoto: func.isRequired,
     files: objectOf(any).isRequired,
-    guestId: string.isRequired
+    guestId: string.isRequired,
   };
 
   static defaultProps = {
-    className: ""
+    className: "",
   };
 
   state = {
@@ -44,10 +44,10 @@ class ImageCropper extends React.PureComponent {
       aspect: 1,
       width: 50,
       x: 0,
-      y: 0
+      y: 0,
     },
     loading: false,
-    rotate: 0
+    rotate: 0,
   };
 
   constructor(props) {
@@ -79,7 +79,7 @@ class ImageCropper extends React.PureComponent {
   };
 
   onCropComplete = (crop, pixelCrop) => {
-    this.setState({pixelCrop});
+    this.setState({ pixelCrop });
     this.makeClientCrop(crop, pixelCrop);
   };
 
@@ -88,9 +88,12 @@ class ImageCropper extends React.PureComponent {
   };
 
   rotateImage() {
-    this.setState({rotate: this.state.rotate === 270 ? 0 : this.state.rotate + 90 }, () => {
-      this.makeClientCrop(this.state.crop, this.state.pixelCrop)
-    })
+    this.setState(
+      { rotate: this.state.rotate === 270 ? 0 : this.state.rotate + 90 },
+      () => {
+        this.makeClientCrop(this.state.crop, this.state.pixelCrop);
+      }
+    );
   }
 
   async makeClientCrop(crop, pixelCrop) {
@@ -112,9 +115,9 @@ class ImageCropper extends React.PureComponent {
     canvas.height = pixelCrop.height;
     const ctx = canvas.getContext("2d");
 
-    if(rotate){
+    if (rotate) {
       ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
-      ctx.rotate(rotate*Math.PI/180);
+      ctx.rotate((rotate * Math.PI) / 180);
       ctx.translate(-canvas.width * 0.5, -canvas.height * 0.5);
     }
 
@@ -129,7 +132,7 @@ class ImageCropper extends React.PureComponent {
       pixelCrop.width,
       pixelCrop.height
     );
-    if(rotate){
+    if (rotate) {
       ctx.restore();
     }
 
@@ -148,7 +151,7 @@ class ImageCropper extends React.PureComponent {
     if (this.state.caption && this.state.croppedImageUrl) {
       const data = {
         caption: this.state.caption,
-        groupId: this.state.isGroupShare ? this.state.groupId : null
+        groupId: this.state.isGroupShare ? this.state.groupId : null,
       };
       this.setState({ loading: true });
       this.props.uploadPhoto(data, [this.state.file]);
@@ -169,7 +172,7 @@ class ImageCropper extends React.PureComponent {
   onGroupCreate(groupInfo) {
     this.setState({
       createNewGroup: false,
-      groupId: groupInfo ? groupInfo._id : ""
+      groupId: groupInfo ? groupInfo._id : "",
     });
   }
 
@@ -181,20 +184,26 @@ class ImageCropper extends React.PureComponent {
           <CropImageWrapper>
             {src && (
               <div className={`rotate-${this.state.rotate}`}>
-              <div className="image-block">
-              <ReactCrop
-                src={src}
-                crop={crop}
-                onImageLoaded={this.onImageLoaded}
-                onComplete={this.onCropComplete}
-                onChange={this.onCropChange}
-              />
-              </div>
+                <div className="image-block">
+                  <ReactCrop
+                    src={src}
+                    crop={crop}
+                    onImageLoaded={this.onImageLoaded}
+                    onComplete={this.onCropComplete}
+                    onChange={this.onCropChange}
+                  />
+                </div>
               </div>
             )}
-            <div className="form-group mt-3">
-            <img className="mt-2 mb-3 d-block demoImage" src={this.state.croppedImageUrl} />
-              <Button type="button" className="textboxTransparent btn btn-sm imageUpload">
+            <div className="form-group mt-3 iphone-image">
+              <img
+                className="mt-2 mb-3 d-block demoImage"
+                src={this.state.croppedImageUrl}
+              />
+              <Button
+                type="button"
+                className="textboxTransparent btn btn-sm imageUpload"
+              >
                 Change Image
                 <FileInput
                   type="file"
@@ -203,13 +212,19 @@ class ImageCropper extends React.PureComponent {
                   onChange={e => this.onSelectFile(e.target.files)}
                 />
               </Button>
-              <Button type="button" className="btn btn-sm ml-3" onClick={() => this.rotateImage()}>
-              <i className="fa fa-repeat mr-2" aria-hidden="true"></i>
-              Rotate
+              <Button
+                type="button"
+                className="btn btn-sm ml-3"
+                onClick={() => this.rotateImage()}
+              >
+                <i className="fa fa-repeat mr-2" aria-hidden="true"></i>
+                Rotate
               </Button>
             </div>
             <div className="form-group">
-              <label htmlFor="searchText" className="m-0">Photo Caption</label>
+              <label htmlFor="searchText" className="m-0">
+                Photo Caption
+              </label>
               <Input
                 className="form-control form-control-color"
                 type="text"
@@ -284,7 +299,7 @@ class ImageCropper extends React.PureComponent {
 function mapStateToProps(state) {
   return {
     guestsList: getAllGuests(state),
-    groupsList: getGuestGroups(state)
+    groupsList: getGuestGroups(state),
   };
 }
 

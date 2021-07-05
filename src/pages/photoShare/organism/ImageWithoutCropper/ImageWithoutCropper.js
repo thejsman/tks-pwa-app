@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
-import EXIF from 'exif-js';
+import EXIF from "exif-js";
 
 import { string, func, objectOf, any } from "prop-types";
 
@@ -15,7 +15,7 @@ import {
   Select,
   Button,
   CropImageWrapper,
-  FileInput
+  FileInput,
 } from "./ImageWithoutCropper.styles";
 
 import CreateGroup from "../../molecules/CreateGroup";
@@ -28,11 +28,11 @@ class ImageWithoutCropper extends React.PureComponent {
     uploadPhoto: func.isRequired,
     files: objectOf(any).isRequired,
     guestId: string.isRequired,
-    cancelUpload: func.isRequired
+    cancelUpload: func.isRequired,
   };
 
   static defaultProps = {
-    className: ""
+    className: "",
   };
 
   state = {
@@ -46,10 +46,10 @@ class ImageWithoutCropper extends React.PureComponent {
       aspect: 16 / 9,
       width: 100,
       x: 0,
-      y: 0
+      y: 0,
     },
     loading: false,
-    rotate: 0
+    rotate: 0,
   };
 
   constructor(props) {
@@ -79,14 +79,18 @@ class ImageWithoutCropper extends React.PureComponent {
         aspect: image.naturalWidth / image.naturalHeight,
         width: 100,
         x: 0,
-        y: 0
-      }
+        y: 0,
+      },
     });
 
-    EXIF.getData(image, function() {
-      _self.resetOrientation(image.src, EXIF.getTag(this, "Orientation"), resetBase64Image => {
-        _self.imageRef = resetBase64Image;
-      });
+    EXIF.getData(image, function () {
+      _self.resetOrientation(
+        image.src,
+        EXIF.getTag(this, "Orientation"),
+        resetBase64Image => {
+          _self.imageRef = resetBase64Image;
+        }
+      );
     });
   };
 
@@ -94,7 +98,7 @@ class ImageWithoutCropper extends React.PureComponent {
     const _self = this;
     const img = new Image();
 
-    img.onload = function() {
+    img.onload = function () {
       const width = img.width,
         height = img.height,
         canvas = document.createElement("canvas"),
@@ -139,15 +143,22 @@ class ImageWithoutCropper extends React.PureComponent {
       // draw image
       ctx.drawImage(img, 0, 0);
 
-      canvas.toBlob(blob => {
-        blob.name = "newFile.jpg";
-        window.URL.revokeObjectURL(this.fileUrl);
-        this.fileUrl = window.URL.createObjectURL(blob);
-        _self.setState({ croppedImageUrl: this.src, file: new File([blob], "newFile.jpg", {
-          type: "image/jpeg",
-        }) });
-        callback(this);
-      }, "image/jpeg", 0.5);
+      canvas.toBlob(
+        blob => {
+          blob.name = "newFile.jpg";
+          window.URL.revokeObjectURL(this.fileUrl);
+          this.fileUrl = window.URL.createObjectURL(blob);
+          _self.setState({
+            croppedImageUrl: this.src,
+            file: new File([blob], "newFile.jpg", {
+              type: "image/jpeg",
+            }),
+          });
+          callback(this);
+        },
+        "image/jpeg",
+        0.5
+      );
     };
 
     img.src = srcBase64;
@@ -245,7 +256,7 @@ class ImageWithoutCropper extends React.PureComponent {
     if (this.state.croppedImageUrl) {
       const data = {
         caption: this.state.caption,
-        groupId: this.state.isGroupShare ? this.state.groupId : null
+        groupId: this.state.isGroupShare ? this.state.groupId : null,
       };
       this.setState({ loading: true });
       this.props.uploadPhoto(data, [this.state.file]);
@@ -266,7 +277,7 @@ class ImageWithoutCropper extends React.PureComponent {
   onGroupCreate(groupInfo) {
     this.setState({
       createNewGroup: false,
-      groupId: groupInfo ? groupInfo._id : ""
+      groupId: groupInfo ? groupInfo._id : "",
     });
   }
 
@@ -288,7 +299,7 @@ class ImageWithoutCropper extends React.PureComponent {
                 />
               </div>
             )}
-            <div className="form-group">
+            <div className="form-group iphone-image">
               <div className="mb-3 d-block demoImage">
                 <img src={this.state.croppedImageUrl} />
               </div>
@@ -397,7 +408,7 @@ class ImageWithoutCropper extends React.PureComponent {
 function mapStateToProps(state) {
   return {
     guestsList: getAllGuests(state),
-    groupsList: getGuestGroups(state)
+    groupsList: getGuestGroups(state),
   };
 }
 

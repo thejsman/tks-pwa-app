@@ -608,3 +608,6 @@ ul.alice-carousel__dots {
     overflow: scroll;
   }
 }
+.iphone-image img {
+  image-orientation: from-image;
+}
