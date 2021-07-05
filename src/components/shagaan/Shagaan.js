@@ -20,6 +20,14 @@ class ContactUs extends Component {
     }
   }
   componentDidMount() {
+    const rpForm = document.getElementById("razorpay_btn");
+    const script = document.createElement("script");
+    document.head.appendChild(script);
+    script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+    script.setAttribute("data-payment_button_id", "pl_HVOhJMIIYYRpOK");
+    script.async = true;
+    rpForm.appendChild(script);
+
     $("body").attr("class", "");
 
     fetchWelcomeDetails();
@@ -66,22 +74,11 @@ class ContactUs extends Component {
               Pay Shagan Digitally
             </h5>
           </div>
-          <div>
-            <form className="text-white">
-              <script
-                src="https://checkout.razorpay.com/v1/payment-button.js"
-                data-payment_button_id="pl_GoRSJzMSHt1TPw"
-                async
-              ></script>
-            </form>
-          </div>
-          <div className="BtnCommon responsiveBtn rsvpWeddingGuestName my-3">
-            <button
-              className="btn commonBtnDestination appBodyFontFamily appBodyFontColor submitRsvp"
-              onClick=""
-            >
-              Shagan
-            </button>
+
+          <div className="BtnCommon responsiveBtn rsvpWeddingGuestName my-5">
+            <div>
+              <form id="razorpay_btn"></form>
+            </div>
           </div>
         </div>
       </div>
