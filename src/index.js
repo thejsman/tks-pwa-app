@@ -11,9 +11,9 @@ import Meteor from "react-web-meteor";
 Meteor.connect("wss://thekeysolution.in/websocket");
 // Meteor.connect('wss://the-keyapp.com/websocket');
 
-// console.log = function () {};
-// console.error = function () {};
-// console.warn = function () {};
+console.log = function () {};
+console.error = function () {};
+console.warn = function () {};
 
 ReactDOM.render(
   <Provider store={store}>

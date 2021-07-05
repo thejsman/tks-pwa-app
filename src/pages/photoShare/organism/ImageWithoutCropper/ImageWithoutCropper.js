@@ -182,7 +182,7 @@ class ImageWithoutCropper extends React.PureComponent {
 
   rotateImage() {
     this.setState(
-      { rotate: this.state.rotate === 270 ? 0 : this.state.rotate + 90 },
+      { rotate: this.state.rotate === 270 ? 0 : this.state.rotate + 0 },
       () => {
         this.makeClientCrop(this.state.crop, this.state.pixelCrop);
       }
@@ -217,7 +217,7 @@ class ImageWithoutCropper extends React.PureComponent {
         ? image.naturalWidth
         : image.naturalHeight;
     const ctx = canvas.getContext("2d");
-
+    console.log("Rotate Value: ", rotate);
     if (rotate) {
       let a = 0;
       let b = 0;
