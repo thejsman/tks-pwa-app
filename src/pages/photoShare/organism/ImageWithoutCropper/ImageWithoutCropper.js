@@ -117,24 +117,31 @@ class ImageWithoutCropper extends React.PureComponent {
       switch (srcOrientation) {
         case 2:
           ctx.transform(-1, 0, 0, 1, width, 0);
+          console.log("Case 2");
           break;
         case 3:
           ctx.transform(-1, 0, 0, -1, width, height);
+          console.log("Case 3");
           break;
         case 4:
           ctx.transform(1, 0, 0, -1, 0, height);
+          console.log("Case 4");
           break;
         case 5:
           ctx.transform(0, 1, 1, 0, 0, 0);
+          console.log("Case 5");
           break;
         case 6:
           ctx.transform(0, 1, -1, 0, height, 0);
+          console.log("Case 6");
           break;
         case 7:
           ctx.transform(0, -1, -1, 0, height, width);
+          console.log("Case 7");
           break;
         case 8:
           ctx.transform(0, -1, 1, 0, 0, width);
+          console.log("Case 8");
           break;
         default:
           break;
@@ -145,18 +152,18 @@ class ImageWithoutCropper extends React.PureComponent {
 
       canvas.toBlob(
         blob => {
-          blob.name = "newFile.png";
+          blob.name = "newFile.jpeg";
           window.URL.revokeObjectURL(this.fileUrl);
           this.fileUrl = window.URL.createObjectURL(blob);
           _self.setState({
             croppedImageUrl: this.src,
-            file: new File([blob], "newFile.png", {
-              type: "image/png",
+            file: new File([blob], "newFile.jpeg", {
+              type: "image/jpeg",
             }),
           });
           callback(this);
         },
-        "image/png",
+        "image/jpeg",
         0.5
       );
     };
@@ -187,7 +194,7 @@ class ImageWithoutCropper extends React.PureComponent {
       const croppedImageUrl = await this.getCroppedImg(
         this.imageRef,
         pixelCrop,
-        "newFile.png",
+        "newFile.jpeg",
         this.state.rotate
       );
       this.setState({ croppedImageUrl });
@@ -248,7 +255,7 @@ class ImageWithoutCropper extends React.PureComponent {
         window.URL.revokeObjectURL(this.fileUrl);
         this.fileUrl = window.URL.createObjectURL(blob);
         resolve(this.fileUrl);
-      }, "image/png");
+      }, "image/jpeg");
     });
   }
 
