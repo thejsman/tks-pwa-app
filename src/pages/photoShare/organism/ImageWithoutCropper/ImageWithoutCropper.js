@@ -145,18 +145,18 @@ class ImageWithoutCropper extends React.PureComponent {
 
       canvas.toBlob(
         blob => {
-          blob.name = "newFile.jpg";
+          blob.name = "newFile.png";
           window.URL.revokeObjectURL(this.fileUrl);
           this.fileUrl = window.URL.createObjectURL(blob);
           _self.setState({
             croppedImageUrl: this.src,
-            file: new File([blob], "newFile.jpg", {
-              type: "image/jpeg",
+            file: new File([blob], "newFile.png", {
+              type: "image/png",
             }),
           });
           callback(this);
         },
-        "image/jpeg",
+        "image/png",
         0.5
       );
     };
@@ -187,7 +187,7 @@ class ImageWithoutCropper extends React.PureComponent {
       const croppedImageUrl = await this.getCroppedImg(
         this.imageRef,
         pixelCrop,
-        "newFile.jpg",
+        "newFile.png",
         this.state.rotate
       );
       this.setState({ croppedImageUrl });
@@ -248,7 +248,7 @@ class ImageWithoutCropper extends React.PureComponent {
         window.URL.revokeObjectURL(this.fileUrl);
         this.fileUrl = window.URL.createObjectURL(blob);
         resolve(this.fileUrl);
-      }, "image/jpeg");
+      }, "image/png");
     });
   }
 
