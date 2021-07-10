@@ -178,8 +178,8 @@ ul#iconContainer li {
 .bigIcon {
   position: relative;
   display: flex;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border: 1px solid var(--font-color) !important;
   align-items: center;
   justify-content: center;
