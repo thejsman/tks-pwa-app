@@ -24,7 +24,7 @@ class ContactUs extends Component {
     $('body').addClass('appContactBackground');
     fetchWelcomeDetails();
     if (isMobile) {
-      $("#spanHeaderText").html("Contact Us");
+      $("#spanHeaderText").html("HOSPITALITY DESK");
       $(".notificationBell").show();
       $(".appLogo").hide()
       $(".chat").show();
@@ -52,7 +52,7 @@ class ContactUs extends Component {
     let contacts = contactData.contactItems;
     return (
       <div className="container-fluid respobsiveMarginTop contactusmaincontent">
-        <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">CONTACT US{contactData && contactData.contactTitle}</h3>
+        <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">HOSPITALITY DESK{contactData && contactData.contactTitle}</h3>
         <div className=" mT90ContactUs">
           {
             contacts && contacts.map(contact => {

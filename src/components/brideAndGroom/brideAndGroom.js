@@ -44,7 +44,7 @@ class brideAndGroom extends React.Component {
       this.setState({ appDetails: appDetails });
       if (isMobile) {
         if (appDetails.basicDetails.eventType === "wedding") {
-          $("#spanHeaderText").html("Bride & Groom");
+          $("#spanHeaderText").html("KANWAR & BINDNI");
         }
         else {
           $("#spanHeaderText").html("About");
@@ -66,7 +66,7 @@ class brideAndGroom extends React.Component {
     this.sessionEventId = localStorage.getItem('eventId');
     this.sessionGuestId = localStorage.getItem('guestId');
     if (isMobile) {
-      $("#spanHeaderText").html("Bride & Groom");
+      $("#spanHeaderText").html("KANWAR & BINDNI");
       $(".notificationBell").show();
       $(".appLogo").hide()
       $(".chat").show();
@@ -95,7 +95,7 @@ class brideAndGroom extends React.Component {
     return (
       <div className="container about-page">
         {appdet && appdet.basicDetails && appdet.basicDetails.eventType === "wedding" &&
-          <h3 className="headingTop headingTopMobile  d-none d-sm-block appBodyFontColor appBodyFontFamily">BRIDE & GROOM</h3>
+          <h3 className="headingTop headingTopMobile  d-none d-sm-block appBodyFontColor appBodyFontFamily">KANWAR & BINDNI</h3>
         }
         {appdet && appdet.basicDetails && appdet.basicDetails.eventType !== "wedding" &&
           <h3 className="headingTop headingTopMobile  d-none d-sm-block appBodyFontColor appBodyFontFamily">ABOUT</h3>

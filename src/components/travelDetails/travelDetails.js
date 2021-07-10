@@ -278,7 +278,7 @@ class TravelDetails extends Component {
         {this.state.loading ? <Loader /> : null}
         <div className="row">
           <div className="col-sm-12">
-            <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">TRAVEL DETAILS </h3>
+            <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">GUEST TRAVEL DETAILS </h3>
             <div className="BtnCommon responsiveBtn rsvpWeddingGuestName" style={{ marginTop: '90px' }}>
               <button className="btn appBodyFontFamily appBodyFontColor commonBtnDestination active">FLIGHTs</button>
               {/* <button className="btn appBodyFontFamily appBodyFontColor commonBtnDestination">HOTELS</button> */}

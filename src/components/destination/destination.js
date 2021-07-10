@@ -62,7 +62,7 @@ class destination extends React.Component {
     this.sessionGuestId = localStorage.getItem("guestId");
 
     if (isMobile) {
-      $("#spanHeaderText").html("Destination");
+      $("#spanHeaderText").html("CITY OF LAKES");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
@@ -179,7 +179,7 @@ class destination extends React.Component {
     return (
       <div className="container resposiveHideHeading">
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">
-          DESTINATION
+          CITY OF LAKES
         </h3>
         {!this.state.showPlacesToVisit && destinationExist && (
           <div>

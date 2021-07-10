@@ -320,7 +320,7 @@ class header extends React.Component {
                 <div className="icon-div">
                   <span className="icon-handshake commonIcon icon-white iconp" />
                 </div>
-                <p className="menuName">WELCOME</p>
+                <p className="menuName">PADHARO SA</p>
               </div>
             </li>
             {appdet &&
@@ -341,7 +341,7 @@ class header extends React.Component {
                               <div className="icon-div">
                                 <span className="icon-bride-and-groom commonIcon icon-white iconp" />
                               </div>
-                              <p className="menuName">BRIDE & GROOM</p>
+                              <p className="menuName">KANWAR & BINDNI</p>
                             </div>
                           </div>
                         )}
@@ -378,7 +378,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-destination commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">DESTINATION</p>
+                        <p className="menuName">CITY OF LAKES</p>
                       </div>
                     </li>
                   );
@@ -417,7 +417,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-itinerary commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">ITINERARY</p>
+                        <p className="menuName">PROGRAM</p>
                       </div>
                     </li>
                   );
@@ -429,7 +429,7 @@ class header extends React.Component {
                 <div className="icon-div">
                   <span className="icon-event-details commonIcon icon-white iconp" />
                 </div>
-                <p className="menuName">EVENT DETAILS</p>
+                <p className="menuName">CELEBRATIONS</p>
               </div>
             </li>
             {appdet &&
@@ -461,7 +461,7 @@ class header extends React.Component {
                 <div className="icon-div">
                   <span className="icon-my-info commonIcon icon-white iconp" />
                 </div>
-                <p className="menuName">MY INFORMATION</p>
+                <p className="menuName">MY INFO</p>
               </div>
             </li>
             {appdet &&
@@ -478,7 +478,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-travel-details commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">TRAVEL DETAILS</p>
+                        <p className="menuName">GUEST TRAVEL DETAILS</p>
                       </div>
                     </li>
                   );
@@ -538,7 +538,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="fa fa-camera commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">PHOTO SHARING</p>
+                        <p className="menuName">INSTANT CAMERA</p>
                       </div>
                     </li>
                   );
@@ -622,7 +622,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-contact-us commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">CONTACT US</p>
+                        <p className="menuName">HOSPITALITY DESK</p>
                       </div>
                     </li>
                   );

@@ -37,7 +37,7 @@ class Itinerary extends Component {
         $('html').scrollTop(0) ;
 
         if(isMobile){
-            $("#spanHeaderText").html("Itinerary");
+            $("#spanHeaderText").html("PROGRAM");
                 $(".notificationBell").show();
                 $(".appLogo").hide()
                 $(".chat").show();
@@ -132,7 +132,7 @@ class Itinerary extends Component {
        });
         return (
             <div className="container-fluid  itienararyBtn">
-                <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">ITINERARY</h3>
+                <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">PROGRAM</h3>
                 <div className="row mT90">
                         <div className="d-none d-lg-block col-md-12 col-sm-12 col-xs-12">
                             {itineraries && itineraries.map(itinerary => {

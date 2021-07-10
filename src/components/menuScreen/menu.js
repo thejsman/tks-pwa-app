@@ -203,7 +203,7 @@ class Menu extends React.Component {
                   />
                 )}
               <p className="iconName appBodyFontFamily appBodyFontColor">
-                WELCOME
+                PADHARO SA
               </p>
             </li>
             {appdet &&
@@ -224,7 +224,7 @@ class Menu extends React.Component {
                               }}
                             />
                             <p className="iconName appBodyFontFamily appBodyFontColor">
-                              BRIDE & GROOM
+                              KANWAR & BINDNI
                             </p>
                           </div>
                         )}
@@ -256,7 +256,7 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  DESTINATION
+                  CITY OF LAKES
                 </p>
               </li>
             ) : null}
@@ -275,7 +275,33 @@ class Menu extends React.Component {
             </li> */}
             {/* My Purchases section - END */}
 
-            {this.hasFeature("RSVP") ? (
+            <li>
+              <div
+                className="icon-event-details-2 bigIcon  icon-white"
+                onClick={() => {
+                  browserHistory.push("/eventDetails");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                CELEBRATIONS
+              </p>
+            </li>
+
+            {this.hasFeature("Itinerary") ? (
+              <li>
+                <div
+                  className="icon-itinerary-2 bigIcon  icon-white"
+                  onClick={() => {
+                    browserHistory.push("/itinerary");
+                  }}
+                />
+                <p className="iconName appBodyFontFamily appBodyFontColor">
+                  PROGRAM
+                </p>
+              </li>
+            ) : null}
+
+        {this.hasFeature("RSVP") ? (
               <li>
                 <div
                   className="icon-rsvp-and-registration-2 bigIcon icon-white"
@@ -289,31 +315,7 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-            {this.hasFeature("Itinerary") ? (
-              <li>
-                <div
-                  className="icon-itinerary-2 bigIcon  icon-white"
-                  onClick={() => {
-                    browserHistory.push("/itinerary");
-                  }}
-                />
-                <p className="iconName appBodyFontFamily appBodyFontColor">
-                  ITINERARY
-                </p>
-              </li>
-            ) : null}
-
-            <li>
-              <div
-                className="icon-event-details-2 bigIcon  icon-white"
-                onClick={() => {
-                  browserHistory.push("/eventDetails");
-                }}
-              />
-              <p className="iconName appBodyFontFamily appBodyFontColor">
-                EVENT DETAILS
-              </p>
-            </li>
+           
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
@@ -352,7 +354,7 @@ class Menu extends React.Component {
                     }}
                   />
                   <p className="iconName appBodyFontFamily appBodyFontColor">
-                    MY INFORMATION
+                    MY INFO
                   </p>
                 </li>
               )}
@@ -401,7 +403,21 @@ class Menu extends React.Component {
                 MY SUMMARY
               </p>
             </li>
-            <li>
+            
+            {this.hasFeature("photoShare") ? (
+              <li>
+                <div
+                  className="icon-camera-2 bigIcon  icon-white"
+                  onClick={() => {
+                    browserHistory.push(`/${PHOTOS.BASE_PATH}`);
+                  }}
+                />
+                <p className="iconName appBodyFontFamily appBodyFontColor">
+                  INSTANT CAMERA
+                </p>
+              </li>
+            ) : null}
+<li>
               <div
                 className="shagaan-icon bigIcon  icon-white"
                 onClick={() => {
@@ -412,20 +428,6 @@ class Menu extends React.Component {
                 Shagan
               </p>
             </li>
-            {this.hasFeature("photoShare") ? (
-              <li>
-                <div
-                  className="icon-camera-2 bigIcon  icon-white"
-                  onClick={() => {
-                    browserHistory.push(`/${PHOTOS.BASE_PATH}`);
-                  }}
-                />
-                <p className="iconName appBodyFontFamily appBodyFontColor">
-                  PHOTO SHARING
-                </p>
-              </li>
-            ) : null}
-
             {this.hasFeature("downloads") ? (
               <li>
                 <div
@@ -499,13 +501,13 @@ class Menu extends React.Component {
                   return (
                     <li>
                       <div
-                        className="icon-contact-us bigIcon icon-white"
+                        className="icon-contact-us-2 bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/contactUs");
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        CONTACT US
+                        HOSPITALITY DESK
                       </p>
                     </li>
                   );

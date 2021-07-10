@@ -606,53 +606,55 @@ ul.alice-carousel__dots {
 /* Homescreen Icons */
 
 .icon-namaste-2 {
-  background-image: url("/homescreen/welcome.svg");
+  background-image: url("/homescreen/welcome.png");
 }
 .icon-bride-and-groom-2 {
-  background-image: url("/homescreen/bride&groom.svg");
+  background-image: url("/homescreen/bride&groom.png");
 }
 .icon-destination-2 {
-  background-image: url("/homescreen/destination.svg");
+  background-image: url("/homescreen/destination.png");
 }
 .icon-event-details-2 {
-  background-image: url("/homescreen/program.svg");
+  background-image: url("/homescreen/celebrations.png");
 }
 .icon-rsvp-and-registration-2 {
-  background-image: url("/homescreen/rsvp.svg");
+  background-image: url("/homescreen/rsvp.png");
 }
 .album-icon {
-  background-image: url("/homescreen/instantcamera.svg");
+  background-image: url("/homescreen/instantcamera.png");
 }
 .icon-wishes-2 {
-  background-image: url("/homescreen/wishes.svg");
+  background-image: url("/homescreen/wishes.png");
 }
 .icon-contact-us-2 {
-  background-image: url("/homescreen/contact-us.svg");
+  background-image: url("/homescreen/hospitality.png");
 }
 .shagaan-icon {
-  background-image: url("/homescreen/shagaan.svg");
+  background-image: url("/homescreen/shagaan.png");
 }
 .icon-itinerary-2 {
-  background-image: url("/homescreen/programs.svg");
+  background-image: url("/homescreen/program.png");
 }
 .icon-my-info-2 {
-  background-image: url("/homescreen/myinfo.svg");
+  background-image: url("/homescreen/myinfo.png");
 }
 .icon-travel-details-2 {
-  background-image: url("/homescreen/traveldetails.svg");
+  background-image: url("/homescreen/traveldetails.png");
 }
 .icon-my-preferences-2 {
-  background-image: url("/homescreen/mypreferences.svg");
+  background-image: url("/homescreen/mypreferences.png");
 }
 .icon-my-summary-2 {
-  background-image: url("/homescreen/mysummary.svg");
+  background-image: url("/homescreen/mysummary.png");
 }
 .icon-camera-2 {
-  background-image: url("/homescreen/instantcamera.svg");
+  background-image: url("/homescreen/instantcamera.png");
 }
-.icon-event-details-2 {
-  background-image: url("/homescreen/hospitality.svg");
-}
+
 .shagaan-icon {
-  background-image: url("/homescreen/shagan.svg");
+  background-image: url("/homescreen/shagan.png");
+}
+
+.bigIcon {
+  background-size: cover;
 }

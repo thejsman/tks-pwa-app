@@ -35,7 +35,7 @@ const PlacesToVisit = ({ places, images1, images2, images3 }) => {
     <div>
       <div>
         <span className="d-none d-sm-block visitTiPlaceHeading appBodyFontColor appBodyFontFamily">
-          DESTINATION
+          CITY OF LAKES
         </span>
         <h4 className="placesToVisitHeading appBodyFontColor appBodyFontFamily">
           PLACES TO VISIT

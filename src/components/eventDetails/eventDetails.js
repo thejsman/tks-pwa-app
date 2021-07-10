@@ -49,7 +49,7 @@ class EventDetails extends Component {
     $(".eventDetDiv").height(maxHeight);
 
     if (isMobile) {
-      $("#spanHeaderText").html("Event Details");
+      $("#spanHeaderText").html("CELEBRATIONS");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
@@ -181,7 +181,7 @@ class EventDetails extends Component {
     return (
       <div className="container eventDetailsBtn">
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">
-          EVENT DETAILS
+          CELEBRATIONS
         </h3>
         <div className="mT90">
           <div className="eventBtnCls d-none d-lg-block col-md-12 col-sm-12 col-xs-12">

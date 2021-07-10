@@ -19,7 +19,7 @@ class DropDown extends React.PureComponent {
   }
   
   render() {   
-      $("#spanHeaderText").html("Photo Sharing");
+      $("#spanHeaderText").html("INSTANT CAMERA");
     // const grid = this.props.column === 1 ? 2 : this.props.column - 1;
     const grid = this.props.column === 3 ? 1 : 3;
     return (

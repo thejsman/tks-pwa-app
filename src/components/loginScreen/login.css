@@ -26,6 +26,7 @@
   padding: 0px 40px !important;
   outline: none !important;
   cursor: pointer;
+  align-items: center;
 }
 .loginbtn:focus,
 .loginbtn:active,
