@@ -650,7 +650,9 @@ ul.alice-carousel__dots {
 .icon-camera-2 {
   background-image: url("/homescreen/svg/instantcamera.svg");
 }
-
+.icon-hotel {
+  background-image: url("/homescreen/svg/hotel.svg");
+}
 .bigIcon {
   background-size: cover;
   background-color: #fff;

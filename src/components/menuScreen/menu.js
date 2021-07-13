@@ -209,7 +209,7 @@ class Menu extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "About") {
                   return (
                     <li>
@@ -301,7 +301,7 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-        {this.hasFeature("RSVP") ? (
+            {this.hasFeature("RSVP") ? (
               <li>
                 <div
                   className="icon-rsvp-and-registration-2 bigIcon icon-white"
@@ -315,17 +315,16 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-           
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
-                  className="fa fa-microphone bigIcon icon-white"
+                  className="icon-hotel bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/speakers");
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  SPEAKERS
+                  HOTELS
                 </p>
               </li>
             ) : null}
@@ -361,7 +360,7 @@ class Menu extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Travel Details") {
                   return (
                     <li>
@@ -403,7 +402,7 @@ class Menu extends React.Component {
                 MY SUMMARY
               </p>
             </li>
-            
+
             {this.hasFeature("photoShare") ? (
               <li>
                 <div
@@ -417,7 +416,7 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
-<li>
+            <li>
               <div
                 className="shagaan-icon bigIcon  icon-white"
                 onClick={() => {
@@ -496,7 +495,7 @@ class Menu extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Contact Details") {
                   return (
                     <li>
