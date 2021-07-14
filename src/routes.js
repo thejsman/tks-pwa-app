@@ -29,7 +29,7 @@ import Chat from "./components/chat/chat";
 import App from "./App";
 import Shagaan from "./components/shagaan/Shagaan";
 import { DOWNLOADS, PHOTOS } from "./constants";
-
+import CovidInfo from "./components/covidInfo/myInformation";
 // New UI
 import NewApp from "./newApp";
 import MenuScreen from "./pages/menuScreen/menuScreen";
@@ -59,6 +59,7 @@ export default (
       <Route path="/destination" component={Destination} />
       <Route path="/rsvp" component={RSVP} />
       <Route path="/myInformation" component={MyInformation} />
+      <Route path="/covid-info" component={CovidInfo} />
       <Route path="/travel/upload-ticket" component={TravelDetails} />
       <Route path="/itinerary" component={Itinerary} />
       <Route path="/eventDetails" component={EventDetails} />

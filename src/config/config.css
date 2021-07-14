@@ -6,7 +6,7 @@ body,
   background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/mX9xHtMettLL84u9z.png");
 }
 .appLogo {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/F8KH4Qgqf2LmhSSpC.png");
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/S2hPsn6to2BuHknbm.png");
 }
 .appNavbarBGColor {
   background-color: #e17e18;
@@ -31,4 +31,7 @@ body,
   /* border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px; */
   box-shadow: 5px 5px 7px #890200;
+}
+.loginScreen_bg {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/frHWeyHaoZuXf5cA8.png");
 }

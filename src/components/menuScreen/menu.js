@@ -342,6 +342,20 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
+            {/* COVID-INFO */}
+            <li>
+              <div
+                className="fa fa-heartbeat bigIcon icon-white"
+                style={{ backgroundColor: "#be3807" }}
+                onClick={() => {
+                  browserHistory.push("/covid-info");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                COVID-19
+              </p>
+            </li>
+
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppGuestInfo && (
