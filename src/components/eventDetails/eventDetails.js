@@ -49,7 +49,7 @@ class EventDetails extends Component {
     $(".eventDetDiv").height(maxHeight);
 
     if (isMobile) {
-      $("#spanHeaderText").html("CELEBRATIONS");
+      $("#spanHeaderText").html("FESTIVITIES");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
@@ -82,7 +82,7 @@ class EventDetails extends Component {
     let date = get(event.target, "textContent");
     let data =
       this.state.eventDetails &&
-      this.state.eventDetails.filter(data => {
+      this.state.eventDetails.filter((data) => {
         if (data.subEventDate === date) {
           return data;
         }
@@ -111,7 +111,7 @@ class EventDetails extends Component {
       let firstItineraryDate = eventDetails[0] && eventDetails[0].subEventDate;
       let eventData =
         this.state.eventDetails &&
-        this.state.eventDetails.filter(data => {
+        this.state.eventDetails.filter((data) => {
           if (data.subEventDate === firstItineraryDate) {
             return data;
           }
@@ -128,7 +128,7 @@ class EventDetails extends Component {
     } else {
       let eventData =
         this.state.eventDetails &&
-        this.state.eventDetails.filter(data => {
+        this.state.eventDetails.filter((data) => {
           if (data.subEventDate === this.state.defaultId) {
             return data;
           }
@@ -181,12 +181,12 @@ class EventDetails extends Component {
     return (
       <div className="container eventDetailsBtn">
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">
-          CELEBRATIONS
+          FESTIVITIES
         </h3>
         <div className="mT90">
           <div className="eventBtnCls d-none d-lg-block col-md-12 col-sm-12 col-xs-12">
             {eventByDate &&
-              eventByDate.map(event => {
+              eventByDate.map((event) => {
                 return (
                   <button
                     className={` BtnCommon btn appBodyFontFamily appBodyFontColor commonBtnDestination ${
@@ -206,7 +206,7 @@ class EventDetails extends Component {
           <div className="d-md-block d-lg-none d-xl-none destinationMobile">
             <div className="col-md-12 col-sm-12 col-xs-12 scrollMobile">
               {eventByDate &&
-                eventByDate.map(event => {
+                eventByDate.map((event) => {
                   return (
                     <button
                       className={` BtnCommon btn appBodyFontFamily appBodyFontColor commonBtnDestination ${
@@ -230,7 +230,7 @@ class EventDetails extends Component {
             <div className="destinationImage">
               <div className="eventDetailsCls">
                 <Slider {...settings}>
-                  {defaultEvent.map(defaultEve => {
+                  {defaultEvent.map((defaultEve) => {
                     return (
                       <div
                         className="eventDetDiv owl-item"
@@ -348,7 +348,7 @@ class EventDetails extends Component {
           {defaultEvent && (
             <div className="row destinationImage">
               <div className="eventDetailsCls">
-                {defaultEvent.map(defaultEve => {
+                {defaultEvent.map((defaultEve) => {
                   return (
                     <div className="eventDetDiv" key={defaultEve._id}>
                       <figure className="figure bridgeImage">
@@ -463,7 +463,7 @@ class EventDetails extends Component {
             <div className="destinationImage">
               <div className="eventDetailsCls">
                 <Slider {...mobSettings}>
-                  {defaultEvent.map(defaultEve => {
+                  {defaultEvent.map((defaultEve) => {
                     return (
                       <div
                         className="eventDetDiv  owl-item appGradientColor"

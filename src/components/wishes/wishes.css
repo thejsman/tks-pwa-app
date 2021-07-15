@@ -10,14 +10,20 @@
 }
 .textAreaAlign textarea {
   margin-left: auto;
-
   margin-right: auto;
-
   resize: none !important;
-
-  background: transparent;
+  background: #d13e09ab;
+  border-radius: 10px;
+  border: 0px;
+  box-shadow: 5px 5px 9px #330800;
 }
-
+.sagan_container {
+  background-color: #d36610e3;
+  padding: 5px;
+  margin-top: 29px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 9px #330800;
+}
 .textAreaAlign ::placeholder {
   color: var(--font-color) !important;
 

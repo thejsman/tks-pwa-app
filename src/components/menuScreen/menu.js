@@ -283,7 +283,7 @@ class Menu extends React.Component {
                 }}
               />
               <p className="iconName appBodyFontFamily appBodyFontColor">
-                CELEBRATIONS
+                FESTIVITIES
               </p>
             </li>
 
@@ -386,7 +386,7 @@ class Menu extends React.Component {
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        TRAVEL DETAILS
+                        MY TRAVEL
                       </p>
                     </li>
                   );
@@ -430,7 +430,7 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
-            <li>
+            {/* <li>
               <div
                 className="shagaan-icon bigIcon  icon-white"
                 onClick={() => {
@@ -440,7 +440,7 @@ class Menu extends React.Component {
               <p className="iconName appBodyFontFamily appBodyFontColor">
                 Shagan
               </p>
-            </li>
+            </li> */}
             {this.hasFeature("downloads") ? (
               <li>
                 <div
@@ -474,13 +474,13 @@ class Menu extends React.Component {
                   ) : (
                     <li>
                       <div
-                        className="icon-wishes bigIcon icon-white"
+                        className="shagaan-icon bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/wishes");
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        WISHES
+                        BLESSINGS
                       </p>
                     </li>
                   )}
@@ -520,7 +520,7 @@ class Menu extends React.Component {
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        HOSPITALITY DESK
+                        HOSPITALITY
                       </p>
                     </li>
                   );

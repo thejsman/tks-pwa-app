@@ -73,11 +73,10 @@ class ContactUs extends Component {
             <h5 className="text-white my-2 appBodyFontFamily pt-4">
               Pay Shagan Digitally
             </h5>
-          </div>
-
-          <div className="BtnCommon responsiveBtn rsvpWeddingGuestName my-5">
-            <div>
-              <form id="razorpay_btn"></form>
+            <div className="BtnCommon responsiveBtn rsvpWeddingGuestName my-5">
+              <div>
+                <form id="razorpay_btn"></form>
+              </div>
             </div>
           </div>
         </div>

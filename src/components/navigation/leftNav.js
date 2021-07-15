@@ -209,7 +209,7 @@ class leftNav extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Chat Option") {
                   return (
                     <div
@@ -249,7 +249,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "About") {
                 return (
                   <li>
@@ -296,7 +296,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Destination") {
                 return (
                   <li
@@ -333,7 +333,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Itinerary") {
                 return (
                   <li
@@ -358,7 +358,7 @@ class leftNav extends React.Component {
                 <span className="icon-event-details commonIcon icon-white iconp" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
-                CELEBRATIONS
+                FESTIVITIES
               </p>
             </div>
           </li>
@@ -383,7 +383,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Travel Details") {
                 return (
                   <li
@@ -395,7 +395,7 @@ class leftNav extends React.Component {
                         <span className="icon-travel-details commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
-                        GUEST TRAVEL DETAILS
+                        MY TRAVEL
                       </p>
                     </div>
                   </li>
@@ -518,7 +518,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Contact Details") {
                 return (
                   <li
@@ -530,7 +530,7 @@ class leftNav extends React.Component {
                         <span className="icon-contact-us commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
-                        HOSPITALITY DESK
+                        HOSPITALITY
                       </p>
                     </div>
                   </li>
