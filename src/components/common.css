@@ -51,7 +51,7 @@ body {
   margin-right: auto;
   text-transform: uppercase;
   font-size: 36px;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9);
+
   text-align: center !important;
 }
 .BtnCommon {
@@ -600,4 +600,23 @@ ul.alice-carousel__dots {
 .table td,
 .table th {
   padding: 0.6rem;
+}
+.leftHeaderMobile .icon-white:before {
+  color: white !important;
+}
+.rightHeader .rightHeaderIcon {
+  color: white !important;
+  border: 1px solid white;
+}
+.rightHeader .icon-white:before {
+  color: white;
+}
+.expMenudiv p.menuName {
+  color: white;
+}
+.expMenudiv .commonIcon {
+  border: 1px solid white;
+}
+.expMenudiv .icon-white:before {
+  color: white;
 }

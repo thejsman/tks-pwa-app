@@ -95,9 +95,7 @@
   -o-transform: scale(1);
   text-rendering: optimizeLegibility;
 }
-.categories .icon-white:before {
-  color: var(--font-color);
-}
+
 .icon-white:before {
   color: var(--font-color);
 }
