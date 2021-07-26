@@ -112,7 +112,7 @@ class ImageWithoutCropper extends React.PureComponent {
       canvas.width = h;
       canvas.height = w;
 
-      ctx.translate(w - h, w);
+      ctx.translate(h, w);
       ctx.rotate((-90 * Math.PI) / 180);
       ctx.translate(0, -(w - h));
       ctx.drawImage(img, 0, 0, w, h);
