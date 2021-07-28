@@ -120,18 +120,18 @@ class ImageWithoutCropper extends React.PureComponent {
       ctx.translate(w - h, w);
       ctx.rotate((-90 * Math.PI) / 180);
       ctx.translate(0, -(w - h));
-      ctx.drawImage(img, 0, 0, w, h);
-      ctx.save();
-      ctx.translate(w - h, w);
-      ctx.rotate((-90 * Math.PI) / 180);
-      ctx.translate(0, -(w - h));
-      ctx.drawImage(img, 0, 0, w, h);
-      ctx.save();
-      ctx.translate(w - h, w);
-      ctx.rotate((-90 * Math.PI) / 180);
-      ctx.translate(0, -(w - h));
-      ctx.drawImage(img, 0, 0, w, h);
-      ctx.save();
+      ctx.drawImage(img, 0, 0, h, w);
+      // ctx.save();
+      // ctx.translate(w - h, w);
+      // ctx.rotate((-90 * Math.PI) / 180);
+      // ctx.translate(0, -(w - h));
+      // ctx.drawImage(img, 0, 0, w, h);
+      // ctx.save();
+      // ctx.translate(w - h, w);
+      // ctx.rotate((-90 * Math.PI) / 180);
+      // ctx.translate(0, -(w - h));
+      // ctx.drawImage(img, 0, 0, w, h);
+      // ctx.save();
 
       // // set proper canvas dimensions before transform & export
       // if (4 < srcOrientation && srcOrientation < 9) {
