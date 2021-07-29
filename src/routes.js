@@ -17,6 +17,7 @@ import EventDetails from "./components/eventDetails/eventDetails";
 import MyPreferences from "./components/myPreferences/myPreferences";
 import MYSUMMARY from "./components/mySummary/mySummary";
 import ContactUs from "./components/contactUs/contactUs";
+import Assignment from "./components/assignment/assignment";
 import Wishes from "./components/wishes/wishes";
 import Legal from "./components/legal/legal";
 import privacyPolicy from "./components/legal/privacyPolicy";
@@ -43,7 +44,7 @@ import PhotoLanding from "./pages/photoShare/templates/PhotoLanding";
 import Groups from "./pages/photoShare/templates/Groups";
 import Downloads from "./pages/downloads";
 
-import MyPurchases from './pages/myPurchases/myPurchases';
+import MyPurchases from "./pages/myPurchases/myPurchases";
 // import Cart from './pages/myPurchases/cart';
 // import Checkout from './pages/myPurchases/checkout';
 
@@ -65,6 +66,7 @@ export default (
       <Route path="/myPreferences" component={MyPreferences} />
       <Route path="/mySummary" component={MYSUMMARY} />
       <Route path="/contactUs" component={ContactUs} />
+      <Route path="/assignment" component={Assignment} />
       <Route path="/wishes" component={Wishes} />
       <Route path="/feedback" component={Wishes} />
       <Route path="/legal" component={Legal} />
@@ -90,9 +92,15 @@ export default (
       <Route path="/home" component={homePage} />
       <Route path="/speakers" component={speakerPage} />
       <Route path="/sponsors" component={sponsorPage} />
-      <Route path={`/${PHOTOS.BASE_PATH}/${PHOTOS.MY_GROUPS}`} component={Groups} />
+      <Route
+        path={`/${PHOTOS.BASE_PATH}/${PHOTOS.MY_GROUPS}`}
+        component={Groups}
+      />
       <Route path={`/${PHOTOS.BASE_PATH}(/:subPath)`} component={PhotoShare} />
-      <Route path={`/${PHOTOS.LANDING}/:photoId(/:subPath)(/:commentId)`} component={PhotoLanding} />
+      <Route
+        path={`/${PHOTOS.LANDING}/:photoId(/:subPath)(/:commentId)`}
+        component={PhotoLanding}
+      />
       <Route path={`/${DOWNLOADS.BASE_PATH}`} component={Downloads} />
     </Route>
   </div>

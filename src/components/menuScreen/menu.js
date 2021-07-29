@@ -4,7 +4,7 @@ import {
   getEventName,
   getGuestId,
   getEventId,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -30,7 +30,7 @@ class Menu extends React.Component {
       appDetails: cloneDeep(props.appDetails),
       showIosPWABanner: false,
       showAndroidPWADownload: false,
-      downloadAndroidPWA: false
+      downloadAndroidPWA: false,
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -79,7 +79,7 @@ class Menu extends React.Component {
     if (window.matchMedia("(display-mode: standalone)").matches) {
       this.setState({
         showAndroidPWADownload: false,
-        showIosPWABanner: false
+        showIosPWABanner: false,
       });
     }
   }
@@ -177,7 +177,8 @@ class Menu extends React.Component {
     return (
       <div className="categories">
         <h3 className="coupleName appBodyFontColor appNavbarFontFamily headingTop headingTopSize">
-          {AppTItle}
+          {/* {AppTItle} */}
+          &nbsp;
         </h3>
         <div className="container categoriesItem">
           <ul id="iconContainer" className="category-items">
@@ -209,7 +210,7 @@ class Menu extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "About") {
                   return (
                     <li>
@@ -224,7 +225,7 @@ class Menu extends React.Component {
                               }}
                             />
                             <p className="iconName appBodyFontFamily appBodyFontColor">
-                              BRIDE & GROOM
+                              GRTY 2021
                             </p>
                           </div>
                         )}
@@ -239,7 +240,7 @@ class Menu extends React.Component {
                               }}
                             />
                             <p className="iconName appBodyFontFamily appBodyFontColor">
-                              ABOUT
+                              GRTY 2021
                             </p>
                           </div>
                         )}
@@ -303,27 +304,16 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-            <li>
-              <div
-                className="icon-event-details bigIcon  icon-white"
-                onClick={() => {
-                  browserHistory.push("/eventDetails");
-                }}
-              />
-              <p className="iconName appBodyFontFamily appBodyFontColor">
-                EVENT DETAILS
-              </p>
-            </li>
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
-                  className="fa fa-microphone bigIcon icon-white"
+                  className="fa fa fa-users bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/speakers");
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  SPEAKERS
+                  PARTICIPANTS
                 </p>
               </li>
             ) : null}
@@ -356,10 +346,21 @@ class Menu extends React.Component {
                   </p>
                 </li>
               )}
+            <li>
+              <div
+                className="icon-event-details bigIcon  icon-white"
+                onClick={() => {
+                  browserHistory.push("/eventDetails");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                SESSION
+              </p>
+            </li>
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Travel Details") {
                   return (
                     <li>
@@ -390,7 +391,7 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
-            <li>
+            {/* <li>
               <div
                 className="icon-my-summary bigIcon icon-white"
                 onClick={() => {
@@ -400,7 +401,7 @@ class Menu extends React.Component {
               <p className="iconName appBodyFontFamily appBodyFontColor">
                 MY SUMMARY
               </p>
-            </li>
+            </li> */}
 
             {this.hasFeature("photoShare") ? (
               <li>
@@ -429,6 +430,17 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
+            <li>
+              <div
+                className="fa fa-book bigIcon icon-white"
+                onClick={() => {
+                  browserHistory.push("/assignment");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                Home Work
+              </p>
+            </li>
 
             {appdet &&
               appdet.appDetails &&
@@ -484,7 +496,7 @@ class Menu extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Contact Details") {
                   return (
                     <li>
@@ -526,7 +538,7 @@ function mapStateToProps(state) {
     eventId: getEventId(state),
     guestId: getGuestId(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 

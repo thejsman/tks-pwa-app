@@ -21,7 +21,7 @@ class login extends React.Component {
       browserHistory.push("/menus");
     }
     this.state = {
-      appDetails: cloneDeep(props.appDetails)
+      appDetails: cloneDeep(props.appDetails),
     };
   }
 
@@ -35,7 +35,7 @@ class login extends React.Component {
       let appDetails = cloneDeep(nextProps.appDetails);
       this.setState({ appDetails: appDetails });
     }
-    $(".toggle-password").click(function() {
+    $(".toggle-password").click(function () {
       $(this).toggleClass("fa-eye fa-eye-slash");
       var input = $($(this).attr("toggle"));
       input.toggleClass("password-mask");
@@ -63,8 +63,8 @@ class login extends React.Component {
       <div className="container">
         <Popup />
         <div className="Absolute-Center is-Responsive">
-          <div className="appLogo logo" />
-          <h1 className="nameHeading appBodyFontColor appBodyFontFamily">
+          <div className="appLogo logo mt-4" />
+          <h1 className="nameHeading appBodyFontColor appBodyFontFamily ">
             {AppTItle}
           </h1>
           <form id="loginForm">
@@ -112,7 +112,7 @@ class login extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    appDetails: getAppDetails(state)
+    appDetails: getAppDetails(state),
   };
 }
 

@@ -156,6 +156,9 @@
   #loginForm .form-group {
     margin-bottom: 10px !important;
   }
+  .logo {
+    /* visibility: hidden; */
+  }
 }
 .login-page {
   background-size: cover !important;
@@ -166,4 +169,10 @@
   -webkit-text-security: disc;
   -moz-webkit-text-security: disc;
   -moz-text-security: disc;
+}
+
+@media screen and (min-width: 768px) {
+  .login-page {
+    background-position: center bottom 0px !important;
+  }
 }

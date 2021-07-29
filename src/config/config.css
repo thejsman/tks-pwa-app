@@ -3,13 +3,13 @@ html {
 }
 body,
 .appBody {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/4osLJT4CHzBB4jDdW.jpeg");
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/4hi4smNarWo5giJqa.jpeg");
 }
 .appLogo {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/fnELfjJsKtygyT8bg.png");
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/Ai9Qc4qNG3PQ8qiiz.png");
 }
 .appNavbarBGColor {
-  background-color: #25282d;
+  background-color: #070069;
 }
 .appNavbarFontColor {
   color: #ffffff;
@@ -18,17 +18,16 @@ body,
   font-family: "Scope One Regular";
 }
 .appBodyFontColor {
-  color: #25282d;
+  color: #ffffff;
 }
 .appBodyFontFamily {
   font-family: "Scope One Regular";
 }
 .appSelectColor {
-  color: #25282d;
+  color: #ffffff;
 }
 .appGradientColor {
-  background: linear-gradient(to right, #fff, #ffff);
+  background: linear-gradient(to right, #070069, #070069);
   /* border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px; */
-  box-shadow: 5px 5px 7px #25282d;
 }
