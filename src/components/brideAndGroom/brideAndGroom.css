@@ -317,7 +317,10 @@
   white-space: pre-line;
   text-align: justify !important;
 }
-
+.lineFormat a {
+  color: white;
+  font-weight: bold;
+}
 @media only screen and (max-width: 768px) {
   .alice-carousel__stage-item {
     margin-top: 100px;

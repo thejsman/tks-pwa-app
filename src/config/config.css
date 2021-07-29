@@ -30,7 +30,7 @@ body,
   background: linear-gradient(to right, #f45e00, #e6952a);
   /* border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px; */
-  box-shadow: 5px 5px 7px #890200;
+  /* box-shadow: 5px 5px 7px #890200; */
 }
 .loginScreen_bg {
   background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/frHWeyHaoZuXf5cA8.png");
