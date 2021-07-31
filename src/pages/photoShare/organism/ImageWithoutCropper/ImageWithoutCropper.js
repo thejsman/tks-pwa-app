@@ -104,73 +104,70 @@ class ImageWithoutCropper extends React.PureComponent {
         canvas = document.createElement("canvas"),
         ctx = canvas.getContext("2d");
 
-      var maxsize = 1080;
+      // set proper canvas dimensions before transform & export
+      if (4 < srcOrientation && srcOrientation < 9) {
+        canvas.width = height;
+        canvas.height = width;
+      } else {
+        canvas.width = width;
+        canvas.height = height;
+      }
 
-      var w = maxsize;
-      var ratio = img.width / w;
-      var h = img.height / ratio;
-      canvas.width = h;
-      canvas.height = w;
+      // Rotal image 90*4 - Start
+      const a = (canvas.height - canvas.width) / 2;
+      const b = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - a) / 2, (canvas.height + b) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + a) / 2, -(canvas.height + b) / 2);
 
-      ctx.translate(h, w);
-      ctx.rotate((-90 * Math.PI) / 180);
-      ctx.translate(0, -(w - h));
-      ctx.drawImage(img, 0, 0, w, h);
-      ctx.save();
-      ctx.translate(w - h, w);
-      ctx.rotate((-90 * Math.PI) / 180);
-      ctx.translate(0, -(w - h));
-      ctx.drawImage(img, 0, 0, h, w);
-      // ctx.save();
-      // ctx.translate(w - h, w);
-      // ctx.rotate((-90 * Math.PI) / 180);
-      // ctx.translate(0, -(w - h));
-      // ctx.drawImage(img, 0, 0, w, h);
-      // ctx.save();
-      // ctx.translate(w - h, w);
-      // ctx.rotate((-90 * Math.PI) / 180);
-      // ctx.translate(0, -(w - h));
-      // ctx.drawImage(img, 0, 0, w, h);
-      // ctx.save();
+      const c = (canvas.height - canvas.width) / 2;
+      const d = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - c) / 2, (canvas.height + d) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + c) / 2, -(canvas.height + d) / 2);
 
-      // // set proper canvas dimensions before transform & export
-      // if (4 < srcOrientation && srcOrientation < 9) {
-      //   canvas.width = height;
-      //   canvas.height = width;
-      // } else {
-      //   canvas.width = width;
-      //   canvas.height = height;
-      // }
+      const e = (canvas.height - canvas.width) / 2;
+      const f = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - e) / 2, (canvas.height + f) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + e) / 2, -(canvas.height + f) / 2);
 
-      // // transform context before drawing image
-      // switch (srcOrientation) {
-      //   case 2:
-      //     ctx.transform(-1, 0, 0, 1, width, 0);
-      //     break;
-      //   case 3:
-      //     ctx.transform(-1, 0, 0, -1, width, height);
-      //     break;
-      //   case 4:
-      //     ctx.transform(1, 0, 0, -1, 0, height);
-      //     break;
-      //   case 5:
-      //     ctx.transform(0, 1, 1, 0, 0, 0);
-      //     break;
-      //   case 6:
-      //     ctx.transform(0, 1, -1, 0, height, 0);
-      //     break;
-      //   case 7:
-      //     ctx.transform(0, -1, -1, 0, height, width);
-      //     break;
-      //   case 8:
-      //     ctx.transform(0, -1, 1, 0, 0, width);
-      //     break;
-      //   default:
-      //     break;
-      // }
+      const g = (canvas.height - canvas.width) / 2;
+      const h = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - g) / 2, (canvas.height + h) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + g) / 2, -(canvas.height + h) / 2);
+      // Rotal image 90*4 - End
+
+      // transform context before drawing image
+      switch (srcOrientation) {
+        case 2:
+          ctx.transform(-1, 0, 0, 1, width, 0);
+          break;
+        case 3:
+          ctx.transform(-1, 0, 0, -1, width, height);
+          break;
+        case 4:
+          ctx.transform(1, 0, 0, -1, 0, height);
+          break;
+        case 5:
+          ctx.transform(0, 1, 1, 0, 0, 0);
+          break;
+        case 6:
+          ctx.transform(0, 1, -1, 0, height, 0);
+          break;
+        case 7:
+          ctx.transform(0, -1, -1, 0, height, width);
+          break;
+        case 8:
+          ctx.transform(0, -1, 1, 0, 0, width);
+          break;
+        default:
+          break;
+      }
 
       // draw image
-      // ctx.drawImage(img, 0, 0);
+      ctx.drawImage(img, 0, 0);
 
       canvas.toBlob(
         (blob) => {
