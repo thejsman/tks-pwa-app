@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
-import EXIF from 'exif-js';
+import EXIF from "exif-js";
 
 import { string, func, objectOf, any } from "prop-types";
 
@@ -15,7 +15,7 @@ import {
   Select,
   Button,
   CropImageWrapper,
-  FileInput
+  FileInput,
 } from "./ImageWithoutCropper.styles";
 
 import CreateGroup from "../../molecules/CreateGroup";
@@ -28,11 +28,11 @@ class ImageWithoutCropper extends React.PureComponent {
     uploadPhoto: func.isRequired,
     files: objectOf(any).isRequired,
     guestId: string.isRequired,
-    cancelUpload: func.isRequired
+    cancelUpload: func.isRequired,
   };
 
   static defaultProps = {
-    className: ""
+    className: "",
   };
 
   state = {
@@ -46,10 +46,10 @@ class ImageWithoutCropper extends React.PureComponent {
       aspect: 16 / 9,
       width: 100,
       x: 0,
-      y: 0
+      y: 0,
     },
     loading: false,
-    rotate: 0
+    rotate: 0,
   };
 
   constructor(props) {
@@ -62,7 +62,7 @@ class ImageWithoutCropper extends React.PureComponent {
     fetchGuestGroups(this.props.guestId);
   }
 
-  onSelectFile = files => {
+  onSelectFile = (files) => {
     if (files && files.length > 0) {
       const reader = new FileReader();
       reader.addEventListener("load", () =>
@@ -79,14 +79,18 @@ class ImageWithoutCropper extends React.PureComponent {
         aspect: image.naturalWidth / image.naturalHeight,
         width: 100,
         x: 0,
-        y: 0
-      }
+        y: 0,
+      },
     });
 
-    EXIF.getData(image, function() {
-      _self.resetOrientation(image.src, EXIF.getTag(this, "Orientation"), resetBase64Image => {
-        _self.imageRef = resetBase64Image;
-      });
+    EXIF.getData(image, function () {
+      _self.resetOrientation(
+        image.src,
+        EXIF.getTag(this, "Orientation"),
+        (resetBase64Image) => {
+          _self.imageRef = resetBase64Image;
+        }
+      );
     });
   };
 
@@ -94,7 +98,7 @@ class ImageWithoutCropper extends React.PureComponent {
     const _self = this;
     const img = new Image();
 
-    img.onload = function() {
+    img.onload = function () {
       const width = img.width,
         height = img.height,
         canvas = document.createElement("canvas"),
@@ -108,6 +112,32 @@ class ImageWithoutCropper extends React.PureComponent {
         canvas.width = width;
         canvas.height = height;
       }
+
+      // Rotal image 90*4 - Start
+      const a = (canvas.height - canvas.width) / 2;
+      const b = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - a) / 2, (canvas.height + b) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + a) / 2, -(canvas.height + b) / 2);
+
+      const c = (canvas.height - canvas.width) / 2;
+      const d = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - c) / 2, (canvas.height + d) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + c) / 2, -(canvas.height + d) / 2);
+
+      const e = (canvas.height - canvas.width) / 2;
+      const f = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - e) / 2, (canvas.height + f) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + e) / 2, -(canvas.height + f) / 2);
+
+      const g = (canvas.height - canvas.width) / 2;
+      const h = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - g) / 2, (canvas.height + h) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + g) / 2, -(canvas.height + h) / 2);
+      // Rotal image 90*4 - End
 
       // transform context before drawing image
       switch (srcOrientation) {
@@ -139,15 +169,22 @@ class ImageWithoutCropper extends React.PureComponent {
       // draw image
       ctx.drawImage(img, 0, 0);
 
-      canvas.toBlob(blob => {
-        blob.name = "newFile.jpg";
-        window.URL.revokeObjectURL(this.fileUrl);
-        this.fileUrl = window.URL.createObjectURL(blob);
-        _self.setState({ croppedImageUrl: this.src, file: new File([blob], "newFile.jpg", {
-          type: "image/jpeg",
-        }) });
-        callback(this);
-      }, "image/jpeg", 0.5);
+      canvas.toBlob(
+        (blob) => {
+          blob.name = "newFile.jpg";
+          window.URL.revokeObjectURL(this.fileUrl);
+          this.fileUrl = window.URL.createObjectURL(blob);
+          _self.setState({
+            croppedImageUrl: this.src,
+            file: new File([blob], "newFile.jpg", {
+              type: "image/jpeg",
+            }),
+          });
+          callback(this);
+        },
+        "image/jpeg",
+        0.5
+      );
     };
 
     img.src = srcBase64;
@@ -158,7 +195,7 @@ class ImageWithoutCropper extends React.PureComponent {
     this.makeClientCrop(crop, pixelCrop);
   };
 
-  onCropChange = crop => {
+  onCropChange = (crop) => {
     this.setState({ crop });
   };
 
@@ -228,7 +265,7 @@ class ImageWithoutCropper extends React.PureComponent {
     }
 
     return new Promise((resolve, reject) => {
-      canvas.toBlob(blob => {
+      canvas.toBlob((blob) => {
         _self.setState({ file: blob });
         // _self.setState({ file: new File([blob], "newFile.jpg", {
         //   type: "image/jpeg",
@@ -245,7 +282,7 @@ class ImageWithoutCropper extends React.PureComponent {
     if (this.state.croppedImageUrl) {
       const data = {
         caption: this.state.caption,
-        groupId: this.state.isGroupShare ? this.state.groupId : null
+        groupId: this.state.isGroupShare ? this.state.groupId : null,
       };
       this.setState({ loading: true });
       this.props.uploadPhoto(data, [this.state.file]);
@@ -266,7 +303,7 @@ class ImageWithoutCropper extends React.PureComponent {
   onGroupCreate(groupInfo) {
     this.setState({
       createNewGroup: false,
-      groupId: groupInfo ? groupInfo._id : ""
+      groupId: groupInfo ? groupInfo._id : "",
     });
   }
 
@@ -302,7 +339,7 @@ class ImageWithoutCropper extends React.PureComponent {
                   name="photos"
                   value=""
                   accept="image/*"
-                  onChange={e => this.onSelectFile(e.target.files)}
+                  onChange={(e) => this.onSelectFile(e.target.files)}
                 />
               </Button>
               <Button
@@ -322,7 +359,7 @@ class ImageWithoutCropper extends React.PureComponent {
                 name="caption"
                 id="caption"
                 placeholder="Photo Caption(optional)"
-                onChange={e => this.setState({ caption: e.target.value })}
+                onChange={(e) => this.setState({ caption: e.target.value })}
               />
             </div>
 
@@ -353,11 +390,11 @@ class ImageWithoutCropper extends React.PureComponent {
                   className="form-control form-control-color"
                   name="groupName"
                   value={this.state.groupId}
-                  onChange={e => this.onGroupSelect(e.target.value)}
+                  onChange={(e) => this.onGroupSelect(e.target.value)}
                 >
                   <option value="">Select One</option>
                   <option value="NEW">Create</option>
-                  {this.props.groupsList.map(group => (
+                  {this.props.groupsList.map((group) => (
                     <option value={group._id} key={group._id}>
                       {group.groupName}
                     </option>
@@ -384,7 +421,7 @@ class ImageWithoutCropper extends React.PureComponent {
           <CreateGroup
             guestsList={this.props.guestsList}
             guestId={this.props.guestId}
-            onGroupCreate={groupInfo => this.onGroupCreate(groupInfo)}
+            onGroupCreate={(groupInfo) => this.onGroupCreate(groupInfo)}
             groupsList={this.props.groupsList}
           />
         )}
@@ -397,7 +434,7 @@ class ImageWithoutCropper extends React.PureComponent {
 function mapStateToProps(state) {
   return {
     guestsList: getAllGuests(state),
-    groupsList: getGuestGroups(state)
+    groupsList: getGuestGroups(state),
   };
 }
 
