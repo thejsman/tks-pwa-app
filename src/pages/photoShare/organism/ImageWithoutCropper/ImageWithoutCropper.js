@@ -62,7 +62,7 @@ class ImageWithoutCropper extends React.PureComponent {
     fetchGuestGroups(this.props.guestId);
   }
 
-  onSelectFile = files => {
+  onSelectFile = (files) => {
     if (files && files.length > 0) {
       const reader = new FileReader();
       reader.addEventListener("load", () =>
@@ -87,7 +87,7 @@ class ImageWithoutCropper extends React.PureComponent {
       _self.resetOrientation(
         image.src,
         EXIF.getTag(this, "Orientation"),
-        resetBase64Image => {
+        (resetBase64Image) => {
           _self.imageRef = resetBase64Image;
         }
       );
@@ -113,35 +113,54 @@ class ImageWithoutCropper extends React.PureComponent {
         canvas.height = height;
       }
 
+      // Rotal image 90*4 - Start
+      const a = (canvas.height - canvas.width) / 2;
+      const b = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - a) / 2, (canvas.height + b) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + a) / 2, -(canvas.height + b) / 2);
+
+      const c = (canvas.height - canvas.width) / 2;
+      const d = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - c) / 2, (canvas.height + d) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + c) / 2, -(canvas.height + d) / 2);
+
+      const e = (canvas.height - canvas.width) / 2;
+      const f = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - e) / 2, (canvas.height + f) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + e) / 2, -(canvas.height + f) / 2);
+
+      const g = (canvas.height - canvas.width) / 2;
+      const h = (canvas.width - canvas.height) / 2;
+      ctx.translate((canvas.width - g) / 2, (canvas.height + h) / 2);
+      ctx.rotate((90 * Math.PI) / 180);
+      ctx.translate(-(canvas.width + g) / 2, -(canvas.height + h) / 2);
+      // Rotal image 90*4 - End
+
       // transform context before drawing image
       switch (srcOrientation) {
         case 2:
           ctx.transform(-1, 0, 0, 1, width, 0);
-          console.log("Case 2");
           break;
         case 3:
           ctx.transform(-1, 0, 0, -1, width, height);
-          console.log("Case 3");
           break;
         case 4:
           ctx.transform(1, 0, 0, -1, 0, height);
-          console.log("Case 4");
           break;
         case 5:
           ctx.transform(0, 1, 1, 0, 0, 0);
-          console.log("Case 5");
           break;
         case 6:
           ctx.transform(0, 1, -1, 0, height, 0);
-          console.log("Case 6");
           break;
         case 7:
           ctx.transform(0, -1, -1, 0, height, width);
-          console.log("Case 7");
           break;
         case 8:
           ctx.transform(0, -1, 1, 0, 0, width);
-          console.log("Case 8");
           break;
         default:
           break;
@@ -151,13 +170,13 @@ class ImageWithoutCropper extends React.PureComponent {
       ctx.drawImage(img, 0, 0);
 
       canvas.toBlob(
-        blob => {
-          blob.name = "newFile.jpeg";
+        (blob) => {
+          blob.name = "newFile.jpg";
           window.URL.revokeObjectURL(this.fileUrl);
           this.fileUrl = window.URL.createObjectURL(blob);
           _self.setState({
             croppedImageUrl: this.src,
-            file: new File([blob], "newFile.jpeg", {
+            file: new File([blob], "newFile.jpg", {
               type: "image/jpeg",
             }),
           });
@@ -176,13 +195,13 @@ class ImageWithoutCropper extends React.PureComponent {
     this.makeClientCrop(crop, pixelCrop);
   };
 
-  onCropChange = crop => {
+  onCropChange = (crop) => {
     this.setState({ crop });
   };
 
   rotateImage() {
     this.setState(
-      { rotate: this.state.rotate === 270 ? 0 : this.state.rotate + 0 },
+      { rotate: this.state.rotate === 270 ? 0 : this.state.rotate + 90 },
       () => {
         this.makeClientCrop(this.state.crop, this.state.pixelCrop);
       }
@@ -194,7 +213,7 @@ class ImageWithoutCropper extends React.PureComponent {
       const croppedImageUrl = await this.getCroppedImg(
         this.imageRef,
         pixelCrop,
-        "newFile.jpeg",
+        "newFile.jpg",
         this.state.rotate
       );
       this.setState({ croppedImageUrl });
@@ -217,7 +236,7 @@ class ImageWithoutCropper extends React.PureComponent {
         ? image.naturalWidth
         : image.naturalHeight;
     const ctx = canvas.getContext("2d");
-    console.log("Rotate Value: ", rotate);
+
     if (rotate) {
       let a = 0;
       let b = 0;
@@ -246,7 +265,7 @@ class ImageWithoutCropper extends React.PureComponent {
     }
 
     return new Promise((resolve, reject) => {
-      canvas.toBlob(blob => {
+      canvas.toBlob((blob) => {
         _self.setState({ file: blob });
         // _self.setState({ file: new File([blob], "newFile.jpg", {
         //   type: "image/jpeg",
@@ -306,7 +325,7 @@ class ImageWithoutCropper extends React.PureComponent {
                 />
               </div>
             )}
-            <div className="form-group iphone-image">
+            <div className="form-group">
               <div className="mb-3 d-block demoImage">
                 <img src={this.state.croppedImageUrl} />
               </div>
@@ -320,7 +339,7 @@ class ImageWithoutCropper extends React.PureComponent {
                   name="photos"
                   value=""
                   accept="image/*"
-                  onChange={e => this.onSelectFile(e.target.files)}
+                  onChange={(e) => this.onSelectFile(e.target.files)}
                 />
               </Button>
               <Button
@@ -340,7 +359,7 @@ class ImageWithoutCropper extends React.PureComponent {
                 name="caption"
                 id="caption"
                 placeholder="Photo Caption(optional)"
-                onChange={e => this.setState({ caption: e.target.value })}
+                onChange={(e) => this.setState({ caption: e.target.value })}
               />
             </div>
 
@@ -371,11 +390,11 @@ class ImageWithoutCropper extends React.PureComponent {
                   className="form-control form-control-color"
                   name="groupName"
                   value={this.state.groupId}
-                  onChange={e => this.onGroupSelect(e.target.value)}
+                  onChange={(e) => this.onGroupSelect(e.target.value)}
                 >
                   <option value="">Select One</option>
                   <option value="NEW">Create</option>
-                  {this.props.groupsList.map(group => (
+                  {this.props.groupsList.map((group) => (
                     <option value={group._id} key={group._id}>
                       {group.groupName}
                     </option>
@@ -402,7 +421,7 @@ class ImageWithoutCropper extends React.PureComponent {
           <CreateGroup
             guestsList={this.props.guestsList}
             guestId={this.props.guestId}
-            onGroupCreate={groupInfo => this.onGroupCreate(groupInfo)}
+            onGroupCreate={(groupInfo) => this.onGroupCreate(groupInfo)}
             groupsList={this.props.groupsList}
           />
         )}
