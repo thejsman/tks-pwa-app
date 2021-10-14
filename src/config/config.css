@@ -38,3 +38,7 @@ body,
 .categories .bigIcon {
   border: 1px solid #232b2d !important;
 }
+
+.Linkify a {
+  color: white;
+}
