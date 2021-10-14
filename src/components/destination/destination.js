@@ -62,7 +62,7 @@ class destination extends React.Component {
     this.sessionGuestId = localStorage.getItem("guestId");
 
     if (isMobile) {
-      $("#spanHeaderText").html("Destination");
+      $("#spanHeaderText").html("Venue");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
@@ -89,7 +89,7 @@ class destination extends React.Component {
     let id = get(event.target, "attributes['id'].value");
     let data =
       this.state.destinationData &&
-      this.state.destinationData.filter(data => {
+      this.state.destinationData.filter((data) => {
         if (data.destinationId === id) {
           return data;
         }
@@ -107,7 +107,7 @@ class destination extends React.Component {
     } else {
       let destinationDetails =
         this.state.destinationData &&
-        this.state.destinationData.filter(data => {
+        this.state.destinationData.filter((data) => {
           if (data.destinationId === this.state.defaultId) {
             return data;
           }
@@ -153,13 +153,13 @@ class destination extends React.Component {
     let invitedEvents = this.props.eventDetails;
     let invitedEventDestinations = [];
     invitedEvents &&
-      invitedEvents.map(a => {
+      invitedEvents.map((a) => {
         invitedEventDestinations.push(a.subEventDestination);
       });
     invitedEventDestinations = _.uniq(invitedEventDestinations);
     let destinations = [];
     allDestinations &&
-      allDestinations.map(a => {
+      allDestinations.map((a) => {
         if (_.includes(invitedEventDestinations, a.destinationName)) {
           destinations.push({
             destinationId: a.destinationId,
@@ -170,7 +170,7 @@ class destination extends React.Component {
     let destinationExist = destinations.length > 0 ? true : false;
     let destinationData2 = [];
     destinationData &&
-      destinationData.map(a => {
+      destinationData.map((a) => {
         if (_.includes(_.map(destinations, "destinationId"), a._id)) {
           destinationData2.push(a);
         }
@@ -179,7 +179,7 @@ class destination extends React.Component {
     return (
       <div className="container resposiveHideHeading">
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">
-          DESTINATION
+          VENUE
         </h3>
         {!this.state.showPlacesToVisit && destinationExist && (
           <div>
@@ -187,7 +187,7 @@ class destination extends React.Component {
               <div className="col-md-12 destinationBtn mT90">
                 <div className="d-none d-lg-block col-md-12 col-sm-12 col-xs-12">
                   {destinations &&
-                    destinations.map(destination => {
+                    destinations.map((destination) => {
                       return (
                         <button
                           name="button"
@@ -209,7 +209,7 @@ class destination extends React.Component {
                 <div className="d-md-block d-lg-none d-xl-none destinationMobile">
                   <div className="col-md-12 col-sm-12 col-xs-12 scrollMobile">
                     {destinations &&
-                      destinations.map(destination => {
+                      destinations.map((destination) => {
                         return (
                           <button
                             name="button"
@@ -299,7 +299,7 @@ class destination extends React.Component {
                                     Currency
                                   </span>
                                   {defaultDestination.otherDetails.destinationCurrency.map(
-                                    currency => {
+                                    (currency) => {
                                       if (
                                         currency &&
                                         currency.rate &&
@@ -489,7 +489,7 @@ class destination extends React.Component {
                                     Currency
                                   </span>
                                   {defaultDestination.otherDetails.destinationCurrency.map(
-                                    currency => {
+                                    (currency) => {
                                       if (
                                         currency &&
                                         currency.rate &&

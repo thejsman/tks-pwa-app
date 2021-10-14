@@ -1,10 +1,40 @@
-html{height:100%;} 
-body,.appBody {background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/phL4LXyXpPm9HvHjH.jpeg'); } 
-.appLogo{ background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/TKCafpepQxPd4dZnk.png');} 
-.appNavbarBGColor{background-color:#000000;} 
-.appNavbarFontColor{color:#ffffff;} 
-.appNavbarFontFamily{font-family: 'Roboto', sans-serif;}  
-.appBodyFontColor{color:#ffffff;}  
-.appBodyFontFamily{font-family: 'Roboto', sans-serif;}   
-.appSelectColor{color:#8a74b4;}  
-.appGradientColor{background: linear-gradient(to right,#002f4c,#094470);} 
+html {
+  height: 100%;
+}
+body,
+.appBody {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/yv9zoEr3PNnzGsz6z.jpeg");
+}
+.appLogo {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/gHd2iE3ZiQMwYcsFM.png");
+}
+.appNavbarBGColor {
+  background-color: #232b2dff;
+}
+.appNavbarFontColor {
+  color: #ffffff;
+}
+.appNavbarFontFamily {
+  font-family: "Scope One Regular";
+}
+.appBodyFontColor {
+  color: #f4f4f4ff;
+}
+.appBodyFontFamily {
+  font-family: "Scope One Regular";
+}
+.appSelectColor {
+  color: #f4f4f4ff;
+}
+.appGradientColor {
+  background: linear-gradient(to right, #232b2dff, #585d5fff);
+}
+
+.categories .icon-white:before,
+.iconName,
+.coupleName {
+  color: #232b2d !important;
+}
+.categories .bigIcon {
+  border: 1px solid #232b2d !important;
+}

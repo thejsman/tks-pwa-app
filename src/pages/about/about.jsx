@@ -44,7 +44,7 @@ class aboutPage extends React.Component {
       this.setState({ appDetails: appDetails });
       if (isMobile) {
         if (appDetails.basicDetails.eventType === "wedding") {
-          $("#spanHeaderText").html("Bride & Groom");
+          $("#spanHeaderText").html("Our Story");
         }
         else {
           $("#spanHeaderText").html("About");

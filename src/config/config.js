@@ -1,6 +1,6 @@
-export const EventId = "cQfC27MHoMqbzNpNw";
-export const AppTItle = "VisionIT 2020 Conference";
-export const eventTitle = "VisionIT 2020 Conference";
-export const AppShortName = "SoftechLife";
-export const AppURL = "https://softechlife.thekeyevent.in";
+export const EventId = "HzvsA2puBSm8DR48Z";
+export const AppTItle = "MeetWah Wedding";
+export const eventTitle = "MeetWah Wedding";
+export const AppShortName = "MeetWah";
+export const AppURL = "https://MeetWah.thekeywedding.in";
 export const isMobile = window.innerWidth <= 500;

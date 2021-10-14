@@ -47,7 +47,7 @@ class MenuItems extends React.Component {
         <div>XXYXXIXJJXJXXJ</div>
         <ul>
           <li>
-            <a href="/destination">Destination</a>
+            <a href="/destination">Venue</a>
           </li>
         </ul>
       </MenuContainer>
