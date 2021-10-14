@@ -315,6 +315,19 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
+            {/* COVID-INFO */}
+            <li>
+              <div
+                className="fa fa-heartbeat bigIcon icon-white"
+                onClick={() => {
+                  browserHistory.push("/covid-info");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                COVID-19
+              </p>
+            </li>
+
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
@@ -342,7 +355,7 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
-            {appdet &&
+            {/* {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppGuestInfo && (
                 <li>
@@ -356,7 +369,7 @@ class Menu extends React.Component {
                     MY INFORMATION
                   </p>
                 </li>
-              )}
+              )} */}
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&

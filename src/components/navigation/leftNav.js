@@ -581,7 +581,7 @@ class leftNav extends React.Component {
             </div>
           </li>
 
-          {appdet &&
+          {/* {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppGuestInfo && (
               <li
@@ -597,7 +597,7 @@ class leftNav extends React.Component {
                   </p>
                 </div>
               </li>
-            )}
+            )} */}
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&

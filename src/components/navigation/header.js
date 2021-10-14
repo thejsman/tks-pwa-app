@@ -455,7 +455,7 @@ class header extends React.Component {
                 }
               })}
 
-            <li
+            {/* <li
               onClick={this.toggleHidden.bind(this)}
               data-menu="myInformation"
             >
@@ -465,7 +465,7 @@ class header extends React.Component {
                 </div>
                 <p className="menuName">MY INFORMATION</p>
               </div>
-            </li>
+            </li> */}
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
@@ -540,7 +540,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="fa fa-camera commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">Gallery</p>
+                        <p className="menuName text-uppercase">Gallery</p>
                       </div>
                     </li>
                   );
