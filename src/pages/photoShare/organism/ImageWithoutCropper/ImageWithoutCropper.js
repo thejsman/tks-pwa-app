@@ -49,7 +49,7 @@ class ImageWithoutCropper extends React.PureComponent {
       y: 0
     },
     loading: false,
-    rotate: 0
+    rotate: 0,
   };
 
   constructor(props) {
@@ -80,12 +80,16 @@ class ImageWithoutCropper extends React.PureComponent {
         width: 100,
         x: 0,
         y: 0
-      }
+      },
+      rotate: 270,
     });
 
     EXIF.getData(image, function() {
       _self.resetOrientation(image.src, EXIF.getTag(this, "Orientation"), resetBase64Image => {
         _self.imageRef = resetBase64Image;
+        // to fix the bug of image rotation while uploading
+        // initial set the rotate: 270 and rotate the image 1 time;
+        _self.rotateImage();
       });
     });
   };
@@ -200,7 +204,7 @@ class ImageWithoutCropper extends React.PureComponent {
         : image.naturalHeight;
     const ctx = canvas.getContext("2d");
 
-    if (rotate) {
+    if (rotate >= 0) {
       let a = 0;
       let b = 0;
       if (rotate === 90) {
@@ -223,7 +227,7 @@ class ImageWithoutCropper extends React.PureComponent {
     }
 
     ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
-    if (rotate) {
+    if (rotate >= 0) {
       ctx.restore();
     }
 
