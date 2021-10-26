@@ -81,6 +81,7 @@ class ImageWithoutCropper extends React.PureComponent {
         x: 0,
         y: 0,
       },
+      rotate: 270,
     });
 
     EXIF.getData(image, function () {
@@ -89,6 +90,9 @@ class ImageWithoutCropper extends React.PureComponent {
         EXIF.getTag(this, "Orientation"),
         (resetBase64Image) => {
           _self.imageRef = resetBase64Image;
+          // to fix the bug of image rotation while uploading
+          // initial set the rotate: 270 and rotate the image 1 time;
+          _self.rotateImage();
         }
       );
     });
@@ -112,32 +116,6 @@ class ImageWithoutCropper extends React.PureComponent {
         canvas.width = width;
         canvas.height = height;
       }
-
-      // Rotal image 90*4 - Start
-      const a = (canvas.height - canvas.width) / 2;
-      const b = (canvas.width - canvas.height) / 2;
-      ctx.translate((canvas.width - a) / 2, (canvas.height + b) / 2);
-      ctx.rotate((90 * Math.PI) / 180);
-      ctx.translate(-(canvas.width + a) / 2, -(canvas.height + b) / 2);
-
-      const c = (canvas.height - canvas.width) / 2;
-      const d = (canvas.width - canvas.height) / 2;
-      ctx.translate((canvas.width - c) / 2, (canvas.height + d) / 2);
-      ctx.rotate((90 * Math.PI) / 180);
-      ctx.translate(-(canvas.width + c) / 2, -(canvas.height + d) / 2);
-
-      const e = (canvas.height - canvas.width) / 2;
-      const f = (canvas.width - canvas.height) / 2;
-      ctx.translate((canvas.width - e) / 2, (canvas.height + f) / 2);
-      ctx.rotate((90 * Math.PI) / 180);
-      ctx.translate(-(canvas.width + e) / 2, -(canvas.height + f) / 2);
-
-      const g = (canvas.height - canvas.width) / 2;
-      const h = (canvas.width - canvas.height) / 2;
-      ctx.translate((canvas.width - g) / 2, (canvas.height + h) / 2);
-      ctx.rotate((90 * Math.PI) / 180);
-      ctx.translate(-(canvas.width + g) / 2, -(canvas.height + h) / 2);
-      // Rotal image 90*4 - End
 
       // transform context before drawing image
       switch (srcOrientation) {
@@ -237,7 +215,7 @@ class ImageWithoutCropper extends React.PureComponent {
         : image.naturalHeight;
     const ctx = canvas.getContext("2d");
 
-    if (rotate) {
+    if (rotate >= 0) {
       let a = 0;
       let b = 0;
       if (rotate === 90) {
@@ -260,7 +238,7 @@ class ImageWithoutCropper extends React.PureComponent {
     }
 
     ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
-    if (rotate) {
+    if (rotate >= 0) {
       ctx.restore();
     }
 
