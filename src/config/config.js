@@ -1,6 +1,6 @@
-export const EventId = "cQfC27MHoMqbzNpNw";
-export const AppTItle = "VisionIT 2020 Conference";
-export const eventTitle = "VisionIT 2020 Conference";
-export const AppShortName = "SoftechLife";
-export const AppURL = "https://softechlife.thekeyevent.in";
+export const EventId = "67HKqZ9FsRAof2x7u";
+export const AppTItle = "Above & Beyond";
+export const eventTitle = "Above & Beyond";
+export const AppShortName = "Above & Beyond";
+export const AppURL = "https://above-beyond.thekeyevent.in";
 export const isMobile = window.innerWidth <= 500;
