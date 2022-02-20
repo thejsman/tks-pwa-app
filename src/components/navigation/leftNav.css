@@ -313,7 +313,7 @@
   color: var(--font-color);
   left: 41%;
   top: 22px;
-  color: white;
+  /* color: white; */
   font-size: 21px;
 }
 .topHeaderCss {

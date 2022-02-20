@@ -61,7 +61,7 @@ class dashboard extends React.Component {
   changeText(message) {
     if (message) {
       let arrayItem = message.split("\n");
-      let text = arrayItem.map(item => {
+      let text = arrayItem.map((item) => {
         return item;
       });
       return text;
@@ -121,7 +121,7 @@ class dashboard extends React.Component {
             position: "absolute",
             top: "0px",
             width: "100%",
-            height: "100%"
+            height: "100%",
           }}
         >
           <div className="modal-body" style={{ padding: "0px" }}>
@@ -141,7 +141,7 @@ class dashboard extends React.Component {
                 paddingTop: "10px",
                 paddingLeft: "17px",
                 zIndex: "1",
-                top: "8%"
+                top: "8%",
               }}
             >
               X
@@ -159,40 +159,10 @@ class dashboard extends React.Component {
         <div className="container">
           <div className="Dashboard-Center Dashboard-Center-welcome Dashboard-Center-welcome  is-Responsive">
             <div className="invitationBox">
-              <div className="videoContainer">
-                <div
-                  onClick={this.playVideo.bind(this)}
-                  className="youTubeIcon"
-                  id="youClickDiv2"
-                >
-                  <i className="fa fa fa-youtube-play" id="youIcon2" />
-                  <img src={welcomeImage} className="dashboardImage" />
-                </div>
-              </div>
-              <div className="invitationMessage appGradientColor appBodyFontColor appBodyFontFamily">
-                <p
-                  className="paragraphCommon appBodyFontFamily  appBodyFontColor text-capitalize"
-                  style={{ fontWeight: "400" }}
-                >
-                  Dear {guestNickName},
-                </p>
-                {text && text.length > 0 && (
-                  <div
-                    className="appBodyFontFamily paragraphCommon appBodyFontColor"
-                    style={{ marginTop: "10px" }}
-                  >
-                    {
-                      // text.map((lines) =>
-                      <p className="lineFormat">
-                        <Linkify properties={{ target: "_blank" }}>
-                          {msg}
-                        </Linkify>
-                      </p>
-                      // )
-                    }
-                  </div>
-                )}
-              </div>
+              <img
+                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/DFvGiCBF68w8PzGwf.jpeg"
+                className="dashboardImage"
+              />
             </div>
           </div>
         </div>
@@ -204,7 +174,7 @@ function mapStateToProps(state) {
   return {
     welcomeData: getWelcomeDetails(state),
     eventId: getEventId(state),
-    guestId: getGuestId(state)
+    guestId: getGuestId(state),
   };
 }
 export default connect(mapStateToProps)(dashboard);

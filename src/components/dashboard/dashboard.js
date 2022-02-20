@@ -7,7 +7,7 @@ import {
   getWelcomeDetails,
   getEventName,
   getGuestFirstName,
-  getGuestLastName
+  getGuestLastName,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -48,7 +48,7 @@ class dashboard extends React.Component {
   changeText(message) {
     if (message) {
       let arrayItem = message.split("\n");
-      let text = arrayItem.map(item => {
+      let text = arrayItem.map((item) => {
         return item;
       });
       return text;
@@ -142,7 +142,7 @@ class dashboard extends React.Component {
             position: "absolute",
             top: "0px",
             width: "100%",
-            height: "100%"
+            height: "100%",
           }}
         >
           <div className="modal-body" style={{ padding: "0px" }}>
@@ -161,7 +161,7 @@ class dashboard extends React.Component {
                 paddingLeft: "10px",
                 fontSize: "18px",
                 paddingTop: "10px",
-                paddingLeft: "17px"
+                paddingLeft: "17px",
               }}
             >
               X
@@ -179,41 +179,10 @@ class dashboard extends React.Component {
         <div className="container">
           <div className="Dashboard-Center is-Responsive">
             <div className="invitationBox">
-              <div className="videoContainer">
-                <div
-                  onClick={this.playVideo.bind(this)}
-                  className="youTubeIcon"
-                  id="youClickDiv"
-                >
-                  <i className="fa fa-youtube-play" id="youIcon" />
-                  <img src={welcomeImage} className="dashboardImage" />
-                </div>
-              </div>
-              <div className="invitationMessage appGradientColor appFontColor">
-                <p
-                  className="paragraphCommon appBodyFontFamily  appBodyFontColor text-capitalize"
-                  style={{ fontWeight: "400" }}
-                >
-                  Dear{" "}
-                  {guestNickName ? guestNickName : this.props.guestAddressing},
-                </p>
-                {text && text.length > 0 && (
-                  <div
-                    className="appBodyFontFamily paragraphCommon appBodyFontColor"
-                    style={{ marginTop: "10px" }}
-                  >
-                    {
-                      // text.map((lines) =>
-                      <p className="lineFormat">
-                        <Linkify properties={{ target: "_blank" }}>
-                          {msg}
-                        </Linkify>
-                      </p>
-                      // )
-                    }
-                  </div>
-                )}
-              </div>
+              <img
+                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/DFvGiCBF68w8PzGwf.jpeg"
+                className="dashboardImage"
+              />
             </div>
             <div className="form-group">
               <button
@@ -241,7 +210,7 @@ function mapStateToProps(state) {
     eventName: getEventName(state),
     guestAddressing: getGuestAddressing(state),
     guestFirstName: getGuestFirstName(state),
-    guestLastName: getGuestLastName(state)
+    guestLastName: getGuestLastName(state),
   };
 }
 export default connect(mapStateToProps)(dashboard);

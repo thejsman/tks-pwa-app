@@ -1,13 +1,13 @@
 .invitationBox {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .invitationMessage {
   padding: 15px;
 }
 
 .dashboardImage {
-  width: 500px;
-  height: 293px;
+  width: 100%;
+  height: auto;
   padding-top: 60px;
 }
 .fa-youtube-play {
