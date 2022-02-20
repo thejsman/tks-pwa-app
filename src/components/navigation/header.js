@@ -315,15 +315,74 @@ class header extends React.Component {
             className="leftMenuExpanded appNavbarFontFamily appNavbarBGColor py-3"
             style={{ display: this.state.display }}
           >
-            {/* <li onClick={this.toggleHidden.bind(this)} data-menu="welcome">
+            <li onClick={this.toggleHidden.bind(this)} data-menu="welcome">
               <div className="expMenudiv">
                 <div className="icon-div">
-                  <span className="icon-handshake commonIcon icon-white iconp" />
+                  <span className="icon-handshake-2 commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName">WELCOME</p>
               </div>
-            </li> */}
-            {/* {appdet &&
+            </li>
+
+            {appdet &&
+              appdet.appDetails &&
+              appdet.appDetails.selectedAppDetails &&
+              appdet.appDetails.selectedAppDetails.map((list) => {
+                if (list === "Travel Details") {
+                  return (
+                    <li
+                      onClick={this.toggleHidden.bind(this)}
+                      data-menu="travel/booked-ticket"
+                    >
+                      <div className="expMenudiv">
+                        <div className="icon-div">
+                          <span className="icon-travel-details commonIcon icon-white iconp" />
+                        </div>
+                        <p className="menuName">TRAVEL DETAILS</p>
+                      </div>
+                    </li>
+                  );
+                }
+
+                if (list === "Sponsors") {
+                  return (
+                    <li
+                      onClick={this.toggleHidden.bind(this)}
+                      data-menu="Sponsors"
+                    >
+                      <div className="expMenudiv">
+                        <div className="icon-div">
+                          <span className="icon-destination-2 commonIcon icon-white iconp" />
+                        </div>
+                        <p className="menuName">BANGLORE</p>
+                      </div>
+                    </li>
+                  );
+                }
+              })}
+
+            <li
+              onClick={this.toggleHidden.bind(this)}
+              data-menu="myInformation"
+            >
+              <div className="expMenudiv">
+                <div className="icon-div">
+                  <span className="icon-my-profile commonIcon icon-white iconp" />
+                </div>
+                <p className="menuName">MY PROFILE</p>
+              </div>
+            </li>
+
+            <li onClick={this.toggleHidden.bind(this)} data-menu="eventDetails">
+              <div className="expMenudiv">
+                <div className="icon-div">
+                  <span className="icon-event-details-2 commonIcon icon-white iconp" />
+                </div>
+                <p className="menuName">EVENT DETAILS</p>
+              </div>
+            </li>
+
+            {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
@@ -363,8 +422,8 @@ class header extends React.Component {
                     </li>
                   );
                 }
-              })} */}
-            {/* {appdet &&
+              })}
+            {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
@@ -383,9 +442,9 @@ class header extends React.Component {
                     </li>
                   );
                 }
-              })} */}
+              })}
 
-            {/* {appdet &&
+            {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
@@ -401,9 +460,9 @@ class header extends React.Component {
                     </li>
                   );
                 }
-              })} */}
+              })}
 
-            {/* {appdet &&
+            {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
@@ -415,7 +474,7 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="icon-itinerary commonIcon icon-white iconp" />
+                          <span className="icon-itinerary-2 commonIcon icon-white iconp" />
                         </div>
                         <p className="menuName">AGENDA</p>
                       </div>
@@ -424,14 +483,15 @@ class header extends React.Component {
                 }
               })}
 
-            <li onClick={this.toggleHidden.bind(this)} data-menu="eventDetails">
+            <li onClick={this.toggleHidden.bind(this)} data-menu="covid-info">
               <div className="expMenudiv">
                 <div className="icon-div">
-                  <span className="icon-event-details commonIcon icon-white iconp" />
+                  <span className="icon-covid commonIcon icon-white iconp" />
                 </div>
-                <p className="menuName">EVENT DETAILS</p>
+                <p className="menuName">COVID-19</p>
               </div>
             </li>
+
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
@@ -453,54 +513,6 @@ class header extends React.Component {
                 }
               })}
 
-            <li
-              onClick={this.toggleHidden.bind(this)}
-              data-menu="myInformation"
-            >
-              <div className="expMenudiv">
-                <div className="icon-div">
-                  <span className="icon-my-info commonIcon icon-white iconp" />
-                </div>
-                <p className="menuName">MY PROFILE</p>
-              </div>
-            </li> */}
-            {/* {appdet &&
-              appdet.appDetails &&
-              appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map((list) => {
-                if (list === "Travel Details") {
-                  return (
-                    <li
-                      onClick={this.toggleHidden.bind(this)}
-                      data-menu="travel/booked-ticket"
-                    >
-                      <div className="expMenudiv">
-                        <div className="icon-div">
-                          <span className="icon-travel-details commonIcon icon-white iconp" />
-                        </div>
-                        <p className="menuName">TRAVEL DETAILS</p>
-                      </div>
-                    </li>
-                  );
-                }
-
-                if (list === "Sponsors") {
-                  return (
-                    <li
-                      onClick={this.toggleHidden.bind(this)}
-                      data-menu="Sponsors"
-                    >
-                      <div className="expMenudiv">
-                        <div className="icon-div">
-                          <span className="fa fa-star commonIcon icon-white iconp" />
-                        </div>
-                        <p className="menuName">SPONSORS</p>
-                      </div>
-                    </li>
-                  );
-                }
-              })}
-
             {this.preferenceExist() ? (
               <li
                 onClick={this.toggleHidden.bind(this)}
@@ -515,34 +527,10 @@ class header extends React.Component {
               </li>
             ) : null}
 
-            <li onClick={this.toggleHidden.bind(this)} data-menu="mySummary">
-              <div className="expMenudiv">
-                <div className="icon-div">
-                  <span className="icon-my-summary commonIcon icon-white iconp" />
-                </div>
-                <p className="menuName">MY SUMMARY</p>
-              </div>
-            </li> */}
-
-            {/* {appdet &&
+            {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
-                if (list === "photoShare") {
-                  return (
-                    <li
-                      onClick={this.toggleHidden.bind(this)}
-                      data-menu="photos"
-                    >
-                      <div className="expMenudiv">
-                        <div className="icon-div">
-                          <span className="fa fa-camera commonIcon icon-white iconp" />
-                        </div>
-                        <p className="menuName">PHOTO SHARING</p>
-                      </div>
-                    </li>
-                  );
-                }
                 console.log("LIST IS ", list);
                 if (list === "downloads") {
                   return (
@@ -552,7 +540,7 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="fa fa-download commonIcon icon-white iconp" />
+                          <span className="icon-edocs commonIcon icon-white iconp" />
                         </div>
                         <p className="menuName">E-DOCS</p>
                       </div>
@@ -560,6 +548,24 @@ class header extends React.Component {
                   );
                 }
               })}
+
+            <li onClick={this.toggleHidden.bind(this)} data-menu="mySummary">
+              <div className="expMenudiv">
+                <div className="icon-div">
+                  <span className="icon-my-summary-2 commonIcon icon-white iconp" />
+                </div>
+                <p className="menuName">MY SUMMARY</p>
+              </div>
+            </li>
+
+            <li onClick={this.toggleHidden.bind(this)} data-menu="photos">
+              <div className="expMenudiv">
+                <div className="icon-div">
+                  <span className="icon-camera-2 commonIcon icon-white iconp" />
+                </div>
+                <p className="menuName">ACTIVITY</p>
+              </div>
+            </li>
 
             {appdet &&
               appdet.appDetails &&
@@ -572,7 +578,7 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="icon-wishes commonIcon icon-white iconp" />
+                          <span className="icon-feedback-2 commonIcon icon-white iconp" />
                         </div>
                         <p className="menuName">FEEDBACK</p>
                       </div>
@@ -607,8 +613,8 @@ class header extends React.Component {
                     <p className="menuName">SOCIAL</p>
                   </div>
                 </li>
-              )} */}
-            {/* {appdet &&
+              )}
+            {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
@@ -620,18 +626,18 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="icon-contact-us commonIcon icon-white iconp" />
+                          <span className="icon-contact-us-2 commonIcon icon-white iconp" />
                         </div>
                         <p className="menuName">CONTACT US</p>
                       </div>
                     </li>
                   );
                 }
-              })} */}
+              })}
             <li onClick={this.toggleHidden.bind(this)} data-menu="legal">
               <div className="expMenudiv">
                 <div className="icon-div">
-                  <span className="icon-legal commonIcon icon-white iconp" />
+                  <span className="icon-legal commonIcon icon-white iconp circle" />
                 </div>
                 <p className="menuName">LEGAL</p>
               </div>
@@ -639,7 +645,7 @@ class header extends React.Component {
             <li onClick={this.openLogoutScreen}>
               <div className="expMenudiv">
                 <div className="icon-div">
-                  <span className="icon-log-out commonIcon icon-white iconp" />
+                  <span className="icon-log-out commonIcon icon-white iconp circle" />
                 </div>
                 <p className="menuName">LOGOUT</p>
               </div>

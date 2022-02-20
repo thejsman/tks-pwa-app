@@ -669,3 +669,7 @@ ul.alice-carousel__dots {
   position: relative;
   bottom: 115px;
 }
+
+.circle {
+  border: 1px solid #5b5b5b;
+}
