@@ -292,6 +292,19 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
+            {/* COVID-INFO */}
+            <li>
+              <div
+                className="icon-covid bigIcon icon-white"
+                onClick={() => {
+                  browserHistory.push("/covid-info");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                COVID-19
+              </p>
+            </li>
+
             {this.hasFeature("Speakers") ? (
               <li>
                 <div

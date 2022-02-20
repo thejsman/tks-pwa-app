@@ -5,7 +5,7 @@ import {
   fetchGuestFamily,
   uploadPhoto,
   submitGuestDetails,
-  guestClearVisa,
+  guestClearInsurance,
 } from "../../api/guestInformationApi.js";
 import { dataSavedSuccessfully } from "../../actions/popup.action";
 
@@ -16,15 +16,16 @@ const smallName = name => {
   }
   return name;
 };
-class Visa extends React.Component {
+class Insurance extends React.Component {
   constructor(props) {
     super(props);
-    let pIs = this.props.familyMember[0].guestVisaImages;
+    let pIs = this.props.familyMember[0].guestInsuranceImages;
     pIs = pIs ? pIs : [];
+
     this.state = {
       page: null,
-      visaImages: pIs,
-      hasVisa: pIs.length > 0 ? true : null,
+      insuranceImages: pIs,
+      hasInsurance: pIs.length > 0 ? true : null,
       currentGuestId: this.props.familyMember[0].guestId,
     };
   }
@@ -35,22 +36,23 @@ class Visa extends React.Component {
       return m.guestId === guestId;
     });
     let passportImages = [];
-    if (typeof currentGuest.guestVisaImages == "undefined") {
+    if (typeof currentGuest.guestInsuranceImages == "undefined") {
       passportImages = [];
     } else {
-      passportImages = currentGuest.guestVisaImages;
+      passportImages = currentGuest.guestInsuranceImages;
     }
-    let visaImages = passportImages ? passportImages : [];
+    let insuranceImages = passportImages ? passportImages : [];
     this.setState({
       currentGuestId: guestId,
-      visaImages,
-      hasVisa: visaImages.length > 0 ? true : null,
+      insuranceImages,
+      hasInsurance: insuranceImages.length > 0 ? true : null,
       page: null,
     });
   }
 
   saveInfo(information) {
     let { familyMember } = this.props;
+
     let primaryGuest = familyMember.find(m => {
       return m.guestIsPrimary;
     });
@@ -75,13 +77,14 @@ class Visa extends React.Component {
       });
   }
 
-  clearVisa() {
+  clearInsurance() {
     let { familyMember } = this.props;
     let primaryGuest = familyMember.find(m => {
       return m.guestIsPrimary;
     });
+
     this.props.setLoading(true);
-    guestClearVisa(this.state.currentGuestId)
+    guestClearInsurance(this.state.currentGuestId)
       .then(() => {
         fetchGuestFamily(primaryGuest.guestId)
           .then(() => {
@@ -106,10 +109,12 @@ class Visa extends React.Component {
     uploadPhoto(this.state.page)
       .then(url => {
         self.saveInfo({
-          guestVisaImages: [url],
+          guestInsuranceImages: [url],
         });
         self.props.setLoading(false);
-        store.dispatch(dataSavedSuccessfully("Visa photo saved successfully"));
+        store.dispatch(
+          dataSavedSuccessfully("Vaccination Certificate saved successfully")
+        );
       })
       .catch(e => {
         alert("Upload failed");
@@ -119,12 +124,15 @@ class Visa extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let { familyMember } = nextProps;
+
     let currentGuest = familyMember.find(m => {
       return m.guestId === this.state.currentGuestId;
     });
+
     this.setState({
-      hasVisa:
-        currentGuest.guestVisaImages && currentGuest.guestVisaImages.length > 0
+      hasInsurance:
+        currentGuest.guestInsuranceImages &&
+        currentGuest.guestInsuranceImages.length > 0
           ? true
           : null,
     });
@@ -135,28 +143,30 @@ class Visa extends React.Component {
     let currentGuest = familyMember.find(m => {
       return m.guestId === this.state.currentGuestId;
     });
-    let passportImages = currentGuest.guestVisaImages;
-    let visaImages = passportImages ? passportImages : [];
+    let passportImages = currentGuest.guestInsuranceImages;
+    let insuranceImages = passportImages ? passportImages : [];
+    let pis = insuranceImages;
+    // let insuranceQuestion = appSettings ? appSettings.insuranceQuestion : '';
+    let insuranceQuestion =
+      "Do you have a valid COVID-19 vaccination certificate?";
 
-    let pis = visaImages;
-    let visaQuestion = appSettings ? appSettings.visaQuestion : "";
     return (
       <div className="informationScreenDividesTop">
         <div
           className="card-header myInformation-card-header appBodyFontColor appGradientColor collapsed"
           data-toggle="collapse"
           data-parent="#accordion"
-          href="#ROOM REQUIREMENT"
+          href="#my-insurance"
         >
           <a className="card-title">
-            <i className="icon-my-visa" aria-hidden="true" />
-            MY VISA
+            <i className="icon-insurance" aria-hidden="true" />
+            VACCINATION CERTIFICATE
             <i className="fa" aria-hidden="true" />
           </a>
         </div>
         <div
-          id="ROOM REQUIREMENT"
-          className="card-body myInformation-card-body appGradientColor collapse"
+          id="my-insurance"
+          className="card-body myInformation-card-body ankur appGradientColor collapse"
           data-parent="#accordion"
         >
           <div className="row">
@@ -184,7 +194,7 @@ class Visa extends React.Component {
             <div>
               <div className="row">
                 <p className="info-statement appBodyFontFamily appBodyFontColor">
-                  {this.props.visaQuestion}
+                  {insuranceQuestion}
                 </p>
               </div>
               <div className="myPassportBtnRadio">
@@ -195,7 +205,7 @@ class Visa extends React.Component {
                       htmlFor="option-three"
                       onClick={() => {
                         this.setState({
-                          hasVisa: true,
+                          hasInsurance: true,
                           page: null,
                         });
                       }}
@@ -207,7 +217,7 @@ class Visa extends React.Component {
                       htmlFor="option-four"
                       onClick={() => {
                         this.setState({
-                          hasVisa: false,
+                          hasInsurance: false,
                         });
                       }}
                     >
@@ -218,40 +228,42 @@ class Visa extends React.Component {
               </div>
             </div>
           )}
-          {this.state.hasVisa || pis.length > 0 ? (
+          {this.state.hasInsurance || pis.length > 0 ? (
             <div>
-              <div className="row text-center">
+              <div className="uploadInsurancePhotoId text-center">
                 {this.state.page || pis[0] ? (
                   <label
                     className="btn-bs-file myInformationBtn ankur appBodyFontFamily appBodyFontColor active abl-filename"
-                    id="visaPhotoLabel"
+                    id="insurancePhotoLabel"
                   >
                     <span>
                       {smallName(
-                        this.state.page ? this.state.page.name : "upload visa"
+                        this.state.page
+                          ? this.state.page.name
+                          : "upload vaccination certificate"
                       )}
                     </span>
                   </label>
                 ) : null}
                 {this.state.page || pis[0] ? null : (
-                  <div className="col-md-12">
+                  <div>
                     <label
                       className="btn-bs-file Myaddress-btn-bs-file myInformationBtn"
-                      id="visaLabel"
-                      name="visaImage"
+                      id="insuranceLabel"
+                      name="insuranceImage"
                       onClick={() => {
-                        this.refs.visaUpload.click();
+                        this.refs.insuranceUpload.click();
                       }}
                     >
                       {" "}
-                      UPLOAD VISA{" "}
+                      UPLOAD VACCINATION CERTIFICATE{" "}
                     </label>
                     <input
                       type="file"
                       tabIndex="0"
-                      id="visaImage"
+                      id="insuranceImage"
                       accept="image/*,application/pdf"
-                      ref="visaUpload"
+                      ref="insuranceUpload"
                       className="myInformationBtn"
                       style={{ display: "none" }}
                       onChange={e => {
@@ -261,26 +273,22 @@ class Visa extends React.Component {
                       }}
                     />
                     <br />
-                    <canvas
-                      id="canvas"
-                      height="420"
-                      width="560"
-                      className="camera-box"
-                      style={{ display: "none" }}
-                    />
-                    <span id="visaUploadError" style={{ color: "white" }} />
+                    <span
+                      id="insuranceUploadError"
+                      style={{ color: "white" }}
+                    />{" "}
                   </div>
                 )}
               </div>
               <div className="row">
-                <div className="update-info">
-                  Please click save button to save your changes.
-                </div>
+                <div className="update-info">Click 'SAVE'</div>
                 <button
                   className="myInformationBtn btnSave"
-                  id="save-visa-btn"
+                  id="save-insurance-btn"
                   onClick={() => {
-                    pis.length > 0 ? this.clearVisa() : this.saveGuestDetails();
+                    pis.length > 0
+                      ? this.clearInsurance()
+                      : this.saveGuestDetails();
                   }}
                 >
                   {pis.length > 0 ? "CLEAR" : "SAVE"}
@@ -288,11 +296,11 @@ class Visa extends React.Component {
               </div>
             </div>
           ) : null}
-          {this.state.hasVisa === false ? (
-            <div className="row text-center" id="visa-na">
+          {this.state.hasInsurance === false ? (
+            <div className="row text-center">
               <div className="col-md-12">
                 <p className="disable-msg">
-                  Please get in touch with a travel representative to get
+                  Please get in touch with a wedding representative to get
                   assistance regarding your travel.
                 </p>
               </div>
@@ -313,4 +321,5 @@ class Visa extends React.Component {
     );
   }
 }
-export default Visa;
+
+export default Insurance;

@@ -639,6 +639,9 @@ ul.alice-carousel__dots {
 .icon-edocs {
   background-image: url("/homescreen/edocs.svg");
 }
+.icon-covid {
+  background-image: url("/homescreen/covid.svg");
+}
 
 .bigIcon {
   background-size: cover;

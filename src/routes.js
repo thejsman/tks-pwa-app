@@ -7,6 +7,7 @@ import BrideAndGroom from "./components/brideAndGroom/brideAndGroom";
 import Destination from "./components/destination/destination";
 import Menus from "./components/menuScreen/menu";
 import RSVP from "./components/rsvp/rsvp";
+import CovidInfo from "./components/covidInfo/myInformation";
 import MyInformation from "./components/myInformation/myInformation";
 import TravelDetails from "./components/travelDetails/travelDetails";
 import searchFlight from "./components/travelDetails/searchFlight";
@@ -43,7 +44,7 @@ import PhotoLanding from "./pages/photoShare/templates/PhotoLanding";
 import Groups from "./pages/photoShare/templates/Groups";
 import Downloads from "./pages/downloads";
 
-import MyPurchases from './pages/myPurchases/myPurchases';
+import MyPurchases from "./pages/myPurchases/myPurchases";
 // import Cart from './pages/myPurchases/cart';
 // import Checkout from './pages/myPurchases/checkout';
 
@@ -57,6 +58,7 @@ export default (
       <Route path="/brideAndGroom" component={BrideAndGroom} />
       <Route path="/about" component={BrideAndGroom} />
       <Route path="/destination" component={Destination} />
+      <Route path="/covid-info" component={CovidInfo} />
       <Route path="/rsvp" component={RSVP} />
       <Route path="/myInformation" component={MyInformation} />
       <Route path="/travel/upload-ticket" component={TravelDetails} />
@@ -90,9 +92,15 @@ export default (
       <Route path="/home" component={homePage} />
       <Route path="/speakers" component={speakerPage} />
       <Route path="/sponsors" component={sponsorPage} />
-      <Route path={`/${PHOTOS.BASE_PATH}/${PHOTOS.MY_GROUPS}`} component={Groups} />
+      <Route
+        path={`/${PHOTOS.BASE_PATH}/${PHOTOS.MY_GROUPS}`}
+        component={Groups}
+      />
       <Route path={`/${PHOTOS.BASE_PATH}(/:subPath)`} component={PhotoShare} />
-      <Route path={`/${PHOTOS.LANDING}/:photoId(/:subPath)(/:commentId)`} component={PhotoLanding} />
+      <Route
+        path={`/${PHOTOS.LANDING}/:photoId(/:subPath)(/:commentId)`}
+        component={PhotoLanding}
+      />
       <Route path={`/${DOWNLOADS.BASE_PATH}`} component={Downloads} />
     </Route>
   </div>
