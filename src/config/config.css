@@ -29,6 +29,13 @@ body,
 .appGradientColor {
   background: linear-gradient(to right, #ff9e65ff, #f5a437ff);
 }
-.appWelcomeBackground {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/bPicQKbqXWC8kugzM.jpeg");
+.appLoginBackground {
+  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/pEGahAGHDsoGwghvi.jpeg");
+}
+
+.login_side_logo {
+  width: 160px;
+  position: fixed;
+  right: 20px;
+  top: 80px;
 }

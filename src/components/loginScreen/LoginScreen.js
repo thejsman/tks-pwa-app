@@ -29,6 +29,7 @@ class login extends React.Component {
     fetchAppDetails();
     $("body").removeClass("appBody");
     $("body").addClass("login-page");
+    // $("body").addClass("appLoginBackground");
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.appDetails !== nextProps.appDetails) {
@@ -62,6 +63,13 @@ class login extends React.Component {
     return (
       <div className="container">
         <Popup />
+        <div>
+          <img
+            src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/cT6H7f2rpXuJxvGbJ.png"
+            alt=""
+            className="login_side_logo"
+          />
+        </div>
         <div className="Absolute-Center is-Responsive">
           <h1 className="nameHeading appBodyFontColor appBodyFontFamily">
             {/* {AppTItle} */}
