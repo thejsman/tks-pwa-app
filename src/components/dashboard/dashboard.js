@@ -176,18 +176,18 @@ class dashboard extends React.Component {
             />
           </div>
         </div>
-        <div className="container">
+        <div className="container-2">
           <div className="Dashboard-Center is-Responsive">
             <div className="invitationBox">
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/DFvGiCBF68w8PzGwf.jpeg"
+                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/sDp4HjBHwSKDxmq4s.jpeg"
                 className="dashboardImage"
               />
             </div>
             <div className="form-group">
               <button
                 type="button"
-                className="loginbtn  btn-def btn-block textboxTransparent"
+                className="loginbtn  btn-def btn-block textboxTransparent login-btn-ab"
                 style={{ fontSize: "18px" }}
                 onClick={() => {
                   browserHistory.push("/menus");

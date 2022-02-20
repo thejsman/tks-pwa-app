@@ -156,11 +156,11 @@ class dashboard extends React.Component {
             />
           </div>
         </div>
-        <div className="container">
+        <div className="container-2">
           <div className="Dashboard-Center Dashboard-Center-welcome Dashboard-Center-welcome  is-Responsive">
             <div className="invitationBox">
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/DFvGiCBF68w8PzGwf.jpeg"
+                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/sDp4HjBHwSKDxmq4s.jpeg"
                 className="dashboardImage"
               />
             </div>
