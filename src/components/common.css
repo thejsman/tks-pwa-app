@@ -650,17 +650,18 @@ ul.alice-carousel__dots {
 
 .login_section {
   position: relative;
-  bottom: -120px;
+  bottom: -100px;
   width: 100%;
+  overflow: hidden;
 }
 
 .login_section img {
   border-bottom: 0px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .login_section form {
   background-color: #f16f21;
   padding: 20px 25px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
