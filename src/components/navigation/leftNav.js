@@ -5,7 +5,7 @@ import {
   getEventName,
   getGuestId,
   getPopupdata,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -36,7 +36,7 @@ class leftNav extends React.Component {
       display: "none",
       leftNav: "block",
       welcomeData: cloneDeep(props.welcomeData),
-      appDetails: cloneDeep(props.appDetails)
+      appDetails: cloneDeep(props.appDetails),
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -209,7 +209,7 @@ class leftNav extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Chat Option") {
                   return (
                     <div
@@ -242,7 +242,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "About") {
                 return (
                   <div>
@@ -277,7 +277,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Destination") {
                 return (
                   <div
@@ -331,7 +331,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Travel Details") {
                 return (
                   <div
@@ -383,7 +383,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Contact Details") {
                 return (
                   <div
@@ -467,7 +467,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "About") {
                 return (
                   <li>
@@ -514,7 +514,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Destination") {
                 return (
                   <li
@@ -551,7 +551,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Itinerary") {
                 return (
                   <li
@@ -563,7 +563,7 @@ class leftNav extends React.Component {
                         <span className="icon-itinerary commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
-                        ITINERARY
+                        AGENDA
                       </p>
                     </div>
                   </li>
@@ -583,25 +583,8 @@ class leftNav extends React.Component {
 
           {appdet &&
             appdet.appDetails &&
-            appdet.appDetails.selectedAppGuestInfo && (
-              <li
-                onClick={this.selectedMenu.bind(this)}
-                data-menu="/myInformation"
-              >
-                <div className="expMenudiv">
-                  <div className="icon-div" style={{ float: "left" }}>
-                    <span className="icon-my-info commonIcon icon-white iconp" />
-                  </div>
-                  <p className="menuName" style={{ float: "left" }}>
-                    MY INFORMATION
-                  </p>
-                </div>
-              </li>
-            )}
-          {appdet &&
-            appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Travel Details") {
                 return (
                   <li
@@ -736,7 +719,7 @@ class leftNav extends React.Component {
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map(list => {
+            appdet.appDetails.selectedAppDetails.map((list) => {
               if (list === "Contact Details") {
                 return (
                   <li
@@ -791,7 +774,7 @@ function mapStateToProps(state) {
     guestId: getGuestId(state),
     popDetails: getPopupdata(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 export default connect(mapStateToProps)(leftNav);

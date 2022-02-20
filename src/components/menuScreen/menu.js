@@ -4,7 +4,7 @@ import {
   getEventName,
   getGuestId,
   getEventId,
-  getWelcomeDetails
+  getWelcomeDetails,
 } from "../../selectors";
 import { fetchWelcomeDetails } from "../../api/welcomeApi";
 import { connect } from "react-redux";
@@ -30,7 +30,7 @@ class Menu extends React.Component {
       appDetails: cloneDeep(props.appDetails),
       showIosPWABanner: false,
       showAndroidPWADownload: false,
-      downloadAndroidPWA: false
+      downloadAndroidPWA: false,
     };
     if (checkIsUserLoggedIn() === "false" || checkIsUserLoggedIn() != "true") {
       browserHistory.push("/");
@@ -79,7 +79,7 @@ class Menu extends React.Component {
     if (window.matchMedia("(display-mode: standalone)").matches) {
       this.setState({
         showAndroidPWADownload: false,
-        showIosPWABanner: false
+        showIosPWABanner: false,
       });
     }
   }
@@ -177,7 +177,8 @@ class Menu extends React.Component {
     return (
       <div className="categories">
         <h3 className="coupleName appBodyFontColor appNavbarFontFamily headingTop headingTopSize">
-          {AppTItle}
+          {/* {AppTItle} */}
+          &nbsp;
         </h3>
         <div className="container categoriesItem">
           <ul id="iconContainer" className="category-items">
@@ -206,10 +207,53 @@ class Menu extends React.Component {
                 WELCOME
               </p>
             </li>
+
+            {this.hasFeature("Sponsors") ? (
+              <li>
+                <div
+                  className="fa fa-star bigIcon icon-white"
+                  onClick={() => {
+                    browserHistory.push("/sponsors");
+                  }}
+                />
+                <p className="iconName appBodyFontFamily appBodyFontColor">
+                  BANGALORE
+                </p>
+              </li>
+            ) : null}
+
+            {appdet &&
+              appdet.appDetails &&
+              appdet.appDetails.selectedAppGuestInfo && (
+                <li>
+                  <div
+                    className="icon-my-info bigIcon icon-white"
+                    onClick={() => {
+                      browserHistory.push("/myInformation");
+                    }}
+                  />
+                  <p className="iconName appBodyFontFamily appBodyFontColor">
+                    MY PROFILE
+                  </p>
+                </li>
+              )}
+
+            <li>
+              <div
+                className="icon-event-details bigIcon  icon-white"
+                onClick={() => {
+                  browserHistory.push("/eventDetails");
+                }}
+              />
+              <p className="iconName appBodyFontFamily appBodyFontColor">
+                EVENT DETAILS
+              </p>
+            </li>
+
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "About") {
                   return (
                     <li>
@@ -298,22 +342,11 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  ITINERARY
+                  AGENDA
                 </p>
               </li>
             ) : null}
 
-            <li>
-              <div
-                className="icon-event-details bigIcon  icon-white"
-                onClick={() => {
-                  browserHistory.push("/eventDetails");
-                }}
-              />
-              <p className="iconName appBodyFontFamily appBodyFontColor">
-                EVENT DETAILS
-              </p>
-            </li>
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
@@ -328,38 +361,10 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-            {this.hasFeature("Sponsors") ? (
-              <li>
-                <div
-                  className="fa fa-star bigIcon icon-white"
-                  onClick={() => {
-                    browserHistory.push("/sponsors");
-                  }}
-                />
-                <p className="iconName appBodyFontFamily appBodyFontColor">
-                  SPONSORS
-                </p>
-              </li>
-            ) : null}
-            {appdet &&
-              appdet.appDetails &&
-              appdet.appDetails.selectedAppGuestInfo && (
-                <li>
-                  <div
-                    className="icon-my-info bigIcon icon-white"
-                    onClick={() => {
-                      browserHistory.push("/myInformation");
-                    }}
-                  />
-                  <p className="iconName appBodyFontFamily appBodyFontColor">
-                    MY INFORMATION
-                  </p>
-                </li>
-              )}
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Travel Details") {
                   return (
                     <li>
@@ -390,6 +395,20 @@ class Menu extends React.Component {
                 </p>
               </li>
             ) : null}
+            {this.hasFeature("downloads") ? (
+              <li>
+                <div
+                  className="fa fa-download bigIcon  icon-white"
+                  onClick={() => {
+                    browserHistory.push(`/${DOWNLOADS.BASE_PATH}`);
+                  }}
+                />
+                <p className="iconName appBodyFontFamily appBodyFontColor">
+                  E-DOCS
+                </p>
+              </li>
+            ) : null}
+
             <li>
               <div
                 className="icon-my-summary bigIcon icon-white"
@@ -411,25 +430,10 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  PHOTO SHARING
+                  ACTIVITY
                 </p>
               </li>
             ) : null}
-
-            {this.hasFeature("downloads") ? (
-              <li>
-                <div
-                  className="fa fa-download bigIcon  icon-white"
-                  onClick={() => {
-                    browserHistory.push(`/${DOWNLOADS.BASE_PATH}`);
-                  }}
-                />
-                <p className="iconName appBodyFontFamily appBodyFontColor">
-                  E-DOCS
-                </p>
-              </li>
-            ) : null}
-
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.featureFeedbackType !== "none" && (
@@ -484,7 +488,7 @@ class Menu extends React.Component {
             {appdet &&
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map(list => {
+              appdet.appDetails.selectedAppDetails.map((list) => {
                 if (list === "Contact Details") {
                   return (
                     <li>
@@ -526,7 +530,7 @@ function mapStateToProps(state) {
     eventId: getEventId(state),
     guestId: getGuestId(state),
     appDetails: getAppDetails(state),
-    welcomeData: getWelcomeDetails(state)
+    welcomeData: getWelcomeDetails(state),
   };
 }
 
