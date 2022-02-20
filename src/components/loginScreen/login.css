@@ -41,7 +41,8 @@
   background-image: url("../../assets/images/loginIcom.jpg");
 }
 .textboxTransparent {
-  background: white;
+  /* background: white; */
+  align-items: center;
   border: 1px solid var(--font-color) !important;
   text-align: center;
 }

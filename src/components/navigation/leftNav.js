@@ -237,8 +237,77 @@ class leftNav extends React.Component {
             data-menu="/welcome"
             data-isexapaned="false"
           >
-            <span className="icon-handshake commonIcon icon-white" />
+            <span className="icon-handshake-2 commonIcon icon-white" />
           </div>
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/sponsors"
+            data-isexapaned="false"
+          >
+            <span className="icon-destination-2 commonIcon icon-white" />
+          </div>
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/myInformation"
+            data-isexapaned="false"
+          >
+            <span className="icon-my-profile commonIcon icon-white" />
+          </div>
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/eventDetails"
+          >
+            <span className="icon-event-details-2 commonIcon icon-white" />
+          </div>
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/itinerary"
+          >
+            <span className="icon-itinerary-2 commonIcon icon-white" />
+          </div>
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/covid-info"
+          >
+            <span className="icon-covid commonIcon icon-white" />
+          </div>
+
+          {this.hasFeature("downloads") ? (
+            <div
+              className="icon-div"
+              onClick={this.selectedMenu.bind(this)}
+              data-menu={`/${DOWNLOADS.BASE_PATH}`}
+            >
+              <span className="icon-edocs  commonIcon icon-white" />
+            </div>
+          ) : null}
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/mySummary"
+          >
+            <span className="icon-my-summary-2 commonIcon icon-white" />
+          </div>
+
+          <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/contactUs"
+          >
+            <span className="icon-contact-us-2 commonIcon icon-white" />
+          </div>
+
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
@@ -307,26 +376,15 @@ class leftNav extends React.Component {
               onClick={this.selectedMenu.bind(this)}
               data-menu={`/${PHOTOS.BASE_PATH}`}
             >
-              <span className="fa fa-camera commonIcon icon-white" />
+              <span className="icon-camera-2  commonIcon icon-white" />
             </div>
           ) : null}
-
-          {this.hasFeature("downloads") ? (
-            <div
-              className="icon-div"
-              onClick={this.selectedMenu.bind(this)}
-              data-menu={`/${DOWNLOADS.BASE_PATH}`}
-            >
-              <span className="fa fa-download commonIcon icon-white" />
-            </div>
-          ) : null}
-
           <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
-            data-menu="/myInformation"
+            data-menu="/feedback"
           >
-            <span className="icon-my-info commonIcon icon-white" />
+            <span className="icon-feedback-2 commonIcon icon-white" />
           </div>
           {appdet &&
             appdet.appDetails &&
@@ -343,25 +401,8 @@ class leftNav extends React.Component {
                   </div>
                 );
               }
-              if (list === "Itinerary") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/itinerary"
-                  >
-                    <span className="icon-itinerary commonIcon icon-white" />
-                  </div>
-                );
-              }
             })}
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/eventDetails"
-          >
-            <span className="icon-event-details commonIcon icon-white" />
-          </div>
+
           {this.preferenceExist() ? (
             <div
               className="icon-div"
@@ -375,57 +416,9 @@ class leftNav extends React.Component {
           <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
-            data-menu="/mySummary"
-          >
-            <span className="icon-my-summary commonIcon icon-white" />
-          </div>
-
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.selectedAppDetails &&
-            appdet.appDetails.selectedAppDetails.map((list) => {
-              if (list === "Contact Details") {
-                return (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/contactUs"
-                  >
-                    {" "}
-                    <span className="icon-contact-us commonIcon icon-white" />
-                  </div>
-                );
-              }
-            })}
-          {appdet &&
-            appdet.appDetails &&
-            appdet.appDetails.featureFeedbackType !== "none" && (
-              <React.Fragment>
-                {feedback ? (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/feedback"
-                  >
-                    <span className="icon-wishes commonIcon icon-white" />
-                  </div>
-                ) : (
-                  <div
-                    className="icon-div"
-                    onClick={this.selectedMenu.bind(this)}
-                    data-menu="/wishes"
-                  >
-                    <span className="icon-wishes commonIcon icon-white" />
-                  </div>
-                )}
-              </React.Fragment>
-            )}
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
             data-menu="/legal"
           >
-            <span className="icon-legal commonIcon icon-white" />
+            <span className="icon-legal commonIcon icon-white circle" />
           </div>
           {welcomeData &&
             ((welcomeData.facebookLink &&
@@ -443,7 +436,7 @@ class leftNav extends React.Component {
               </div>
             )}
           <div className="icon-div" onClick={this.openLogoutScreen}>
-            <span className="icon-log-out commonIcon icon-white" />
+            <span className="icon-log-out commonIcon icon-white circle" />
           </div>
         </div>
         <ul
@@ -457,14 +450,37 @@ class leftNav extends React.Component {
           >
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
-                <span className="icon-handshake commonIcon icon-white iconp" />
+                <span className="icon-handshake-2 commonIcon icon-white iconp" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
                 WELCOME
               </p>
             </div>
           </li>
-          {appdet &&
+
+          <li onClick={this.selectedMenu.bind(this)} data-menu="/sponsors">
+            <div className="expMenudiv">
+              <div className="icon-div" style={{ float: "left" }}>
+                <span className="icon-destination-2 commonIcon icon-white iconp" />
+              </div>
+              <p className="menuName" style={{ float: "left" }}>
+                BANGALORE
+              </p>
+            </div>
+          </li>
+
+          <li onClick={this.selectedMenu.bind(this)} data-menu="/myInformation">
+            <div className="expMenudiv">
+              <div className="icon-div" style={{ float: "left" }}>
+                <span className="icon-my-profile commonIcon icon-white iconp" />
+              </div>
+              <p className="menuName" style={{ float: "left" }}>
+                MY PROFILE
+              </p>
+            </div>
+          </li>
+
+          {/* {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
             appdet.appDetails.selectedAppDetails.map((list) => {
@@ -510,8 +526,8 @@ class leftNav extends React.Component {
                   </li>
                 );
               }
-            })}
-          {appdet &&
+            })} */}
+          {/* {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
             appdet.appDetails.selectedAppDetails.map((list) => {
@@ -547,7 +563,18 @@ class leftNav extends React.Component {
                   </li>
                 );
               }
-            })}
+            })} */}
+
+          <li onClick={this.selectedMenu.bind(this)} data-menu="/eventDetails">
+            <div className="expMenudiv">
+              <div className="icon-div" style={{ float: "left" }}>
+                <span className="icon-event-details-2 commonIcon icon-white iconp" />
+              </div>
+              <p className="menuName" style={{ float: "left" }}>
+                EVENT DETAILS
+              </p>
+            </div>
+          </li>
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
@@ -560,7 +587,7 @@ class leftNav extends React.Component {
                   >
                     <div className="expMenudiv">
                       <div className="icon-div" style={{ float: "left" }}>
-                        <span className="icon-itinerary commonIcon icon-white iconp" />
+                        <span className="icon-itinerary-2 commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
                         AGENDA
@@ -570,16 +597,33 @@ class leftNav extends React.Component {
                 );
               }
             })}
-          <li onClick={this.selectedMenu.bind(this)} data-menu="/eventDetails">
+
+          <li onClick={this.selectedMenu.bind(this)} data-menu="/covid-info">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
-                <span className="icon-event-details commonIcon icon-white iconp" />
+                <span className="icon-covid commonIcon icon-white iconp" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
-                EVENT DETAILS
+                COVID-19
               </p>
             </div>
           </li>
+
+          {this.hasFeature("downloads") ? (
+            <li
+              onClick={this.selectedMenu.bind(this)}
+              data-menu={`/${DOWNLOADS.BASE_PATH}`}
+            >
+              <div className="expMenudiv">
+                <div className="icon-div" style={{ float: "left" }}>
+                  <span className="icon-edocs commonIcon icon-white iconp" />
+                </div>
+                <p className="menuName" style={{ float: "left" }}>
+                  E-DOCS
+                </p>
+              </div>
+            </li>
+          ) : null}
 
           {appdet &&
             appdet.appDetails &&
@@ -623,7 +667,7 @@ class leftNav extends React.Component {
           <li onClick={this.selectedMenu.bind(this)} data-menu="/mySummary">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
-                <span className="icon-my-summary commonIcon icon-white iconp" />
+                <span className="icon-my-summary-2 commonIcon icon-white iconp" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
                 MY SUMMARY
@@ -638,26 +682,10 @@ class leftNav extends React.Component {
             >
               <div className="expMenudiv">
                 <div className="icon-div" style={{ float: "left" }}>
-                  <span className="fa fa-camera commonIcon icon-white iconp" />
+                  <span className="icon-camera-2 commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName" style={{ float: "left" }}>
-                  PHOTO SHARE
-                </p>
-              </div>
-            </li>
-          ) : null}
-
-          {this.hasFeature("downloads") ? (
-            <li
-              onClick={this.selectedMenu.bind(this)}
-              data-menu={`/${DOWNLOADS.BASE_PATH}`}
-            >
-              <div className="expMenudiv">
-                <div className="icon-div" style={{ float: "left" }}>
-                  <span className="fa fa-download commonIcon icon-white iconp" />
-                </div>
-                <p className="menuName" style={{ float: "left" }}>
-                  E-DOCS
+                  ACTIVITY
                 </p>
               </div>
             </li>
@@ -674,7 +702,7 @@ class leftNav extends React.Component {
                   >
                     <div className="expMenudiv">
                       <div className="icon-div" style={{ float: "left" }}>
-                        <span className="icon-wishes commonIcon icon-white iconp" />
+                        <span className="icon-feedback-2 commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
                         FEEDBACK
@@ -728,7 +756,7 @@ class leftNav extends React.Component {
                   >
                     <div className="expMenudiv">
                       <div className="icon-div" style={{ float: "left" }}>
-                        <span className="icon-contact-us commonIcon icon-white iconp" />
+                        <span className="icon-contact-us-2 commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
                         CONTACT US
@@ -742,7 +770,7 @@ class leftNav extends React.Component {
           <li onClick={this.selectedMenu.bind(this)} data-menu="/legal">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
-                <span className="icon-legal commonIcon icon-white iconp" />
+                <span className="icon-legal commonIcon icon-white iconp circle" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
                 LEGAL
@@ -753,7 +781,7 @@ class leftNav extends React.Component {
           <li onClick={this.openLogoutScreen}>
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
-                <span className="icon-log-out commonIcon icon-white iconp" />
+                <span className="icon-log-out commonIcon icon-white iconp circle" />
               </div>
               <p className="menuName" style={{ float: "left" }}>
                 LOGOUT

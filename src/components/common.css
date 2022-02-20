@@ -673,3 +673,7 @@ ul.alice-carousel__dots {
 .circle {
   border: 1px solid #5b5b5b;
 }
+.special-login {
+  background-color: #0a2b53;
+  color: white !important;
+}

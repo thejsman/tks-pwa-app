@@ -110,7 +110,7 @@ class login extends React.Component {
               </div>
               <div className="form-group">
                 <button
-                  className="loginbtn  btn-def btn-block textboxTransparent"
+                  className="loginbtn  btn-def btn-block textboxTransparent special-login"
                   style={{ fontSize: "22px" }}
                   onClick={this.handleSubmit.bind(this)}
                 >
