@@ -35,7 +35,7 @@ class Itinerary extends Component {
     $("html").scrollTop(0);
 
     if (isMobile) {
-      $("#spanHeaderText").html("Itinerary");
+      $("#spanHeaderText").html("Agenda");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
