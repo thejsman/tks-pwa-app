@@ -601,3 +601,46 @@ ul.alice-carousel__dots {
 .table th {
   padding: 0.6rem;
 }
+
+/* Homescreen Icons */
+
+.icon-handshake-2 {
+  background-image: url("/homescreen/welcome.svg");
+}
+
+.icon-destination-2 {
+  background-image: url("/homescreen/destination.svg");
+}
+.icon-event-details-2 {
+  background-image: url("/homescreen/event-details.svg");
+}
+
+.icon-feedback-2 {
+  background-image: url("/homescreen/feedback.svg");
+}
+.icon-contact-us-2 {
+  background-image: url("/homescreen/contact-us.svg");
+}
+
+.icon-itinerary-2 {
+  background-image: url("/homescreen/itinerary.svg");
+}
+.icon-my-profile {
+  background-image: url("/homescreen/profile.svg");
+}
+
+.icon-my-summary-2 {
+  background-image: url("/homescreen/my-summary.svg");
+}
+.icon-camera-2 {
+  background-image: url("/homescreen/photo-sharing.svg");
+}
+
+.icon-edocs {
+  background-image: url("/homescreen/edocs.svg");
+}
+
+.bigIcon {
+  background-size: cover;
+  background-color: #fff;
+}

@@ -187,7 +187,7 @@ class Menu extends React.Component {
                 appdet.basicDetails &&
                 appdet.basicDetails.eventType === "wedding" && (
                   <div
-                    className="icon-namaste bigIcon  icon-white"
+                    className="icon-namaste-2 bigIcon  icon-white"
                     onClick={() => {
                       browserHistory.push("/welcome");
                     }}
@@ -197,7 +197,7 @@ class Menu extends React.Component {
                 appdet.basicDetails &&
                 appdet.basicDetails.eventType !== "wedding" && (
                   <div
-                    className="icon-handshake bigIcon  icon-white"
+                    className="icon-handshake-2 bigIcon  icon-white"
                     onClick={() => {
                       browserHistory.push("/welcome");
                     }}
@@ -211,7 +211,7 @@ class Menu extends React.Component {
             {this.hasFeature("Sponsors") ? (
               <li>
                 <div
-                  className="fa fa-star bigIcon icon-white"
+                  className="icon-destination-2 bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/sponsors");
                   }}
@@ -227,7 +227,7 @@ class Menu extends React.Component {
               appdet.appDetails.selectedAppGuestInfo && (
                 <li>
                   <div
-                    className="icon-my-info bigIcon icon-white"
+                    className="icon-my-profile bigIcon icon-white"
                     onClick={() => {
                       browserHistory.push("/myInformation");
                     }}
@@ -240,7 +240,7 @@ class Menu extends React.Component {
 
             <li>
               <div
-                className="icon-event-details bigIcon  icon-white"
+                className="icon-event-details-2 bigIcon  icon-white"
                 onClick={() => {
                   browserHistory.push("/eventDetails");
                 }}
@@ -250,47 +250,6 @@ class Menu extends React.Component {
               </p>
             </li>
 
-            {appdet &&
-              appdet.appDetails &&
-              appdet.appDetails.selectedAppDetails &&
-              appdet.appDetails.selectedAppDetails.map((list) => {
-                if (list === "About") {
-                  return (
-                    <li>
-                      {appdet &&
-                        appdet.basicDetails &&
-                        appdet.basicDetails.eventType === "wedding" && (
-                          <div>
-                            <div
-                              className="icon-bride-and-groom bigIcon  icon-white"
-                              onClick={() => {
-                                browserHistory.push("/about2");
-                              }}
-                            />
-                            <p className="iconName appBodyFontFamily appBodyFontColor">
-                              BRIDE & GROOM
-                            </p>
-                          </div>
-                        )}
-                      {appdet &&
-                        appdet.basicDetails &&
-                        appdet.basicDetails.eventType !== "wedding" && (
-                          <div>
-                            <div
-                              className="icon-manager bigIcon icon-white"
-                              onClick={() => {
-                                browserHistory.push("/about2");
-                              }}
-                            />
-                            <p className="iconName appBodyFontFamily appBodyFontColor">
-                              ABOUT
-                            </p>
-                          </div>
-                        )}
-                    </li>
-                  );
-                }
-              })}
             {this.hasFeature("Destination") ? (
               <li>
                 <div
@@ -319,24 +278,10 @@ class Menu extends React.Component {
             </li> */}
             {/* My Purchases section - END */}
 
-            {this.hasFeature("RSVP") ? (
-              <li>
-                <div
-                  className="icon-rsvp-and-registration bigIcon icon-white"
-                  onClick={() => {
-                    browserHistory.push("/rsvp");
-                  }}
-                />
-                <p className="iconName appBodyFontFamily appBodyFontColor">
-                  {rsvp_name}
-                </p>
-              </li>
-            ) : null}
-
             {this.hasFeature("Itinerary") ? (
               <li>
                 <div
-                  className="icon-itinerary bigIcon  icon-white"
+                  className="icon-itinerary-2 bigIcon  icon-white"
                   onClick={() => {
                     browserHistory.push("/itinerary");
                   }}
@@ -398,7 +343,7 @@ class Menu extends React.Component {
             {this.hasFeature("downloads") ? (
               <li>
                 <div
-                  className="fa fa-download bigIcon  icon-white"
+                  className="icon-edocs bigIcon  icon-white"
                   onClick={() => {
                     browserHistory.push(`/${DOWNLOADS.BASE_PATH}`);
                   }}
@@ -411,7 +356,7 @@ class Menu extends React.Component {
 
             <li>
               <div
-                className="icon-my-summary bigIcon icon-white"
+                className="icon-my-summary-2 bigIcon icon-white"
                 onClick={() => {
                   browserHistory.push("/mySummary");
                 }}
@@ -424,7 +369,7 @@ class Menu extends React.Component {
             {this.hasFeature("photoShare") ? (
               <li>
                 <div
-                  className="fa fa-camera bigIcon  icon-white"
+                  className="icon-camera-2 bigIcon  icon-white"
                   onClick={() => {
                     browserHistory.push(`/${PHOTOS.BASE_PATH}`);
                   }}
@@ -441,7 +386,7 @@ class Menu extends React.Component {
                   {feedback ? (
                     <li>
                       <div
-                        className="icon-wishes bigIcon icon-white"
+                        className="icon-feedback-2 bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/feedback");
                         }}
@@ -453,7 +398,7 @@ class Menu extends React.Component {
                   ) : (
                     <li>
                       <div
-                        className="icon-wishes bigIcon icon-white"
+                        className="icon-feedback-2 bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/wishes");
                         }}
@@ -493,7 +438,7 @@ class Menu extends React.Component {
                   return (
                     <li>
                       <div
-                        className="icon-contact-us bigIcon icon-white"
+                        className="icon-contact-us-2 bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/contactUs");
                         }}
