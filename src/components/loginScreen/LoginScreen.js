@@ -21,7 +21,7 @@ class login extends React.Component {
       browserHistory.push("/menus");
     }
     this.state = {
-      appDetails: cloneDeep(props.appDetails)
+      appDetails: cloneDeep(props.appDetails),
     };
   }
 
@@ -35,7 +35,7 @@ class login extends React.Component {
       let appDetails = cloneDeep(nextProps.appDetails);
       this.setState({ appDetails: appDetails });
     }
-    $(".toggle-password").click(function() {
+    $(".toggle-password").click(function () {
       $(this).toggleClass("fa-eye fa-eye-slash");
       var input = $($(this).attr("toggle"));
       input.toggleClass("password-mask");
@@ -63,47 +63,54 @@ class login extends React.Component {
       <div className="container">
         <Popup />
         <div className="Absolute-Center is-Responsive">
-          <div className="appLogo logo" />
           <h1 className="nameHeading appBodyFontColor appBodyFontFamily">
-            {AppTItle}
+            {/* {AppTItle} */}
           </h1>
-          <form id="loginForm">
-            <div className="form-group input-group">
-              <input
-                autoFocus
-                ref="username"
-                className="textboxTransparent loginText"
-                type="text"
-                name="username"
-                placeholder="Email ID"
-                value={guestLoginEmail}
-              />
-            </div>
-            <div className="form-group input-group">
-              <input
-                id="password-field"
-                ref="password"
-                className="textboxTransparent loginText password-mask"
-                type="number"
-                name="password"
-                placeholder="Password"
-                value={guestAccessCode}
-              />
-              <span
-                toggle="#password-field"
-                className="fa fa-fw fa-eye field-icon toggle-password"
-              />
-            </div>
-            <div className="form-group">
-              <button
-                className="loginbtn  btn-def btn-block textboxTransparent"
-                style={{ fontSize: "22px" }}
-                onClick={this.handleSubmit.bind(this)}
-              >
-                SIGN IN
-              </button>
-            </div>
-          </form>
+          <div className="login_section">
+            <div className="appLogo logo" />
+            <img
+              className="img-fluid"
+              src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/RQi98DGCYX6Mqn975.png"
+              alt=""
+            />
+            <form id="loginForm">
+              <div className="form-group input-group">
+                <input
+                  autoFocus
+                  ref="username"
+                  className="textboxTransparent loginText"
+                  type="text"
+                  name="username"
+                  placeholder="User ID"
+                  value={guestLoginEmail}
+                />
+              </div>
+              <div className="form-group input-group">
+                <input
+                  id="password-field"
+                  ref="password"
+                  className="textboxTransparent loginText password-mask"
+                  type="number"
+                  name="password"
+                  placeholder="Passcode"
+                  value={guestAccessCode}
+                />
+                {/* <span
+                  toggle="#password-field"
+                  className="fa fa-fw fa-eye field-icon toggle-password"
+                /> */}
+              </div>
+              <div className="form-group">
+                <button
+                  className="loginbtn  btn-def btn-block textboxTransparent"
+                  style={{ fontSize: "22px" }}
+                  onClick={this.handleSubmit.bind(this)}
+                >
+                  LOGIN
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
@@ -112,7 +119,7 @@ class login extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    appDetails: getAppDetails(state)
+    appDetails: getAppDetails(state),
   };
 }
 

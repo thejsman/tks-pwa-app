@@ -41,7 +41,7 @@
   background-image: url("../../assets/images/loginIcom.jpg");
 }
 .textboxTransparent {
-  background: transparent !important;
+  background: white;
   border: 1px solid var(--font-color) !important;
   text-align: center;
 }
@@ -51,7 +51,7 @@
   margin-left: auto !important;
   margin-right: auto !important;
   font-size: 22px;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 .textboxTransparent.loginText:focus {
   border-image: linear-gradient(to right, #d46565, #5a9117 100%);
@@ -65,7 +65,7 @@
 }
 .textboxTransparent {
   color: var(--font-color) !important;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 ::placeholder {
   color: var(--font-color) !important;
@@ -143,7 +143,9 @@
     padding: 0px 20px !important;
     font-size: 14px !important;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
+    color: white !important;
+    background-color: #002b53 !important;
   }
 
   .nameHeading {
