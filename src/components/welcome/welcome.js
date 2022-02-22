@@ -8,7 +8,7 @@ import $ from "jquery";
 import { checkIsUserLoggedIn } from "../../api/storageAPI";
 import { browserHistory } from "react-router";
 import { isMobile, AppTItle, AppShortName } from "../../config/config.js";
-import welcomeImage from "../../assets/images/WelcomeLetter2.jpeg";
+import welcomeImg from "../../assets/images/WelcomeLetter2.jpeg";
 import Linkify from "react-linkify";
 
 class dashboard extends React.Component {
@@ -162,7 +162,7 @@ class dashboard extends React.Component {
             <div className="invitationBox">
               <img
                 // src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/sDp4HjBHwSKDxmq4s.jpeg"
-                src={welcomeImage}
+                src={welcomeImg}
                 className="dashboardImage"
               />
             </div>
