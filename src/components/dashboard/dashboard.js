@@ -16,7 +16,7 @@ import cloneDeep from "lodash/cloneDeep";
 import "../../config/config.js";
 import $ from "jquery";
 import { checkIsUserLoggedIn } from "../../api/storageAPI";
-import welcomeImg from "../../assets/images/WelcomeLetter2.jpeg";
+// import welcomeImg from "../../assets/images/WelcomeLetter2.jpeg";
 
 import Linkify from "react-linkify";
 
@@ -183,7 +183,8 @@ class dashboard extends React.Component {
             <div className="invitationBox">
               <img
                 // src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/sDp4HjBHwSKDxmq4s.jpeg"
-                src={welcomeImg}
+                // src={welcomeImg}
+                src="https://www.linkpicture.com/q/WelcomeLetter2.jpeg"
                 className="dashboardImage"
               />
             </div>
