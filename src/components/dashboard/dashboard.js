@@ -16,6 +16,8 @@ import cloneDeep from "lodash/cloneDeep";
 import "../../config/config.js";
 import $ from "jquery";
 import { checkIsUserLoggedIn } from "../../api/storageAPI";
+import welcomeImage from "../../assets/images/WelcomeLetter2.jpeg";
+
 import Linkify from "react-linkify";
 
 class dashboard extends React.Component {
@@ -180,7 +182,8 @@ class dashboard extends React.Component {
           <div className="Dashboard-Center is-Responsive">
             <div className="invitationBox">
               <img
-                src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/sDp4HjBHwSKDxmq4s.jpeg"
+                // src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/sDp4HjBHwSKDxmq4s.jpeg"
+                src={welcomeImage}
                 className="dashboardImage"
               />
             </div>
