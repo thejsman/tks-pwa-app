@@ -258,13 +258,15 @@ class leftNav extends React.Component {
             <span className="icon-my-profile commonIcon icon-white" />
           </div>
 
-          <div
+          
+          {/* commented - paritosh */}
+          {/* <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
             data-menu="/eventDetails"
           >
             <span className="icon-event-details-2 commonIcon icon-white" />
-          </div>
+          </div> */}
 
           <div
             className="icon-div"
@@ -274,13 +276,14 @@ class leftNav extends React.Component {
             <span className="icon-itinerary-2 commonIcon icon-white" />
           </div>
 
-          <div
+          {/* commented - paritosh */}
+          {/* <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
             data-menu="/covid-info"
           >
             <span className="icon-covid commonIcon icon-white" />
-          </div>
+          </div> */}
 
           {this.hasFeature("downloads") ? (
             <div
@@ -565,7 +568,9 @@ class leftNav extends React.Component {
               }
             })} */}
 
-          <li onClick={this.selectedMenu.bind(this)} data-menu="/eventDetails">
+{/* Commented- Paritosh */}
+
+          {/* <li onClick={this.selectedMenu.bind(this)} data-menu="/eventDetails">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
                 <span className="icon-event-details-2 commonIcon icon-white iconp" />
@@ -574,7 +579,9 @@ class leftNav extends React.Component {
                 EVENT DETAILS
               </p>
             </div>
-          </li>
+          </li> */}
+ {/* Commented - Paritosh */}
+
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
@@ -598,7 +605,8 @@ class leftNav extends React.Component {
               }
             })}
 
-          <li onClick={this.selectedMenu.bind(this)} data-menu="/covid-info">
+          {/* commented - paritosh */}
+          {/* <li onClick={this.selectedMenu.bind(this)} data-menu="/covid-info">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
                 <span className="icon-covid commonIcon icon-white iconp" />
@@ -607,7 +615,7 @@ class leftNav extends React.Component {
                 COVID-19
               </p>
             </div>
-          </li>
+          </li> */}
 
           {this.hasFeature("downloads") ? (
             <li
@@ -619,7 +627,7 @@ class leftNav extends React.Component {
                   <span className="icon-edocs commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName" style={{ float: "left" }}>
-                  E-DOCS
+                TRAVEL DETAILS
                 </p>
               </div>
             </li>

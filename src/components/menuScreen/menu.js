@@ -238,7 +238,7 @@ class Menu extends React.Component {
                 </li>
               )}
 
-            <li>
+            {/* <li>
               <div
                 className="icon-event-details-2 bigIcon  icon-white"
                 onClick={() => {
@@ -248,7 +248,7 @@ class Menu extends React.Component {
               <p className="iconName appBodyFontFamily appBodyFontColor">
                 EVENT DETAILS
               </p>
-            </li>
+            </li> */}
 
             {this.hasFeature("Destination") ? (
               <li>
@@ -292,8 +292,8 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-            {/* COVID-INFO */}
-            <li>
+            {/* COVID-INFO * commented - paritosh/}
+            {/* <li>
               <div
                 className="icon-covid bigIcon icon-white"
                 onClick={() => {
@@ -303,7 +303,7 @@ class Menu extends React.Component {
               <p className="iconName appBodyFontFamily appBodyFontColor">
                 COVID-19
               </p>
-            </li>
+            </li> */}
 
             {this.hasFeature("Speakers") ? (
               <li>
@@ -362,7 +362,7 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  E-DOCS
+                TRAVEL DETAILS
                 </p>
               </li>
             ) : null}

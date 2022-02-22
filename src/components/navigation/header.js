@@ -373,14 +373,15 @@ class header extends React.Component {
               </div>
             </li>
 
-            <li onClick={this.toggleHidden.bind(this)} data-menu="eventDetails">
+{/* Commented - paritosh */}
+            {/* <li onClick={this.toggleHidden.bind(this)} data-menu="eventDetails">
               <div className="expMenudiv">
                 <div className="icon-div">
                   <span className="icon-event-details-2 commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName">EVENT DETAILS</p>
               </div>
-            </li>
+            </li> */}
 
             {appdet &&
               appdet.appDetails &&
@@ -483,14 +484,15 @@ class header extends React.Component {
                 }
               })}
 
-            <li onClick={this.toggleHidden.bind(this)} data-menu="covid-info">
+            {/* commented - paritosh */}
+            {/* <li onClick={this.toggleHidden.bind(this)} data-menu="covid-info">
               <div className="expMenudiv">
                 <div className="icon-div">
                   <span className="icon-covid commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName">COVID-19</p>
               </div>
-            </li>
+            </li> */}
 
             {appdet &&
               appdet.appDetails &&
@@ -542,7 +544,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-edocs commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">E-DOCS</p>
+                        <p className="menuName">TRAVEL DETAILS</p>
                       </div>
                     </li>
                   );

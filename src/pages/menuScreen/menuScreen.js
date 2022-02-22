@@ -116,10 +116,12 @@ class MenuScreen extends React.Component{
               }
             })
           }          
-          <MenuItem name="event details" icon="icon-event-details" link="eventDetails"/>
+          
+          {/* commented - paritosh */}
+          {/* <MenuItem name="event details" icon="icon-event-details" link="eventDetails"/>
           {appDetails && appDetails.featureDetails && appDetails.featureDetails.featureRSVPOption && appDetails.featureDetails.featureRSVPOption !== "RSVP Registration" &&
             <MenuItem name="rsvp" icon="icon-rsvp-and-registration" link="rsvp"/>
-          }
+          } */}
           {appDetails && appDetails.featureDetails && appDetails.featureDetails.featureRSVPOption && appDetails.featureDetails.featureRSVPOption === "RSVP Registration" &&
             <MenuItem name="registration" icon="icon-rsvp-and-registration" link="rsvp"/>
           }
