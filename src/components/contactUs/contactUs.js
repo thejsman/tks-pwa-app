@@ -24,7 +24,8 @@ class ContactUs extends Component {
     $('body').addClass('appContactBackground');
     fetchWelcomeDetails();
     if (isMobile) {
-      $("#spanHeaderText").html("Contact Us");
+      // $("#spanHeaderText").html("Contact Us");
+      $("#spanHeaderText").html("ABOVE & BEYOND");
       $(".notificationBell").show();
       $(".appLogo").hide()
       $(".chat").show();

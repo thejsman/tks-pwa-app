@@ -528,7 +528,7 @@ class Details extends React.Component {
               return (
                 <div className="informationScreenDivides appBodyFontFamily">
                   <div
-                    className="card-header myInformation-card-header appBodyFontColor appGradientColor  collapsed"
+                    className="card-header myInformation-card-header appBodyFontColor appGradientColor"
                     data-toggle="collapse"
                     href="#MEAL PREFERENCES"
                   >
@@ -540,7 +540,7 @@ class Details extends React.Component {
                   </div>
                   <div
                     id="MEAL PREFERENCES"
-                    className="card-body myInformation-card-body appGradientColor collapse"
+                    className="card-body myInformation-card-body appGradientColor"
                     data-parent="#accordion"
                   >
                     <div className="row">
@@ -567,6 +567,7 @@ class Details extends React.Component {
                     {defaultGuest && (
                       <div>
                         <div className="row">
+                          {/* commenting Guest title to add input field -Ps 
                           <div className="col-md-6">
                             <select
                               className="form-control form-control-color appBodyFontFamily appBodyFontColor"
@@ -595,7 +596,23 @@ class Details extends React.Component {
                             </select>
                           </div>
                           <div className="col-md-6"></div>
-                        </div>
+                         */}
+                         <div className="col-md-6">
+                            <input
+                              className="form-control form-control-color appBodyFontFamily appBodyFontColor"
+                              placeholder="Title"
+                              onChange={this.updateGuestDetail.bind(this)}
+                              name="guesttitle"
+                              type="Text"
+                              value={defaultGuest.guestTitle}
+                              id="guesttitle"
+                              tabIndex="1"
+                              disabled
+                            />
+                            <span id="ErrorName" style={{ color: "white" }} />
+                          </div>
+                         </div>
+
                         <div className="row">
                           <div className="col-md-6">
                             <input
@@ -607,6 +624,7 @@ class Details extends React.Component {
                               value={defaultGuest.guestFirstName}
                               id="guestFirstName"
                               tabIndex="1"
+                              disabled
                             />
                             <span id="ErrorName" style={{ color: "white" }} />
                           </div>
@@ -618,6 +636,7 @@ class Details extends React.Component {
                               placeholder="LAST NAME"
                               value={defaultGuest.guestLastName}
                               name="guestLastName"
+                              disabled
                               onChange={this.updateGuestDetail.bind(this)}
                             />
                             <span id="ErrorLName" style={{ color: "white" }} />
@@ -632,6 +651,7 @@ class Details extends React.Component {
                               placeholder="MOBILE"
                               value={defaultGuest.guestContactNo}
                               name="guestContactNo"
+                              disabled
                               onChange={this.updateGuestDetail.bind(this)}
                             />
                             <span id="NumberError" style={{ color: "white" }} />
@@ -646,6 +666,7 @@ class Details extends React.Component {
                               placeholder="EMAIL"
                               name="guestPersonalEmail"
                               value={defaultGuest.guestPersonalEmail}
+                              disabled
                               onChange={this.updateGuestDetail.bind(this)}
                             />
                             <span id="ErrorEmail" style={{ color: "white" }} />
@@ -715,7 +736,7 @@ class Details extends React.Component {
                           </div>
                         ) : null}
                         {this.state.photoField || photo ? null : (
-                          <div className="row">
+                          <div style={{display:"none"}} className="row">
                             <label
                               className="btn-bs-file Myaddress-btn-bs-file myInformationBtn"
                               id="photoLabel"
@@ -743,8 +764,8 @@ class Details extends React.Component {
                             <br />
                           </div>
                         )}
-                        <div className="row">
-                          <div className="update-info">Click 'SAVE'</div>
+                        <div style={{display:'none'}} className="row">
+                          <div style={{display:'none'}} className="update-info">Click 'SAVE'</div>
                           <button
                             className="myInformationBtn appBodyFontFamily appBodyFontColor btnSave"
                             onClick={this.savePersonalDetails.bind(this)}

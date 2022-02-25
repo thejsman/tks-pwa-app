@@ -1,7 +1,7 @@
 import React from "react";
 const Address = ({ familyMember, guestFamilyDetails, guestDetailHandler, airportList, countryList, saveDetails, getGuestFamilyDetail }) => {
     return (
-        <div className="informationScreenDivides appBodyFontFamily">
+        <div style={{display:"none"}} className="informationScreenDivides appBodyFontFamily">
             <div className="card-header myInformation-card-header appBodyFontColor appGradientColor collapsed" data-toggle="collapse"
                 data-parent="#accordion" href="# MERCHANDIZE SIZE">
                 <a className="card-title">

@@ -54,7 +54,8 @@ class TravelDetails extends Component {
     fetchGuestInformation(this.props.guestId || this.sessionGuestId, false);
     $('html').scrollTop(0);
     if (isMobile) {
-      $("#spanHeaderText").html("Travel Details");
+      // $("#spanHeaderText").html("Travel Details"); ABOVE & BEYOND
+      $("#spanHeaderText").html("ABOVE & BEYOND"); 
       $(".notificationBell").show();
       $(".appLogo").hide()
       $(".chat").show();

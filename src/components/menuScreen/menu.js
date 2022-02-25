@@ -367,7 +367,8 @@ class Menu extends React.Component {
               </li>
             ) : null}
 
-            <li>
+{/* removed my summary -ps */}
+            {/* <li>
               <div
                 className="icon-my-summary-2 bigIcon icon-white"
                 onClick={() => {
@@ -377,7 +378,7 @@ class Menu extends React.Component {
               <p className="iconName appBodyFontFamily appBodyFontColor">
                 MY SUMMARY
               </p>
-            </li>
+            </li> */}
 
             {this.hasFeature("photoShare") ? (
               <li>
@@ -388,7 +389,7 @@ class Menu extends React.Component {
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  ACTIVITY
+                  ENGAGEMENT
                 </p>
               </li>
             ) : null}

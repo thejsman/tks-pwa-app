@@ -18,7 +18,7 @@ const Header = props => {
             !params.subPath ? "active" : ""
           }`}
         >
-          FEATURED
+          HIGHLIGHTS
         </Link>
         <Link
           to={`/${PHOTOS.BASE_PATH}/${PHOTOS.SUB_PATH.GUESTS.toLowerCase()}`}
@@ -26,7 +26,7 @@ const Header = props => {
             params.subPath ? "active" : ""
           }`}
         >
-          GUEST SHARED
+          GALLERY
         </Link>
         {(props.guestId && props.changeLayout) && <DropDown changeLayout={props.changeLayout} column={column}/>}
       </div>

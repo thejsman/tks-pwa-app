@@ -19,7 +19,8 @@ class DropDown extends React.PureComponent {
   }
 
   render() {
-    $("#spanHeaderText").html("Activity");
+    // $("#spanHeaderText").html("Activity");
+    $("#spanHeaderText").html("ABOVE & BEYOND");
     // const grid = this.props.column === 1 ? 2 : this.props.column - 1;
     const grid = this.props.column === 3 ? 1 : 3;
     return (

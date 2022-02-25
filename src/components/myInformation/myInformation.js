@@ -59,7 +59,8 @@ class myInformation extends React.Component {
     this.sessionGuestId = localStorage.getItem("guestId");
     fetchGuestInformation(this.props.guestId || this.sessionGuestId, false);
     if (isMobile) {
-      $("#spanHeaderText").html("My Profile");
+      // $("#spanHeaderText").html("My Profile");
+      $("#spanHeaderText").html("ABOVE & BEYOND");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();

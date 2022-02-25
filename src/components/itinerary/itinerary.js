@@ -35,7 +35,8 @@ class Itinerary extends Component {
     $("html").scrollTop(0);
 
     if (isMobile) {
-      $("#spanHeaderText").html("Agenda");
+      //$("#spanHeaderText").html("Agenda"); ABOVE & BEYOND
+      $("#spanHeaderText").html("ABOVE & BEYOND"); 
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
@@ -175,6 +176,7 @@ class Itinerary extends Component {
                         : ""
                     }`}
                     key={itinerary._id}
+                    
                     onClick={this.getItineraryDetails.bind(this)}
                   >
                     {itinerary.date}
@@ -182,6 +184,7 @@ class Itinerary extends Component {
                 );
               })}
           </div>
+          {/* Top div Date tab for mobile view */}
           <div className="d-md-block d-lg-none d-xl-none destinationMobile">
             <div className="col-md-12 col-sm-12 col-xs-12 scrollMobile itinery">
               {itineraries &&
@@ -203,7 +206,9 @@ class Itinerary extends Component {
                 })}
             </div>
           </div>
+          {/* mobile view date tabs end */}
         </div>
+        {/* Itenary content under dates */}
         {defaultItinerary && (
           <div>
             <div className="row d-none d-sm-block itineraryCls">

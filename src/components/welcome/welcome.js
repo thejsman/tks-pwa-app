@@ -31,7 +31,8 @@ class dashboard extends React.Component {
     $("body").attr("class", "");
     $("body").addClass("appWelcomeBackground");
     if (isMobile) {
-      $("#spanHeaderText").html(pageTitle);
+      // $("#spanHeaderText").html(pageTitle);
+      $("#spanHeaderText").html("ABOVE & BEYOND");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();

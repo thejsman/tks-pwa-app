@@ -240,14 +240,15 @@ class leftNav extends React.Component {
             <span className="icon-handshake-2 commonIcon icon-white" />
           </div>
 
-          <div
+              {/* removed banglore from menu -Ps */}
+          {/* <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
             data-menu="/sponsors"
             data-isexapaned="false"
           >
             <span className="icon-destination-2 commonIcon icon-white" />
-          </div>
+          </div> */}
 
           <div
             className="icon-div"
@@ -295,21 +296,13 @@ class leftNav extends React.Component {
             </div>
           ) : null}
 
-          <div
+          {/* <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
             data-menu="/mySummary"
           >
             <span className="icon-my-summary-2 commonIcon icon-white" />
-          </div>
-
-          <div
-            className="icon-div"
-            onClick={this.selectedMenu.bind(this)}
-            data-menu="/contactUs"
-          >
-            <span className="icon-contact-us-2 commonIcon icon-white" />
-          </div>
+          </div> */}
 
           {appdet &&
             appdet.appDetails &&
@@ -382,13 +375,23 @@ class leftNav extends React.Component {
               <span className="icon-camera-2  commonIcon icon-white" />
             </div>
           ) : null}
+          
           <div
+            className="icon-div"
+            onClick={this.selectedMenu.bind(this)}
+            data-menu="/contactUs"
+          >
+            <span className="icon-contact-us-2 commonIcon icon-white" />
+          </div>
+          {/* removed feedback from menu -Ps */}
+          {/* <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
             data-menu="/feedback"
           >
             <span className="icon-feedback-2 commonIcon icon-white" />
-          </div>
+          </div> */}
+
           {appdet &&
             appdet.appDetails &&
             appdet.appDetails.selectedAppDetails &&
@@ -416,13 +419,14 @@ class leftNav extends React.Component {
             </div>
           ) : null}
 
-          <div
+{/* removed legal -Ps */}
+          {/* <div
             className="icon-div"
             onClick={this.selectedMenu.bind(this)}
             data-menu="/legal"
           >
             <span className="icon-legal commonIcon icon-white circle" />
-          </div>
+          </div> */}
           {welcomeData &&
             ((welcomeData.facebookLink &&
               typeof welcomeData.facebookLink != "undefined") ||
@@ -461,7 +465,8 @@ class leftNav extends React.Component {
             </div>
           </li>
 
-          <li onClick={this.selectedMenu.bind(this)} data-menu="/sponsors">
+          {/* removed banglore from menu -Ps */}
+          {/* <li onClick={this.selectedMenu.bind(this)} data-menu="/sponsors">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
                 <span className="icon-destination-2 commonIcon icon-white iconp" />
@@ -470,7 +475,7 @@ class leftNav extends React.Component {
                 BANGALORE
               </p>
             </div>
-          </li>
+          </li> */}
 
           <li onClick={this.selectedMenu.bind(this)} data-menu="/myInformation">
             <div className="expMenudiv">
@@ -672,7 +677,8 @@ class leftNav extends React.Component {
             </li>
           ) : null}
 
-          <li onClick={this.selectedMenu.bind(this)} data-menu="/mySummary">
+          {/* removed my summary -ps */}
+          {/* <li onClick={this.selectedMenu.bind(this)} data-menu="/mySummary">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
                 <span className="icon-my-summary-2 commonIcon icon-white iconp" />
@@ -681,7 +687,7 @@ class leftNav extends React.Component {
                 MY SUMMARY
               </p>
             </div>
-          </li>
+          </li> */}
 
           {this.hasFeature("photoShare") ? (
             <li
@@ -693,7 +699,7 @@ class leftNav extends React.Component {
                   <span className="icon-camera-2 commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName" style={{ float: "left" }}>
-                  ACTIVITY
+                  ENGAGEMENT
                 </p>
               </div>
             </li>
@@ -775,7 +781,8 @@ class leftNav extends React.Component {
               }
             })}
 
-          <li onClick={this.selectedMenu.bind(this)} data-menu="/legal">
+          {/* removed legal menu -Ps */}
+          {/* <li onClick={this.selectedMenu.bind(this)} data-menu="/legal">
             <div className="expMenudiv">
               <div className="icon-div" style={{ float: "left" }}>
                 <span className="icon-legal commonIcon icon-white iconp circle" />
@@ -784,7 +791,7 @@ class leftNav extends React.Component {
                 LEGAL
               </p>
             </div>
-          </li>
+          </li> */}
 
           <li onClick={this.openLogoutScreen}>
             <div className="expMenudiv">

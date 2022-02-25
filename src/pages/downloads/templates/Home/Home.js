@@ -33,6 +33,11 @@ class Home extends React.PureComponent {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.downloads !== nextProps.downloads) {
+      // Requirement to update Travel details names - Ps
+      nextProps.downloads[0].name = 'Flight Ticket';
+      nextProps.downloads[1].name = 'Vehicle Details';
+      nextProps.downloads[1].description = 'Click on the button below to view your vehicle details';
+      // End of changes -Ps
       this.setState({ downloads: nextProps.downloads });
     }
   }
@@ -40,7 +45,8 @@ class Home extends React.PureComponent {
   render() {
     $(".backIcon").show();
     $(".backIconMobile").show();
-    $("#spanHeaderText").html("E-DOCS");
+    // $("#spanHeaderText").html("E-DOCS");
+    $("#spanHeaderText").html("ABOVE & BEYOND");
     const { guestName, downloads } = this.state;
 
     return (
