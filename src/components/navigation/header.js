@@ -551,14 +551,14 @@ class header extends React.Component {
                 }
               })}
 
-            <li onClick={this.toggleHidden.bind(this)} data-menu="mySummary">
+            {/* <li onClick={this.toggleHidden.bind(this)} data-menu="mySummary">
               <div className="expMenudiv">
                 <div className="icon-div">
                   <span className="icon-my-summary-2 commonIcon icon-white iconp" />
                 </div>
                 <p className="menuName">MY SUMMARY</p>
               </div>
-            </li>
+            </li> */}
 
             <li onClick={this.toggleHidden.bind(this)} data-menu="photos">
               <div className="expMenudiv">
@@ -636,14 +636,14 @@ class header extends React.Component {
                   );
                 }
               })}
-            <li onClick={this.toggleHidden.bind(this)} data-menu="legal">
+            {/* <li onClick={this.toggleHidden.bind(this)} data-menu="legal">
               <div className="expMenudiv">
                 <div className="icon-div">
                   <span className="icon-legal commonIcon icon-white iconp circle" />
                 </div>
                 <p className="menuName">LEGAL</p>
               </div>
-            </li>
+            </li> */}
             <li onClick={this.openLogoutScreen}>
               <div className="expMenudiv">
                 <div className="icon-div">
