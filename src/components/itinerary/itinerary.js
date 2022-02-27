@@ -36,7 +36,7 @@ class Itinerary extends Component {
 
     if (isMobile) {
       //$("#spanHeaderText").html("Agenda"); ABOVE & BEYOND
-      $("#spanHeaderText").html("ABOVE & BEYOND"); 
+      $("#spanHeaderText").html("ABOVE & BEYOND");
       $(".notificationBell").show();
       $(".appLogo").hide();
       $(".chat").show();
@@ -52,8 +52,8 @@ class Itinerary extends Component {
     }
   }
 
-  getItineraryDetails(event) {
-    event.preventDefault();
+  getItineraryDetails(date) {
+    // event.preventDefault();
     var guestData = JSON.parse(localStorage.getItem("currentGuest"));
     var invitedSubevents = [];
     guestData.inviteStatus.map((subevent) => {
@@ -61,7 +61,7 @@ class Itinerary extends Component {
         invitedSubevents.push(subevent.subEventId);
       }
     });
-    let date = get(event.target, "textContent");
+    // let date = get(event.target, "textContent");
     let data =
       this.props.itineraryDetails &&
       this.props.itineraryDetails.filter((data) => {
@@ -75,70 +75,248 @@ class Itinerary extends Component {
         }
       });
 
-    if (data[0] && data[0].date) {
-      return this.setState({ defaultDate: data[0].date });
-    }
+    // if (data[0] && data[0].date) {
+    //   return this.setState({ defaultDate: data[0].date });
+    // }
+
+    return (data[0] && data[0].date ? this.getItineraryToRender(data[0], data[0].date) : null)
   }
-  getItineraryToRender(itinerary) {
+
+  getItineraryToRender(date) {
     var guestData = JSON.parse(localStorage.getItem("currentGuest"));
     var invitedSubevents = [];
+    let itineraryData;
     guestData.inviteStatus.map((subevent) => {
       if (subevent.status) {
         invitedSubevents.push(subevent.subEventId);
       }
     });
-    if (this.state.defaultDate === "0") {
-      let firstItineraryDate = itinerary[0] ? itinerary[0].date : "";
-      let itineraryData =
-        this.props.itineraryDetails &&
-        this.props.itineraryDetails.filter((data) => {
-          if (
-            data.date === firstItineraryDate &&
-            (typeof data.subEventId == "undefined" ||
-              data.subEventId == "common" ||
-              invitedSubevents.indexOf(data.subEventId) > -1)
-          ) {
-            return data;
-          }
-        });
-      return (
-        itineraryData &&
-        itineraryData.sort(function (d1, d2) {
-          var time1 = moment(d1.startTime, "hh:mmA");
-          var time2 = moment(d2.startTime, "hh:mmA");
-          return time2.diff(time1) > 0 ? -1 : 1;
-        })
-      );
-      //return itineraryData;
-    } else {
-      let itineraryData =
-        this.props.itineraryDetails &&
-        this.props.itineraryDetails.filter((data) => {
-          if (
-            data.date === this.state.defaultDate &&
-            (typeof data.subEventId == "undefined" ||
-              data.subEventId == "common" ||
-              invitedSubevents.indexOf(data.subEventId) > -1)
-          ) {
-            return data;
-          }
-        });
-
-      return (
-        itineraryData &&
-        itineraryData.sort(function (d1, d2) {
-          var time1 = moment(d1.startTime, "hh:mmA");
-          var time2 = moment(d2.startTime, "hh:mmA");
-          return time2.diff(time1) > 0 ? -1 : 1;
-        })
-      );
+    if (this.props.itineraryDetails) {
+      itineraryData = this.props.itineraryDetails.filter((data) => {
+        if (
+          data.date === date &&
+          (typeof data.subEventId == "undefined" ||
+            data.subEventId == "common" ||
+            invitedSubevents.indexOf(data.subEventId) > -1)
+        ) {
+          return data;
+        }
+      });
     }
+
+    return (
+      itineraryData ?
+        itineraryData.sort(function (d1, d2) {
+          var time1 = moment(d1.startTime, "hh:mmA");
+          var time2 = moment(d2.startTime, "hh:mmA");
+          return time2.diff(time1) > 0 ? -1 : 1;
+        }) : null
+    );
+
+  }
+
+  renderItinerary(date) {
+    let defaultItinerary = this.getItineraryToRender(date);
+    return (
+      <div >
+        <div className="row d-none d-sm-block itineraryCls">
+          <div
+            className="appGradientColor itineraryBody"
+            style={{ justifyContent: "center", paddingTop: "20px", paddingBottom: "20px" }}
+          >
+            {defaultItinerary.map((defaultIti, key) => {
+              var iconName;
+              if (defaultIti.selectIcon === "common") {
+                iconName = "icon-common-itinerary fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "food") {
+                iconName = "icon-food-itineray-and-meal fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "event") {
+                iconName = "icon-event-details fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "travel") {
+                iconName = "icon-travel-itinerary fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "transport") {
+                iconName = "icon-transport fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "hotel") {
+                iconName = "icon-hotel-itinerary fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "tour") {
+                iconName = "icon-tour fa-plane-itinerary";
+              }
+              if (key === 0) {
+                return (
+                  <div style={{ justifyContent: "center", paddingTop: "20px", paddingBottom: "20px" }} className="row" key={defaultIti._id}>
+                    <div className="col-md-5"></div>
+                    <div className="col-md-2">
+                      <div className=" iconDiv">
+                        <i className={iconName} aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
+                      <p className="mobileHeadingFontSize">
+                        {defaultIti.startTime}{" "}
+                        {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                      </p>
+                      <p>{defaultIti.description}</p>
+                    </div>
+                  </div>
+                );
+              } else if (key % 2 === 0) {
+                return (
+                  <div>
+                    <div className="row">
+                      <div className="borderSummaryItinerary"></div>
+                    </div>
+                    <div
+                      style={{ marginBottom: "-10px" }}
+                      className="row"
+                      key={defaultIti._id}
+                    >
+                      <div className="col-md-5"></div>
+                      <div className="col-md-2">
+                        <div className=" iconDiv">
+                          <i className={iconName} aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
+                        <p className=" mobileHeadingFontSize">
+                          {defaultIti.startTime} -{" "}
+                          {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                        </p>
+                        <p className=" mobileParagraphFontSize">
+                          {defaultIti.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div>
+                    <div className="row">
+                      <div className="borderSummaryItinerary"></div>
+                    </div>
+                    <div className="row" key={defaultIti._id}>
+                      <div className="col-md-5 itinerarypRight appBodyFontFamily appBodyFontColor">
+                        <p>
+                          {defaultIti.startTime} -{" "}
+                          {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                        </p>
+                        <p>{defaultIti.description}</p>
+                      </div>
+                      <div className="col-md-2">
+                        <div className=" iconDiv">
+                          <i className={iconName} aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div className="col-md-5"></div>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </div>
+        <div className="row d-md-none d-lg-none d-xl-none">
+          <div
+            className="col-xs-12 col-sm-12 appGradientColor"
+            style={{
+              paddingTop: "20px",
+              paddingBottom: "20px",
+              marginTop: "20px",
+            }}
+          >
+            {defaultItinerary.map((defaultIti, key) => {
+              var iconName;
+              if (defaultIti.selectIcon === "common") {
+                iconName = "icon-common-itinerary fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "food") {
+                iconName = "icon-food-itineray-and-meal fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "event") {
+                iconName = "icon-event-details fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "travel") {
+                iconName = "icon-travel-itinerary fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "transport") {
+                iconName = "icon-transport fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "hotel") {
+                iconName = "icon-hotel-itinerary fa-plane-itinerary";
+              } else if (defaultIti.selectIcon === "tour") {
+                iconName = "icon-tour fa-plane-itinerary";
+              }
+              if (key === 0) {
+                return (
+                  <div
+                    style={{ alignItems: "center" }}
+                    className="row"
+                    key={defaultIti._id}
+                  >
+                    <div
+                      className="col-md-2 col-sm-2 col-xs-2 itineraryMobileIcon"
+                      style={{ float: "left" }}
+                    >
+                      <div className=" iconDiv">
+                        <i className={iconName} aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-10 col-sm-10 col-xs-10 itineraryp itinerarymobile appBodyFontFamily appBodyFontColor"
+                      style={{ float: "left" }}
+                    >
+                      <p className="mobileHeadingFontSize">
+                        {defaultIti.startTime} <span>-</span>{" "}
+                        {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                      </p>
+                      <p className="mobileParagraphFontSize">
+                        {defaultIti.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              } else {
+                // let endTime = defaultIti.endTime === "12:34PM"? "Onwards from let" : defaultIti.endTime;
+
+                return (
+                  <div>
+                    <div className="row">
+                      <div className="borderSummaryItineraryMobile"></div>
+                    </div>
+                    <div
+                      style={{ alignItems: "center" }}
+                      className="row"
+                      key={defaultIti._id}
+                    >
+                      <div
+                        className="col-md-2 col-sm-2 col-xs-2 itineraryMobileIcon"
+                        style={{ float: "left" }}
+                      >
+                        <div className=" iconDiv">
+                          <i className={iconName} aria-hidden="true"></i>
+                        </div>
+                      </div>
+                      <div
+                        className="col-md-10 col-sm-10 col-xs-10 itineraryp itinerarymobile appBodyFontFamily appBodyFontColor"
+                        style={{ float: "left" }}
+                      >
+                        <p className="mobileHeadingFontSize">
+                          {defaultIti.startTime} <span>-</span>{" "}
+                          {defaultIti.endTime.replace("12:34PM", "Onwards")}
+                        </p>
+                        <p className="mobileParagraphFontSize">
+                          {defaultIti.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </div>
+      </div>
+    )
   }
 
   render() {
     $(".backIcon").show();
     $(".backIconMobile").show();
-
     const { itineraryDetails, itineraries } = this.props;
 
     let sorteddet =
@@ -146,8 +324,9 @@ class Itinerary extends Component {
       [].slice.call(itineraries).sort(function (d1, d2) {
         return new Date(d1.date) < new Date(d2.date) ? -1 : 1;
       });
+
     let defaultItinerary =
-      itineraryDetails && this.getItineraryToRender(sorteddet);
+      itineraryDetails && this.getItineraryToRender(sorteddet[0].date);
 
     const myScrollbar = {
       width: 400,
@@ -163,248 +342,72 @@ class Itinerary extends Component {
         <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">
           AGENDA
         </h3>
-        <div className="row mT90">
-          <div className="d-none d-lg-block col-md-12 col-sm-12 col-xs-12">
-            {itineraries &&
-              itineraries.map((itinerary) => {
-                return (
+        <div className="agendacontainer row mT90" style={{
+          display: "flex",
+          flexDirection: "row",
+          paddingTop: "15px",
+          paddingBottom: "15px",
+        }}>
+          {itineraries &&
+            itineraries.map((itinerary) => {
+              return (
+                <div style={{
+                  paddingTop: "15px",
+                  paddingBottom: "15px",
+                }} className="container d-none d-lg-block col-md-12 col-sm-12 col-xs-12">
                   <button
                     name="button"
-                    className={`btn btn-default btn-responsive appBodyFontFamily appBodyFontColor commonBtnDestination ${
-                      itinerary.date === defaultItinerary[0].date
-                        ? "active"
-                        : ""
-                    }`}
+                    className={`btn btn-default btn-responsive appBodyFontFamily appBodyFontColor commonBtnDestination ${itinerary.date === defaultItinerary[0].date
+                      ? "active"
+                      : ""
+                      }`}
                     key={itinerary._id}
-                    
-                    onClick={this.getItineraryDetails.bind(this)}
                   >
                     {itinerary.date}
                   </button>
-                );
-              })}
-          </div>
+                  <div>
+                    {this.renderItinerary(itinerary.date)}
+                  </div>
+                </div>
+              );
+            }
+            )}
+
+
+
+
           {/* Top div Date tab for mobile view */}
           <div className="d-md-block d-lg-none d-xl-none destinationMobile">
-            <div className="col-md-12 col-sm-12 col-xs-12 scrollMobile itinery">
+            <div className="col-md-12 col-sm-12 col-xs-12 itinery">
               {itineraries &&
                 itineraries.map((itinerary) => {
                   return (
-                    <button
-                      name="button"
-                      className={`btn btn-default btn-responsive appBodyFontFamily appBodyFontColor commonBtnDestination ${
-                        itinerary.date === defaultItinerary[0].date
+                    <div>
+                      <button
+                        name="button"
+                        className={`btn btn-default btn-responsive appBodyFontFamily appBodyFontColor commonBtnDestination ${itinerary.date === defaultItinerary[0].date
                           ? "active"
                           : ""
-                      }`}
-                      key={itinerary._id}
-                      onClick={this.getItineraryDetails.bind(this)}
-                    >
-                      {itinerary.date}
-                    </button>
+                          }`}
+                        key={itinerary._id}
+                      >
+                        {itinerary.date}
+                      </button>
+                      {this.renderItinerary(itinerary.date)}
+                    </div>
+
                   );
                 })}
             </div>
           </div>
           {/* mobile view date tabs end */}
-        </div>
-        {/* Itenary content under dates */}
-        {defaultItinerary && (
-          <div>
-            <div className="row d-none d-sm-block itineraryCls">
-              <div
-                className="appGradientColor itineraryBody"
-                style={{ paddingTop: "20px", paddingBottom: "20px" }}
-              >
-                {defaultItinerary.map((defaultIti, key) => {
-                  var iconName;
-                  if (defaultIti.selectIcon === "common") {
-                    iconName = "icon-common-itinerary fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "food") {
-                    iconName = "icon-food-itineray-and-meal fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "event") {
-                    iconName = "icon-event-details fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "travel") {
-                    iconName = "icon-travel-itinerary fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "transport") {
-                    iconName = "icon-transport fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "hotel") {
-                    iconName = "icon-hotel-itinerary fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "tour") {
-                    iconName = "icon-tour fa-plane-itinerary";
-                  }
-                  if (key === 0) {
-                    return (
-                      <div className="row" key={defaultIti._id}>
-                        <div className="col-md-5"></div>
-                        <div className="col-md-2">
-                          <div className=" iconDiv">
-                            <i className={iconName} aria-hidden="true"></i>
-                          </div>
-                        </div>
-                        <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
-                          <p className="mobileHeadingFontSize">
-                            {defaultIti.startTime}{" "}
-                            {defaultIti.endTime.replace("12:34PM", "Onwards")}
-                          </p>
-                          <p>{defaultIti.description}</p>
-                        </div>
-                      </div>
-                    );
-                  } else if (key % 2 === 0) {
-                    return (
-                      <div>
-                        <div className="row">
-                          <div className="borderSummaryItinerary"></div>
-                        </div>
-                        <div
-                          style={{ marginBottom: "-10px" }}
-                          className="row"
-                          key={defaultIti._id}
-                        >
-                          <div className="col-md-5"></div>
-                          <div className="col-md-2">
-                            <div className=" iconDiv">
-                              <i className={iconName} aria-hidden="true"></i>
-                            </div>
-                          </div>
-                          <div className="col-md-5 itineraryp appBodyFontFamily appBodyFontColor">
-                            <p className=" mobileHeadingFontSize">
-                              {defaultIti.startTime} -{" "}
-                              {defaultIti.endTime.replace("12:34PM", "Onwards")}
-                            </p>
-                            <p className=" mobileParagraphFontSize">
-                              {defaultIti.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div>
-                        <div className="row">
-                          <div className="borderSummaryItinerary"></div>
-                        </div>
-                        <div className="row" key={defaultIti._id}>
-                          <div className="col-md-5 itinerarypRight appBodyFontFamily appBodyFontColor">
-                            <p>
-                              {defaultIti.startTime} -{" "}
-                              {defaultIti.endTime.replace("12:34PM", "Onwards")}
-                            </p>
-                            <p>{defaultIti.description}</p>
-                          </div>
-                          <div className="col-md-2">
-                            <div className=" iconDiv">
-                              <i className={iconName} aria-hidden="true"></i>
-                            </div>
-                          </div>
-                          <div className="col-md-5"></div>
-                        </div>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-            </div>
-            <div className="row d-md-none d-lg-none d-xl-none">
-              <div
-                className="col-xs-12 col-sm-12 appGradientColor"
-                style={{
-                  paddingTop: "20px",
-                  paddingBottom: "20px",
-                  marginTop: "20px",
-                }}
-              >
-                {defaultItinerary.map((defaultIti, key) => {
-                  var iconName;
-                  if (defaultIti.selectIcon === "common") {
-                    iconName = "icon-common-itinerary fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "food") {
-                    iconName = "icon-food-itineray-and-meal fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "event") {
-                    iconName = "icon-event-details fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "travel") {
-                    iconName = "icon-travel-itinerary fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "transport") {
-                    iconName = "icon-transport fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "hotel") {
-                    iconName = "icon-hotel-itinerary fa-plane-itinerary";
-                  } else if (defaultIti.selectIcon === "tour") {
-                    iconName = "icon-tour fa-plane-itinerary";
-                  }
-                  if (key === 0) {
-                    return (
-                      <div
-                        style={{ alignItems: "center" }}
-                        className="row"
-                        key={defaultIti._id}
-                      >
-                        <div
-                          className="col-md-2 col-sm-2 col-xs-2 itineraryMobileIcon"
-                          style={{ float: "left" }}
-                        >
-                          <div className=" iconDiv">
-                            <i className={iconName} aria-hidden="true"></i>
-                          </div>
-                        </div>
-                        <div
-                          className="col-md-10 col-sm-10 col-xs-10 itineraryp itinerarymobile appBodyFontFamily appBodyFontColor"
-                          style={{ float: "left" }}
-                        >
-                          <p className="mobileHeadingFontSize">
-                            {defaultIti.startTime} <span>-</span>{" "}
-                            {defaultIti.endTime.replace("12:34PM", "Onwards")}
-                          </p>
-                          <p className="mobileParagraphFontSize">
-                            {defaultIti.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  } else {
-                    // let endTime = defaultIti.endTime === "12:34PM"? "Onwards from let" : defaultIti.endTime;
 
-                    return (
-                      <div>
-                        <div className="row">
-                          <div className="borderSummaryItineraryMobile"></div>
-                        </div>
-                        <div
-                          style={{ alignItems: "center" }}
-                          className="row"
-                          key={defaultIti._id}
-                        >
-                          <div
-                            className="col-md-2 col-sm-2 col-xs-2 itineraryMobileIcon"
-                            style={{ float: "left" }}
-                          >
-                            <div className=" iconDiv">
-                              <i className={iconName} aria-hidden="true"></i>
-                            </div>
-                          </div>
-                          <div
-                            className="col-md-10 col-sm-10 col-xs-10 itineraryp itinerarymobile appBodyFontFamily appBodyFontColor"
-                            style={{ float: "left" }}
-                          >
-                            <p className="mobileHeadingFontSize">
-                              {defaultIti.startTime} <span>-</span>{" "}
-                              {defaultIti.endTime.replace("12:34PM", "Onwards")}
-                            </p>
-                            <p className="mobileParagraphFontSize">
-                              {defaultIti.description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+        </div>
+
+
+        {/* Itenary content under dates */}
+
+      </div >
     );
   }
 }
