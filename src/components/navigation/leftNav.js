@@ -773,7 +773,7 @@ class leftNav extends React.Component {
                         <span className="icon-contact-us-2 commonIcon icon-white iconp" />
                       </div>
                       <p className="menuName" style={{ float: "left" }}>
-                        CONTACT US
+                      AGENCY DETAILS
                       </p>
                     </div>
                   </li>

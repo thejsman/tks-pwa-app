@@ -18,7 +18,7 @@ const Header = props => {
             !params.subPath ? "active" : ""
           }`}
         >
-          HIGHLIGHTS
+          INSTRUCTIONS
         </Link>
         <Link
           to={`/${PHOTOS.BASE_PATH}/${PHOTOS.SUB_PATH.GUESTS.toLowerCase()}`}

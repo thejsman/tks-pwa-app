@@ -53,7 +53,7 @@ class ContactUs extends Component {
     let contacts = contactData.contactItems;
     return (
       <div className="container-fluid respobsiveMarginTop contactusmaincontent">
-        <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">CONTACT US{contactData && contactData.contactTitle}</h3>
+        <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">AGENCY DETAILS{contactData && contactData.contactTitle}</h3>
         <div className=" mT90ContactUs">
           {
             contacts && contacts.map(contact => {

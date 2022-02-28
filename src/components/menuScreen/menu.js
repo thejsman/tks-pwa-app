@@ -458,7 +458,7 @@ class Menu extends React.Component {
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        CONTACT US
+                      AGENCY DETAILS
                       </p>
                     </li>
                   );

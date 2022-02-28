@@ -630,7 +630,7 @@ class header extends React.Component {
                         <div className="icon-div">
                           <span className="icon-contact-us-2 commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">CONTACT US</p>
+                        <p className="menuName">AGENCY DETAILS</p>
                       </div>
                     </li>
                   );
