@@ -1,8 +1,8 @@
 @import url("icons.css");
 :root {
-  --selected-color: #8a74b4;
+  --selected-color: #06040a;
   --font-color: #ffffff;
-  --bbcolor: #ff7d41;
+  --bbcolor: #0026faff;
 }
 
 body {

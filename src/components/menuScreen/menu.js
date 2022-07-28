@@ -177,7 +177,8 @@ class Menu extends React.Component {
 		return (
 			<div className="categories">
 				<h3 className="coupleName appBodyFontColor appNavbarFontFamily headingTop headingTopSize">
-					{AppTItle}
+					{/* {AppTItle} */}
+					&nbsp;
 				</h3>
 				<div className="container categoriesItem">
 					<ul id="iconContainer" className="category-items">
