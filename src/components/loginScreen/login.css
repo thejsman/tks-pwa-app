@@ -9,11 +9,13 @@
   transform: translateX(-50%) translateY(-50%);
 }
 .logo {
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
   margin-left: auto;
   margin-right: auto;
   background-size: cover;
+  border-radius: 9px;
+ 
 }
 .loginbtn {
   width: auto !important;

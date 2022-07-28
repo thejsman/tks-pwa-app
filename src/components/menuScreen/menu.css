@@ -155,7 +155,7 @@ ul#iconContainer li{
   display: flex;
   height: 80px;
   width: 80px;
-  border: 1px solid var(--font-color) !important;
+  /* border: 1px solid var(--font-color) !important; */
   align-items: center;
   justify-content: center;
   font-size: 36px;

@@ -317,6 +317,9 @@
   white-space: pre-line;
   text-align: justify !important;
 }
+.lineFormat a {
+  color: white;
+}
 
 @media only screen and (max-width: 768px) {
   .alice-carousel__stage-item {

@@ -1,6 +1,6 @@
-export const EventId = "cQfC27MHoMqbzNpNw";
-export const AppTItle = "VisionIT 2020 Conference";
-export const eventTitle = "VisionIT 2020 Conference";
-export const AppShortName = "SoftechLife";
-export const AppURL = "https://softechlife.thekeyevent.in";
+export const EventId = "wDS8ufoLsLpofYTxn";
+export const AppTItle = "EO Gurgaon";
+export const eventTitle = "EO Gurgaon";
+export const AppShortName = "EO Gurgaon";
+export const AppURL = "https://eo-gurgaon.thekeyevent.in";
 export const isMobile = window.innerWidth <= 500;
