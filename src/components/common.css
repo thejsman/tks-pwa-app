@@ -601,3 +601,11 @@ ul.alice-carousel__dots {
 .table th {
   padding: 0.6rem;
 }
+
+.hdfc_logo {
+  height: 90px;
+}
+
+.categories .icon-white:before {
+  color: #421603ff;
+}

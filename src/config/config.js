@@ -1,6 +1,6 @@
-export const EventId = "cQfC27MHoMqbzNpNw";
-export const AppTItle = "VisionIT 2020 Conference";
-export const eventTitle = "VisionIT 2020 Conference";
-export const AppShortName = "SoftechLife";
-export const AppURL = "https://softechlife.thekeyevent.in";
+export const EventId = "MH5TyymECf8psfFrS";
+export const AppTItle = "EBIX HDFC MDRT";
+export const eventTitle = "EBIX HDFC MDRT";
+export const AppShortName = "HDFC MDRT";
+export const AppURL = "https://hdfcmart.thekeyevent.in";
 export const isMobile = window.innerWidth <= 500;

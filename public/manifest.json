@@ -1,14 +1,14 @@
 {
-  "name": "Holland Dhamaka",
-  "short_name": "Trailblazers",
-  "description": "Holland Dhamaka Event app.",
+  "name": "EBIX HDFC MDRT",
+  "short_name": "EBIX HDFC MDRT",
+  "description": "EBIX HDFC MDRT Event app.",
   "gcm_sender_id": "103953800507",
   "start_url": "/",
   "scope": "/",
   "orientation": "portrait",
   "display": "standalone",
-  "theme_color": "#2874f0",
-  "background_color": "#2874f0",
+  "theme_color": "#421603ff",
+  "background_color": "#421603ff",
   "icons": [
       {
           "src": "icons/192.png",
