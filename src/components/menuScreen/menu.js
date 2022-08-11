@@ -279,7 +279,7 @@ class Menu extends React.Component {
             </li> */}
             {/* My Purchases section - END */}
 
-            {this.hasFeature("RSVP") ? (
+            {/* {this.hasFeature("RSVP") ? (
               <li>
                 <div
                   className="icon-rsvp-and-registration bigIcon icon-white"
@@ -291,7 +291,7 @@ class Menu extends React.Component {
                   {rsvp_name}
                 </p>
               </li>
-            ) : null}
+            ) : null} */}
 
             {this.hasFeature("Itinerary") ? (
               <li>
@@ -321,13 +321,13 @@ class Menu extends React.Component {
             {this.hasFeature("Speakers") ? (
               <li>
                 <div
-                  className="fa fa-microphone bigIcon icon-white"
+                  className="fa fa-glass bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/speakers");
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  SPEAKERS
+                  NIGHTLIFE
                 </p>
               </li>
             ) : null}
@@ -335,13 +335,13 @@ class Menu extends React.Component {
             {this.hasFeature("Sponsors") ? (
               <li>
                 <div
-                  className="fa fa-star bigIcon icon-white"
+                  className="fa fa-cutlery bigIcon icon-white"
                   onClick={() => {
                     browserHistory.push("/sponsors");
                   }}
                 />
                 <p className="iconName appBodyFontFamily appBodyFontColor">
-                  SPONSORS
+                  INDIAN FOOD
                 </p>
               </li>
             ) : null}
@@ -369,13 +369,13 @@ class Menu extends React.Component {
                     <li>
                       {/* <div className="icon-travel-details bigIcon icon-white" onClick={() => {browserHistory.push("/travelDetails")}}/> */}
                       <div
-                        className="icon-travel-details bigIcon icon-white"
+                        className="fa fa-heartbeat bigIcon icon-white"
                         onClick={() => {
                           browserHistory.push("/travel/booked-ticket");
                         }}
                       />
                       <p className="iconName appBodyFontFamily appBodyFontColor">
-                        TRAVEL DETAILS
+                      COVID-19
                       </p>
                     </li>
                   );

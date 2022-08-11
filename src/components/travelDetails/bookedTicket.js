@@ -87,10 +87,10 @@ class bookedTicket extends Component {
           }
           </div>
         </div>
-        <div className="page-title">Add new Tickets</div>
+        <div className="page-title">Add Covid Cretificates</div>
         <div className="links">
-          <a className="card-header myInformation-card-header appBodyFontColor appGradientColor" onClick={() => {browserHistory.push("/travel/book-ticket")}}>Enter Ticket Details</a>
-          <a className="card-header myInformation-card-header appBodyFontColor appGradientColor" onClick={() => {browserHistory.push("/travel/upload-ticket")}}>Upload Tickets</a>
+          {/* <a className="card-header myInformation-card-header appBodyFontColor appGradientColor" onClick={() => {browserHistory.push("/travel/book-ticket")}}>Enter Ticket Details</a> */}
+          <a className="card-header myInformation-card-header appBodyFontColor appGradientColor" onClick={() => {browserHistory.push("/travel/upload-ticket")}}>Upload Certificates</a>
         </div>
       </div>
     )

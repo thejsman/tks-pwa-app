@@ -54,7 +54,7 @@ class TravelDetails extends Component {
     fetchGuestInformation(this.props.guestId || this.sessionGuestId, false);
     $('html').scrollTop(0);
     if (isMobile) {
-      $("#spanHeaderText").html("Travel Details");
+      $("#spanHeaderText").html("Covid-19");
       $(".notificationBell").show();
       $(".appLogo").hide()
       $(".chat").show();
@@ -280,13 +280,13 @@ class TravelDetails extends Component {
           <div className="col-sm-12">
             <h3 className="headingTop headingTopMobile appBodyFontColor appBodyFontFamily d-none d-sm-block">TRAVEL DETAILS </h3>
             <div className="BtnCommon responsiveBtn rsvpWeddingGuestName" style={{ marginTop: '90px' }}>
-              <button className="btn appBodyFontFamily appBodyFontColor commonBtnDestination active">FLIGHTs</button>
+              <button className="btn appBodyFontFamily appBodyFontColor commonBtnDestination active">REPORTS</button>
               {/* <button className="btn appBodyFontFamily appBodyFontColor commonBtnDestination">HOTELS</button> */}
             </div>
           </div>
           <div className="col-sm-12" style={{ marginTop: '20px' }}>
             <div className="appGradientColor appBodyFontColor">
-              <p className="BOOKED">I HAVE BOOKED MY TICKETS</p>
+              <p className="BOOKED">DO YOU HAVE A VALID RTPCR REPORT or VACCINATION CERTIFICATE?</p>
               <div className="row">
                 <div className="myPassportBtnTop">
                   {guestFamily && guestFamily.map(guest => {
@@ -298,9 +298,9 @@ class TravelDetails extends Component {
               <div className="row">
                 <div className="col-md-6 travelP">
                   <div className="travelUpload">
-                    <p>ARRIVAL</p>
-                    <p>ADD TICKET</p>
-                    {this.state.arrivalTickets || arrivalTickets.length > 0 ? <label className="btn-bs-file myInformationBtn ankur appBodyFontFamily appBodyFontColor active abl-filename" id="photoLabel" ><span>Arrival Tickets</span></label> : null}
+                    <p>RTPCR</p>
+                    <p>UPLOAD YOUR VALID TEST REPORT</p>
+                    {this.state.arrivalTickets || arrivalTickets.length > 0 ? <label className="btn-bs-file myInformationBtn ankur appBodyFontFamily appBodyFontColor active abl-filename" id="photoLabel" ><span>RTPCR Report</span></label> : null}
                     {this.state.arrivalTickets || arrivalTickets.length > 0 ? null : <div>
                       <label className="btn-bs-file" style={{ marginTop: '10px' }}>
                         UPLOAD
@@ -315,10 +315,10 @@ class TravelDetails extends Component {
                 </div>
                 <div className="col-md-6  travelP">
                   <div className="travelUpload">
-                    <p>DEPARTURE</p>
-                    <p>ADD TICKET</p>
+                    <p>VACCINATION CERTIFICATE</p>
+                    <p>UPLOAD YOUR VALID CERTIFICATE</p>
 
-                    {this.state.departureTickets || departureTickets.length > 0 ? <label className="btn-bs-file myInformationBtn ankur appBodyFontFamily appBodyFontColor active abl-filename" id="photoLabel" ><span>Departure Tickets</span></label> : null}
+                    {this.state.departureTickets || departureTickets.length > 0 ? <label className="btn-bs-file myInformationBtn ankur appBodyFontFamily appBodyFontColor active abl-filename" id="photoLabel" ><span>Vacc.. Certificate</span></label> : null}
                     {this.state.departureTickets || departureTickets.length > 0 ? null : <div>
                       <label className="btn-bs-file" style={{ marginTop: '10px' }}>
                         UPLOAD

@@ -389,18 +389,18 @@ class header extends React.Component {
               appdet.appDetails &&
               appdet.appDetails.selectedAppDetails &&
               appdet.appDetails.selectedAppDetails.map((list) => {
-                if (list === "RSVP") {
-                  return (
-                    <li onClick={this.toggleHidden.bind(this)} data-menu="rsvp">
-                      <div className="expMenudiv">
-                        <div className="icon-div">
-                          <span className="icon-rsvp-and-registration commonIcon icon-white iconp" />
-                        </div>
-                        <p className="menuName">{rsvp_name}</p>
-                      </div>
-                    </li>
-                  );
-                }
+                // if (list === "RSVP") {
+                //   return (
+                //     <li onClick={this.toggleHidden.bind(this)} data-menu="rsvp">
+                //       <div className="expMenudiv">
+                //         <div className="icon-div">
+                //           <span className="icon-rsvp-and-registration commonIcon icon-white iconp" />
+                //         </div>
+                //         <p className="menuName">{rsvp_name}</p>
+                //       </div>
+                //     </li>
+                //   );
+                // }
               })}
 
             {appdet &&
@@ -444,9 +444,9 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="fa fa-microphone commonIcon icon-white iconp-fa" />
+                          <span className="fa fa-glass commonIcon icon-white iconp-fa" />
                         </div>
-                        <p className="menuName">SPEAKERS</p>
+                        <p className="menuName">NIGHTLIFE</p>
                       </div>
                     </li>
                   );
@@ -476,9 +476,9 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="icon-travel-details commonIcon icon-white iconp" />
+                          <span className="fa fa-heartbeat commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">TRAVEL DETAILS</p>
+                        <p className="menuName">COVID-19</p>
                       </div>
                     </li>
                   );
@@ -492,9 +492,9 @@ class header extends React.Component {
                     >
                       <div className="expMenudiv">
                         <div className="icon-div">
-                          <span className="fa fa-star commonIcon icon-white iconp" />
+                          <span className="fa fa-cutlery commonIcon icon-white iconp" />
                         </div>
-                        <p className="menuName">SPONSORS</p>
+                        <p className="menuName">INDIAN FOOD</p>
                       </div>
                     </li>
                   );

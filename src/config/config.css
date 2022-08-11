@@ -1,35 +1,14 @@
-html {
-  height: 100%;
-}
-body,
-.appBody {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/Dq33wJX4n3o3R2ohN.jpeg");
-}
-.appLogo {
-  background-image: url("https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/vnCZpLbiMdf594M5W.png");
-}
-.appNavbarBGColor {
-  background-color: #4a3202ff;
-}
-.appNavbarFontColor {
-  color: #ffffff;
-}
-.appNavbarFontFamily {
-  font-family: "Scope One Regular";
-}
-.appBodyFontColor {
-  color: #421603ff;
-}
-.appBodyFontFamily {
-  font-family: "Scope One Regular";
-}
-.appSelectColor {
-  color: #cccccc;
-}
-.appGradientColor {
-  background: linear-gradient(to right, #e2c008ff, #fbe880ff);
-}
-/* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/XQRWj6KxwuiWmN6ud.jpeg');}  
-.appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/XQRWj6KxwuiWmN6ud.jpeg');}  
-.appContactBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/XQRWj6KxwuiWmN6ud.jpeg');}  
-.appItineraryBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/XQRWj6KxwuiWmN6ud.jpeg');}  */
+html{height:100%;} 
+body,.appBody {background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/bQMs5ZnecFH4EGPrf.jpeg'); } 
+.appLogo{ background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/vnCZpLbiMdf594M5W.png');} 
+.appNavbarBGColor{background-color:#646768ff} 
+.appNavbarFontColor{color:#000000ff;} 
+.appNavbarFontFamily{font-family: 'Scope One Regular';}  
+.appBodyFontColor{color:#ffffffff;}  
+.appBodyFontFamily{font-family: 'Scope One Regular';}   
+.appSelectColor{color:#ccc;}  
+.appGradientColor{background: linear-gradient(to right,#000000ff,#54656aff);} 
+/* .appWelcomeBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/bQMs5ZnecFH4EGPrf.jpeg');}  
+.appAboutBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/bQMs5ZnecFH4EGPrf.jpeg');}  
+.appContactBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/bQMs5ZnecFH4EGPrf.jpeg');}  
+.appItineraryBackground{background-image: url('https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/bQMs5ZnecFH4EGPrf.jpeg');}  */

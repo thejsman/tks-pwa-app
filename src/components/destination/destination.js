@@ -130,7 +130,7 @@ class destination extends React.Component {
           className="commonBtnDestination appBodyFontFamily appBodyFontColor btn btn-default btn-responsive"
           onClick={this.openPlaceToVisit.bind(this)}
         >
-          PLACES TO VISIT
+          PLACES TO SHOP
         </button>
       );
     }
@@ -268,7 +268,7 @@ class destination extends React.Component {
                             <div className="destination-data appGradientColor">
                               <figcaption className="figure-caption appGradientColor appBodyFontColor">
                                 <span className="subHeadingCommon appBodyFontFamily">
-                                  Nearest Airport
+                                  {/* Nearest Airport */}
                                 </span>
                                 <p className="appBodyFontColor paragraphCommon appBodyFontFamily">
                                   {
@@ -295,7 +295,7 @@ class destination extends React.Component {
                               {defaultDestination.otherDetails
                                 .destinationCurrency.length > 0 && (
                                 <figcaption className="figure-caption  appGradientColor appBodyFontColor">
-                                  <span className="subHeadingCommon appBodyFontFamily">
+                                  {/* <span className="subHeadingCommon appBodyFontFamily">
                                     Currency
                                   </span>
                                   {defaultDestination.otherDetails.destinationCurrency.map(
@@ -319,7 +319,7 @@ class destination extends React.Component {
                                         );
                                       }
                                     }
-                                  )}
+                                  )} */}
                                 </figcaption>
                               )}
                               {/* ABL SAM BOC : ADD TIME ZONE */}
@@ -327,7 +327,7 @@ class destination extends React.Component {
                                 .destinationTimezone.length > 0 && (
                                 <figcaption className="figure-caption appGradientColor appBodyFontColor">
                                   <span className="subHeadingCommon appBodyFontFamily">
-                                    Time Zone
+                                    {/* Time Zone */}
                                   </span>
                                   <p className="paragraphCommon appBodyFontFamily">
                                     {
@@ -458,7 +458,7 @@ class destination extends React.Component {
                                   className="subHeadingCommon appBodyFontFamily"
                                   style={{ textAlign: "left" }}
                                 >
-                                  Nearest Airport
+                                  {/* Nearest Airport */}
                                 </p>
                                 <p className="paragraphCommon appBodyFontFamily">
                                   {
@@ -469,23 +469,23 @@ class destination extends React.Component {
                               </figcaption>
                               <figcaption className="figure-caption mobilefig appGradientColor appBodyFontColor">
                                 <span className="subHeadingCommon appBodyFontFamily">
-                                  Weather
+                                  {/* Weather */}
                                 </span>
                                 <p className="paragraphCommon appBodyFontFamily">
-                                  Max:{" "}
+                                  {/* Max:{" "} */}
                                   {defaultDestination.otherDetails
-                                    .destinationWeatherMax + " \xB0C"}
+                                    .destinationWeatherMax + ""}
                                 </p>
-                                <p className="paragraphCommon appBodyFontFamily">
+                                {/* <p className="paragraphCommon appBodyFontFamily">
                                   Min:{" "}
                                   {defaultDestination.otherDetails
                                     .destinationWeatherMin + " \xB0C"}
-                                </p>
+                                </p> */}
                               </figcaption>
                               {defaultDestination.otherDetails
                                 .destinationCurrency.length > 0 && (
-                                <figcaption className="figure-caption mobilefig appGradientColor appBodyFontColor">
-                                  <span className="subHeadingCommon appBodyFontFamily">
+                                <figcaption className="figure-caption mobilefig appGradientColor appBodyFontColor destContainerCurrency">
+                                  {/* <span className="subHeadingCommon appBodyFontFamily">
                                     Currency
                                   </span>
                                   {defaultDestination.otherDetails.destinationCurrency.map(
@@ -509,7 +509,7 @@ class destination extends React.Component {
                                         );
                                       }
                                     }
-                                  )}
+                                  )} */}
                                 </figcaption>
                               )}
                               {/* ABL SAM BOC : ADD TIME ZONE */}
@@ -517,13 +517,16 @@ class destination extends React.Component {
                                 .destinationTimezone.length > 0 && (
                                 <figcaption className="figure-caption mobilefig appGradientColor appBodyFontColor">
                                   <span className="subHeadingCommon appBodyFontFamily">
-                                    Time Zone
+                                    {/* Time Zone */}
                                   </span>
                                   <p className="paragraphCommon appBodyFontFamily">
                                     {
                                       defaultDestination.otherDetails
                                         .destinationTimezone
                                     }
+                                    <br></br>
+                                    {defaultDestination.otherDetails
+                                    .destinationWeatherMin }
                                   </p>
                                 </figcaption>
                               )}

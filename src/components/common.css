@@ -607,5 +607,15 @@ ul.alice-carousel__dots {
 }
 
 .categories .icon-white:before {
-  color: #421603ff;
+  /* color: #421603ff; */
+  color: #ffffffff;
 }
+.destContainerCurrency {
+  display: none;
+}
+/* .topHeaderCss {
+    color: #000;
+} */
+/* .booked-ticket {
+  color: #fff;
+} */

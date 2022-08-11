@@ -38,7 +38,7 @@ const PlacesToVisit = ({ places, images1, images2, images3 }) => {
           SYDNEY
         </span>
         <h4 className="placesToVisitHeading appBodyFontColor appBodyFontFamily">
-          PLACES TO VISIT
+          PLACES TO SHOP
         </h4>
         <div className=" d-none d-sm-block">
           <div
