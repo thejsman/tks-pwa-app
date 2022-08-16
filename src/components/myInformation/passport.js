@@ -155,7 +155,7 @@ class Passport extends Component {
       <div>
         <div className="card-header myInformation-card-header appBodyFontColor appGradientColor collapsed" data-toggle="collapse" data-parent="#accordion" href="#SPECIAL ASSISTANCE">
           <a className="card-title">
-            <i className="icon-id-card" aria-hidden="true" />  MY PHOTO ID<i className="fa fa" aria-hidden="true" />
+            <i className="icon-id-card" aria-hidden="true" />  MY PASSPORT<i className="fa fa" aria-hidden="true" />
           </a>
         </div>
         <div id="SPECIAL ASSISTANCE" className="card-body myInformation-card-body appGradientColor collapse" data-parent="#accordion" >
@@ -173,7 +173,7 @@ class Passport extends Component {
               <p className="info-statement">{this.props.photoIDQuestion}</p>
               <p className="info-text">
                 <i className="fa fa-info circleInfo" />
-                <p className="inner-text">For international travel, please upload your passport your passport need to be valid a minimum of 6 month after the date of travel. For Domestic travel, please upload any of the Govt. approved IDs: Driving Licence, Aadhar Card, Voter ID</p>
+                <p className="inner-text">For international travel, please upload your passport your passport need to be valid a minimum of 6 month after the date of travel.</p>
               </p>
             </div>
             <div className="myPassportBtnRadio">
