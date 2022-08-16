@@ -41,7 +41,7 @@ class sponsorPage extends React.Component {
   }
   render() {
     if (isMobile) {
-      $("#spanHeaderText").html("Sponsors");
+      $("#spanHeaderText").html("Indian Restaurants");
     }
     let sponsors = this.props && this.props.sponsors
     let pages = _.sortBy(sponsors, ['sequence'])

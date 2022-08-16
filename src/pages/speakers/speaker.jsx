@@ -42,7 +42,7 @@ class speakerPage extends React.Component {
   }
   render() {
     if (isMobile) {
-        $("#spanHeaderText").html("Speakers");
+        $("#spanHeaderText").html("Nightlife");
       }
     let speakers = this.props && this.props.speakers
     let pages = _.sortBy(speakers, ['sequence'])
