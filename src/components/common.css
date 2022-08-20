@@ -619,3 +619,12 @@ ul.alice-carousel__dots {
 /* .booked-ticket {
   color: #fff;
 } */
+.DashboardTitle {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  color: var(--font-color);
+}
+.DisclaimerAccept {
+  background-color: var(--bbcolor);
+  border-color: #fff;
+}

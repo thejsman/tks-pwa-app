@@ -180,7 +180,7 @@ class Menu extends React.Component {
           {/* {AppTItle} */}
           <img
             className="hdfc_logo"
-            src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/jgTFmAZFE7xkvChC7.png"
+            src="https://s3-ap-southeast-1.amazonaws.com/tksproduction/bmtimages/WEtW5F7bfc7RwLvES.png"
           />
         </h3>
         <div className="container categoriesItem">

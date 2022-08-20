@@ -167,6 +167,7 @@ class dashboard extends React.Component {
                 >
                   <i className="fa fa fa-youtube-play" id="youIcon2" />
                   <img src={welcomeImage} className="dashboardImage" />
+                  {/* <h5 class="DashboardTitle">MDRT Sydney, Australia</h5> */}
                 </div>
               </div>
               <div className="invitationMessage appGradientColor appBodyFontColor appBodyFontFamily">

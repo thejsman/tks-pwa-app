@@ -134,59 +134,23 @@ class dashboard extends React.Component {
 
     return (
       <div>
-        <div
-          className="modal-content"
-          style={{
-            display: "none",
-            zIndex: "999999999",
-            position: "absolute",
-            top: "0px",
-            width: "100%",
-            height: "100%"
-          }}
-        >
-          <div className="modal-body" style={{ padding: "0px" }}>
-            <span
-              className="corss"
-              onClick={this.hideModal.bind(this)}
-              style={{
-                color: "white",
-                position: "absolute",
-                left: "10px",
-                cursor: "pointer",
-                background: "#ff8000",
-                width: "50px",
-                height: "50px",
-                borderRadius: "50%",
-                paddingLeft: "10px",
-                fontSize: "18px",
-                paddingTop: "10px",
-                paddingLeft: "17px"
-              }}
-            >
-              X
-            </span>
-            <iframe
-              className="youTubeAttribute"
-              id="video"
-              src=""
-              allow="autoplay"
-              frameBorder="0"
-              allowFullScreen
-            />
-          </div>
-        </div>
         <div className="container">
           <div className="Dashboard-Center is-Responsive">
             <div className="invitationBox">
               <div className="videoContainer">
-                <div
-                  onClick={this.playVideo.bind(this)}
-                  className="youTubeIcon"
-                  id="youClickDiv"
-                >
-                  <i className="fa fa-youtube-play" id="youIcon" />
-                  <img src={welcomeImage} className="dashboardImage" />
+                <div className="dashboardImage">
+                  {/* <i className="fa fa-youtube-play" id="youIcon"></i> */}
+                  {/* <img src={welcomeImage} className="dashboardImage" /> */}
+                  <h2
+                    className="appBodyFontColor"
+                    style={{
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      paddingTop: "30px"
+                    }}
+                  >
+                    Disclaimer
+                  </h2>
                 </div>
               </div>
               <div className="invitationMessage appGradientColor appFontColor">
@@ -194,12 +158,11 @@ class dashboard extends React.Component {
                   className="paragraphCommon appBodyFontFamily  appBodyFontColor text-capitalize"
                   style={{ fontWeight: "400" }}
                 >
-                  Dear{" "}
-                  {guestNickName ? guestNickName : this.props.guestAddressing},
+                  I understand that I have been nominated to attend the MDRT Training Program to be held in Sydney, Australia from 28th-31st August’2022 and confirm that I would be personally attending all the training events as per the schedule to be held during these days.<br/><br/> I also confirm that I will not extend my stay, further than the duration of the training program, and will return once the training is completed as per the schedule. I also understand that I will be representing HDFC Bank to this event and confirm that my conduct always would be in line with the Bank’s Code of Conduct.<br/><br/> Any deviation on this observed/highlighted might attract action as per Bank’s guidelines.
                 </p>
-                {text && text.length > 0 && (
+                {/* {text && text.length > 0 && (
                   <div
-                    className="appBodyFontFamily paragraphCommon appBodyFontColor"
+                    className="message appBodyFontFamily paragraphCommon appBodyFontColor"
                     style={{ marginTop: "10px" }}
                   >
                     {
@@ -212,19 +175,19 @@ class dashboard extends React.Component {
                       // )
                     }
                   </div>
-                )}
+                )} */}
               </div>
             </div>
             <div className="form-group">
               <button
                 type="button"
-                className="loginbtn  btn-def btn-block textboxTransparent"
+                className="btn btn-primary btn-def btn-block DisclaimerAccept"
                 style={{ fontSize: "18px" }}
                 onClick={() => {
                   browserHistory.push("/menus");
                 }}
               >
-                Next
+                Accept & Proceed
               </button>
             </div>
           </div>
